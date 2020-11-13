@@ -92,7 +92,18 @@ def dichotomieAnyFunction(f, bmin, bmax, epsilon):
 def sq2(x):
     return x*x-2
 
-
+def evalExpress(ex):
+    if type(ex) == int or type(ex)==float:
+        return ex
+    e1, op, e2 = ex #upack expression into tuple
+    if op == '+':
+        return evalExpress(e1) + evalExpress(e2)
+    elif op == '*':
+        return evalExpress(e1) * evalExpress(e2)
+    elif op == '-':
+        return evalExpress(e1) - evalExpress(e2)
+    elif op == '//':
+        return evalExpress(e1) / evalExpress(e2)
 
 print(isSymmetric([1,2]))
 print(dichotomieSin(1.7, 4, 0.0000001))
