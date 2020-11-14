@@ -1,6 +1,7 @@
 #hello
 #hello Polina
 #hello meilin
+#almost all of us have git now
 import math
 
 def doubler(lst):
