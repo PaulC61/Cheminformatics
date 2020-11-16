@@ -23,17 +23,11 @@ def factoriel(N):
 # 3: divisibilite
 # 3.3. annee bissextiles
 def estBissextile(n):
-    if n%400==0 or n%4==0 and n%100!=0:
-        return True
-    else:
-        return False
+    return n%400==0 or n%4==0 and n%100!=0       
 
 # 3.4. nombre de jours dans un mois
 def estPairs(n):
-    if n%2==0:
-        return True
-    else:
-        return False
+    return n%2==0    
 
 def nbJoursDansMois(mois,annee):
     y=estPairs(mois)
@@ -99,11 +93,8 @@ def estPremier(n):
     div=2 #diviseur
     while n%div!=0:
         div+=1
-    if div==n:
-        return True
-    else:
-        return False
-
+    return div==n
+    
 # 6.2. affichage de tous les nombres premiers avant un nombre n
 def nombresPremiers(n):
     # version 1:
@@ -133,7 +124,7 @@ for i in range(len(lst)):
 for (i,e) in enumerate(lst):
     lst[i]=2*e
 
-# 2.3. similare aux 2.1. et 2.2., mais on ecrit une fonctione
+# 2.3. similare aux 2.1. et 2.2., mais on ecrit une fonction
 def doubler(lst):
     lst2=[]
     for e in lst:
@@ -326,15 +317,15 @@ def decodage(message):
     a=decalage(message,-5)
     return a
 
-# 3: atithmetique
+# 3: arithmetique
 # 3.1. savoir si n est divisible par b
 def estDivisiblePar(n,b):
     n=abs(n)
     while n>0:
         n-=b
-    return ==0
+    return n==0
 
-# 3.2. retourne le quotient de la divisin eucledienne de n par b
+# 3.2. retourne le quotient de la division eucledienne de n par b
 def quotientDivision(n,b):
     n=abs(n)
     q=0
