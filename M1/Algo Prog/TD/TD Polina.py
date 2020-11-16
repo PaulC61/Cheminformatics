@@ -34,33 +34,36 @@ def nbJoursDansMois(mois,annee):
     if 1<=mois<=12:
         if 1<=mois<=7:
             if y==False:
-                print("31")
+                return(31)
             if y==True and mois!=2:
-                print("30")
+                return(30)
             if mois==2:
                 z=estBissextile(annee)
                 if z==True:
-                    print("29")
+                    return(29)
                 else:
-                    print("28")
+                    return(28)
         if 8<=mois<=12:
             if y==True:
-                print("31")
+                return(31)
             else:
-                print("30")
+                return(30)
 
 # donne la date d'un jour qui est apres celui qu'on tape 
 def jourApres(jour,mois,annee):
+    nannee=annee
+    nmois=mois
+    njour=jour+1
     if jour==nbJoursDansMois(mois,annee):
         njour=1
         nmois=mois+1
-    elif mois==12:
-        nmois=1
-        nannee=annee+1
     else:
         njour=jour+1
         nmois=mois
         nannee=annee
+    if nmois==13:
+        nmois=1
+        nannee=annee+1
     return njour, nmois, nannee
 
 # 4: tirage au sort
@@ -94,7 +97,7 @@ def estPremier(n):
     while n%div!=0:
         div+=1
     return div==n
-    
+
 # 6.2. affichage de tous les nombres premiers avant un nombre n
 def nombresPremiers(n):
     # version 1:
