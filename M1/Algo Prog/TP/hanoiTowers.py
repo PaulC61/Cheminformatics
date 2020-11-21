@@ -1,7 +1,7 @@
 # departure tower
 # destination tower
 # third tower that is neither
-towerlst = [[1,2],[3],[]]
+towerlst = [[2],[3],[1]]
 
 def thirdTower(dep, dest):
     if (dep == 0 and dest == 1) or (dep == 1 and dest==0):
@@ -18,12 +18,23 @@ def motion(towerlst, dep, dest):
     print(towerlst)
     towerlst[dest] = [towerlst[dep][0]] + towerlst[dest]
     towerlst[dep] = towerlst[dep][1:]
-    # remove the top disk/ first element
-    # add to head of destination tower
     displaysMovement(dep, dest)
     print(towerlst)
-    # display movement
-    # display resulting Hanoi Towers
-    # return new towerlst value
+    return towerlst
+
+def movementIsValid(towerlst, dep, dest):
+    # returns True if and only if deb and dest belong to {0,1,2}
+    # all one statement?
+    return ((dep in [0, 1, 2] and dest in [0, 1, 2]) and (dep != dest) and (towerlst[dep] != []) and (towerlst[dep][0] < towerlst[dest][0] or towerlst[dest] == []))
+
+
+    # dep and dest are different
+
+    # the starting tower is not empty
+    # the first disc of the starting tower is smaller 
+    # than the first disc of the destination tower
+
+
+print(movementIsValid(towerlst, 2, 0))
 
 motion(towerlst,0,1)
