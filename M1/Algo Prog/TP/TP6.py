@@ -1,5 +1,4 @@
 #%%
-from os import curdir
 import random
 import math
 import os
@@ -128,11 +127,25 @@ def getSin(x):
 def sq2(x):
     return x*x-2
 
-def listedir():
-    if os.path.isfile(os.path.curdir) == True:
-        return os.path.abspath
-    else:
-        return os.walk(True,os.path.abspath)
+def isADirectory(path):
+    return os.path.isdir(path)
+
+def listedir(path):
+    return path if os.path.isfile(path) else os.listdir(path)
+
+def searchBranching(nom, initPath):
+    if nom == initPath:
+        return nom
+    elif isADirectory(initPath):
+        lst = listedir(initPath)
+        i = 0, lg = len(lst)
+        while i < lg and lst[i] != nom:
+            if nom == lst[i]:
+                searchBranching(nom, lst[i])
+
+
+
+
     
 
 
