@@ -15,7 +15,7 @@ def thirdTower(dep, dest):
 def displaysMovement(dep, dest):
     return print("T" + str(dep) + " --> T" + str(dest))
 
-def motion(towerlst, dep, dest, nb_disques = 0):
+def motion(towerlst, dep, dest, nb_disques = 1):
     print(towerlst)
     towerlst[dest] = towerlst[dep][0:nb_disques] + towerlst[dest]
     towerlst[dep] = towerlst[dep][nb_disques:]
@@ -52,8 +52,29 @@ def movementMultiDisk(towerlst, dep, dest, nb_disques):
         print(towerlst)
         return towerlst
 
+def towersOfHanoi(towerlst, dep, dest):
+    if towerlst[dest] ==[1,2,3]:
+        return towerlst
+    elif movementIsValid(towerlst, dep, dest) == True:
+        # first move
+        return motion(motion(motion(motion(motion(motion(motion(towerlst,dep,dest),dep,thirdTower(dep,dest)),dest,thirdTower(dep,dest)),dep,dest),thirdTower(dep,dest),dep),thirdTower(dep,dest), dest), dep, dest)
+        # second move
+
+        # third
+        # fourth
+        # fifth 
+        # sixth
+        # seventh
+        
+    return towerlst
+
+finalTowerLst = [[],[1,2,3],[]]
+
+
 print(movementIsValid(towerlst, 2, 0))
 
-movementMultiDisk(towerLst, 0, 2, 1)
+# movementMultiDisk(towerLst, 0, 2, 2)
+
+towersOfHanoi(finalTowerLst, 1, 2)
 
 # %%
