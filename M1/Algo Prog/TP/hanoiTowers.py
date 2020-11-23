@@ -56,17 +56,7 @@ def towersOfHanoi(towerlst, dep, dest):
     if towerlst[dest] ==[1,2,3]:
         return towerlst
     elif movementIsValid(towerlst, dep, dest) == True:
-        # first move
         return motion(motion(motion(motion(motion(motion(motion(towerlst,dep,dest),dep,thirdTower(dep,dest)),dest,thirdTower(dep,dest)),dep,dest),thirdTower(dep,dest),dep),thirdTower(dep,dest), dest), dep, dest)
-        # second move
-
-        # third
-        # fourth
-        # fifth 
-        # sixth
-        # seventh
-        
-    return towerlst
 
 finalTowerLst = [[],[1,2,3],[]]
 
