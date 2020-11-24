@@ -35,5 +35,20 @@ def starsBandWhiteLoop(lngth, pos, bandWdth):
             starStrng += "*"
     return starStrng
 
-print(starsBandWhiteDup(10, 3, 2))
-print(starsBandWhiteLoop(10, 3, 2))
+# 1.3 write a function "whiteScarfPoster"
+# inputs: "lngth", "bndWidth"
+# return
+#   None
+#   but prints in the terminal
+#   lngth-bandWidth+1 rows
+#   of strings length = lngth
+#   where the resulting rectangle of stars has a white band
+#   going from the top left corner to the bottom right 
+#   need to use the function: starsBandWhite
+
+def whiteScarfPoster(lngth, bandWidth):
+    for i in range (lngth-bandWidth+1):
+        print(starsBandWhiteDup(lngth, i,bandWidth))
+    return None
+
+whiteScarfPoster(10,3)
