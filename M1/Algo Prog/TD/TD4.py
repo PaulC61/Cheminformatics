@@ -68,8 +68,10 @@ lst=[1,2,0,8,9]
 def comptepairs(lst):
 	l=[]
 	for i in range(len(lst)):
+		print(i)
 		if lst[i] % 2 == 0:
-			l=[lst[i]]+l
-		return l
+			l += [lst[i]]
+			print(l)
+	return l
 print(comptepairs(lst))
 
