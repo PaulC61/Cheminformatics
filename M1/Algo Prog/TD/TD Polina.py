@@ -53,7 +53,7 @@ def nbJoursDansMois(mois,annee):
 def jourApres(jour,mois,annee):
     nannee=annee
     nmois=mois
-    gitnjour=jour+1
+    njour=jour+1
     if jour==nbJoursDansMois(mois,annee):
         njour=1
         nmois=mois+1
