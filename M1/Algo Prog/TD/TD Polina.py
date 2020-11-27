@@ -53,7 +53,7 @@ def nbJoursDansMois(mois,annee):
 def jourApres(jour,mois,annee):
     nannee=annee
     nmois=mois
-    njour=jour+1
+    gitnjour=jour+1
     if jour==nbJoursDansMois(mois,annee):
         njour=1
         nmois=mois+1
@@ -187,9 +187,9 @@ def minimum(lst):
 # 3.4. l'indice de dernier element egale a "a_trouver"
 def indiceDernier(lst,a_trouver):
     l=len(lst)
-    for i in range(l-1,-1,-1) # donne la liste enversee
+    for i in range(l-1,-1,-1): #donne la liste enversee
     # mais il vaut mieux utiliser boucle while ici:
-    l=len(lst)-1
+        l=len(lst)-1
     while l>=0 and lst(l)!=a_trouver:
         l-=1
     return l  
@@ -301,7 +301,7 @@ def decalageCar(str,decal):
     if not estMinuscule(str):
         return str
     else: 
-        return (ord(str)-ord("a"))+decal)%26+ord("a") 
+        return ((ord(str)-ord("a"))+decal)%26+ord("a") 
 
 # 1.2.2.2. tous les caracteres de chaine "message" sont decales
 def decalageStr(message, decal):
@@ -480,7 +480,7 @@ def indice(lst,a_trouver):
 # 5.2: construction de listes
 # 5.2.1. doubler recursif
 def doublerRec(lst):
-    # verssion 1:
+    # version 1:
     if lst==[]:
         return []
     else:
