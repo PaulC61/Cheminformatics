@@ -69,7 +69,18 @@ def somme(lst):
   # every element in new list must be the sum of previous elements
 lst = [1,5,7]
 newlst= [1,6,13]
+#Polina's version 
+''' seems to be not recursive, cause only use the recursive function somme'''
 
+def somme_prefixe(lst):
+    lst2=[]
+    if len(lst)<=1:
+        return lst
+    else:
+        for i in range(len(lst)):
+            lst2+=[somme(lst[:i+1])]
+            i+=1
+        return lst2
 
 def sumPrevious(lst, n=0, newLst = []):
     # do case of single digit list
