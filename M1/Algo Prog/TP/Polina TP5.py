@@ -11,7 +11,7 @@ sort=sortie(laby)
 print(entr,sort)
 """
 
-#exercice 1 (l'entrée et la sortie)
+# exercice 1 (l'entrée et la sortie)
 def coord(laby,n):
 	for ligne in range(len(laby)):
 		for colonne in range(len(laby[0])):
@@ -57,8 +57,7 @@ def voisins_laby_acc(coord,laby):
 			lst_voisins+=[(dy+lgn,dx+col)]
 	return lst_voisins
 
-#exercice 3 (parcours de cellules)
-
+# exercice 3 (parcours de cellules)
 labyr=[[0,0,0,0,0,0,0],
 [0,2,1,1,0,3,0],
 [0,0,0,1,0,1,0],
@@ -70,7 +69,7 @@ def exploreVoie(laby,depart):
 	arrive=sortie(laby)
 	ca=depart #ca = cellule d'avant
 	cc=voisins_laby_acc(ca,laby)[0] #donne le voisin accessible pour ca, cc = cellule courant
-	#ligne ci-dessous donne element #0 dans la liste "choix" créée pour ca 
+	#ligne ci-dessous donne element #0 dans la liste "choix" créée pour cela 
 	chemin=[ca]
 	choix=voisins_laby_acc(cc,laby)
 	while cc!=arrive and len(choix)==2:
@@ -83,14 +82,6 @@ def exploreVoie(laby,depart):
 			cc=choix[0]
 		choix=voisins_laby_acc(cc,laby)
 	return [] if cc!=arrive else chemin
-	
-
-depart=(1,1)
-y=exploreVoie(labyr,depart)
-print(y)	
-
-
-		
 
 
 
