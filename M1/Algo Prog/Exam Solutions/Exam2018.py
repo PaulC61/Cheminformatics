@@ -122,8 +122,24 @@ def insert(lst, num, ind):
         lst += [num]
     else:
         return lst[:ind] + [num] + lst[ind:]
+        
+# 3.2
+# indiceIns
+# input lst and number n
+# return an index of the list where:
+# if the list is empty return 0
+# ifnot return the index of the first element >= n
+# if n is greater than all the elements in the list; return the length of the list
+
+def indiceIns(lst, n):
+    if lst == []:
+        return 0
+    else:
+        for i in range(len(lst)):
+            if lst[i] >= n:
+                return i
+        return len(lst)
 
 
-lst = [4,2,5,6,3,8,1]
-
-print(insert(lst, 18, 0))
+lst = [1,2,6,2,3,8,10]
+print(indiceIns(lst, 20))
