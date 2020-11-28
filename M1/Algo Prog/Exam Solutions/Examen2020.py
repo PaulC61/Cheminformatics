@@ -191,6 +191,41 @@ def tri(lst):
 
   # 4.4. Propriétés
 
+
+## TP noté
+  # 1. Les cases accessibles
+  # 1.1. Les cases voisines de (lgn,col)
+def un_pas_de_dame_inf(lgn,col):
+    deplacements=[(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]
+    lst_voisins=[]
+    for (dy,dx) in deplacements:
+        lst_voisins+=[(dy+lgn,dx+col)]
+    return lst_voisins
+
+  # 1.2. Les cases situées dans la même direction que les voisins de (lgn,col), mais à N cases de (lgn,col)
+  # cas d'une échiquier infinie
+def N_pas_dame_inf(lgn,col,N):
+    deplacements=[(-N,-N),(-N,0),(-N,N),(0,-N),(0,N),(N,-N),(N,0),(N,N)]
+    lst_voisins=[]
+    for (dy,dx) in deplacements:
+        lst_voisins+=[(dy+lgn,dx+col)]
+    return lst_voisins
+
+  # 1.3. Savoir si la case(lgn,col) est sur l’échiquier
+def est_sur_echiquier(lgn,col):
+    return 0<=lgn<8 and 0<=col<8
+
+  # 1.4. Même chose que dans 1.2. mais pour une échiquier finie
+def N_pas_dame_fini(lgn,col,n):
+    lst_voisins_fini=[]
+    lst_voisins=N_pas_dame_fini(lgn,col,n)
+    for i in range(len(lst_voisins)):
+        for j in range(2):
+            if est_sur_echiquier(lst_voisins[i],lst_voisins[j]):
+                lst_voisins_fini+=[lst_voisins[i][j]] 
+    return lst_voisins_fini
+
+print(N_pas_dame_fini(3,7,3))
  
 
 
