@@ -203,31 +203,51 @@ def est_sur_echiquier(lgn,col):
     return 0<=lgn<8 and 0<=col<8
 
   # 1.4. Même chose que dans 1.2. mais pour une échiquier finie
-''' this is not an elegant way, just the simpliest. If you know how
-to choose the right elements in lst_voisins_inf created by function
-N_pas_dame_inf and add it to lst_voisins_fini,let my know :) 
-it should be smth like this:
 def N_pas_dame_fini(lgn,col,N):
     lst_voisins_fini=[]
     lst_voisins_inf=N_pas_dame_inf(lgn,col,N)
-    for (ligne,colonne) in lst_voisins_inf:
-        if est_sur_echiquier(ligne,colonne):
-            lst_voisins_fini+=[(lst_voisins_inf[i])] ---- here idk how to define i
-    return lst_voisins_fini '''
+    for i in range (len(lst_voisins_inf)):
+            if est_sur_echiquier(lst_voisins_inf[i][0],lst_voisins_inf[i][1]):
+                lst_voisins_fini+=[lst_voisins_inf[i]]
+    return lst_voisins_fini
 
-def N_pas_dame_fini(lgn,col,N):
-    deplacements=[(-N,-N),(-N,0),(-N,N),(0,-N),(0,N),(N,-N),(N,0),(N,N)]
-    lst_voisins=[]
-    for (dy,dx) in deplacements:
-        if est_sur_echiquier(lgn+dy,col+dx):
-            lst_voisins+=[(dy+lgn,dx+col)]
-    return lst_voisins
+  # 1.5. Tous les cases accessibles pour una dame
+def cases_accessibles_dame(lgn,col):
+    lst_cases=[]
+    for N in range(1,7):
+        lst_cases+=N_pas_dame_fini(lgn,col,N)
+    return lst_cases
 
+  # 2. Dessiner des cases
+import graph
+  # 2.1. Colorier la case de l'échiquier
+def dessine_case(lgn,col,lcase,color):
+    for x in range(lcase*col,lcase*(col+1)):
+        for y in range(lcase*lgn,lcase*(lgn+1)):
+            graph.plot(y,x,color)
 
+  # 2.2. Dessine l'échiquier
+def rectangle(y1,y2,x1,x2):
+	for x in range(x1,x2):
+		for y in range(y1,y2):
+			graph.plot(y,x)
 
-print(N_pas_dame_fini(3,7,3))
- 
+def echiquier(lcase):
+    for m in range (0,8,2):
+        for n in range(0,8,2):
+            echiquier_1=rectangle(m*lcase,(m+1)*lcase, n*lcase, (n+1)*lcase)
+    for m in range (1,8,2):
+        for n in range(1,8,2):
+            echiquier_2=rectangle(m*lcase,(m+1)*lcase, n*lcase, (n+1)*lcase)
+    return echiquier_1,echiquier_2
 
+  # 3. Dessiner les cases accessibles
+def dessine_case_accessiles(lgn,col,lcase):
+    partie_echiquier=echiquier(lcase)
+    lst_cases_accessibles=cases_accessibles_dame(lgn,col)
+    for (ligne,colonne) in lst_cases_accessibles:
+        partie_rouge=dessine_case(ligne,colonne,lcase,"red")
+    
+graph.ouvre_fenetre(300,400)
 
-
-
+graph.attend_fenetre()
