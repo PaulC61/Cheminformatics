@@ -111,6 +111,35 @@ def cumulRecurs(lst, newLst = []):
     else:
         return cumulRecurs(lst[1:], newLst + [newLst[-1] + lst[0]])
 
+# Question 3
+# 3.1 
+# inserer
+# input: lst, num, ind
+# return: new lst with num inserted at index ind
+
+def insert(lst, num, ind):
+    if ind > len(lst):
+        lst += [num]
+    else:
+        return lst[:ind] + [num] + lst[ind:]
+        
+# 3.2
+# indiceIns
+# input lst and number n
+# return an index of the list where:
+# if the list is empty return 0
+# ifnot return the index of the first element >= n
+# if n is greater than all the elements in the list; return the length of the list
+
+def indiceIns(lst, n):
+    if lst == []:
+        return 0
+    else:
+        for i in range(len(lst)):
+            if lst[i] >= n:
+                return i
+        return len(lst)
 
 
-
+lst = [1,2,6,2,3,8,10]
+print(indiceIns(lst, 20))
