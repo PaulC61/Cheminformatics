@@ -65,15 +65,9 @@ def somme(lst):
     else:
         return lst[0]+somme(lst[1:])
 
-<<<<<<< HEAD
-=======
   # 2.4. Somme préfixe
-  # every element in new list must be the sum of previous elements
-lst = [1,5,7]
-newlst= [1,6,13]
-#Polina's version 
+  # Polina's version 
 ''' seems to be not recursive, cause only use the recursive function somme'''
-
 def somme_prefixe(lst):
     lst2=[]
     if len(lst)<=1:
@@ -83,8 +77,7 @@ def somme_prefixe(lst):
             lst2+=[somme(lst[:i+1])]
             i+=1
         return lst2
->>>>>>> f6ab5fe15d08636687d96ab409a41954c639b6a3
-
+# Paul's version (brilliant)
 def sumPrevious(lst, n=0, newLst = []):
     if n == len(lst):
         return newLst
@@ -92,12 +85,6 @@ def sumPrevious(lst, n=0, newLst = []):
         return sumPrevious(lst, n+1, newLst + [lst[n]])
     else:
         return sumPrevious(lst, n+1, newLst + [somme(lst[:n+1])])        
-
-
-def somme_prefixe(lst, n = 0):
-    lst2=[]
-    lst2=[lst[0]+somme(lst[1:])]
-    return lst2
 
   # 3. Listes et Tuples
   # 3.1. Distance euclidienne
@@ -216,14 +203,17 @@ def est_sur_echiquier(lgn,col):
     return 0<=lgn<8 and 0<=col<8
 
   # 1.4. Même chose que dans 1.2. mais pour une échiquier finie
-def N_pas_dame_fini(lgn,col,n):
-    lst_voisins_fini=[]
-    lst_voisins=N_pas_dame_fini(lgn,col,n)
-    for i in range(len(lst_voisins)):
-        for j in range(2):
-            if est_sur_echiquier(lst_voisins[i],lst_voisins[j]):
-                lst_voisins_fini+=[lst_voisins[i][j]] 
-    return lst_voisins_fini
+''' this is not an elegant way, just the simpliest. If you know how
+to choose the right elements in lst_voisins_inf created by function
+N_pas_dame_inf and add it to lst_voisins_fini,let my know :) '''
+
+def N_pas_dame_fini(lgn,col,N):
+    deplacements=[(-N,-N),(-N,0),(-N,N),(0,-N),(0,N),(N,-N),(N,0),(N,N)]
+    lst_voisins=[]
+    for (dy,dx) in deplacements:
+        if est_sur_echiquier(lgn+dy,col+dx):
+            lst_voisins+=[(dy+lgn,dx+col)]
+    return lst_voisins
 
 print(N_pas_dame_fini(3,7,3))
  
