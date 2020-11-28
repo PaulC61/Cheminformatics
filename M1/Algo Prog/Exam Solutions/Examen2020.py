@@ -65,33 +65,14 @@ def somme(lst):
     else:
         return lst[0]+somme(lst[1:])
 
-  # 2.4. Somme préfixe
-  # every element in new list must be the sum of previous elements
-lst = [1,5,7]
-newlst= [1,6,13]
-
 
 def sumPrevious(lst, n=0, newLst = []):
-    # do case of single digit list
-    # ways it should fail
-    # when the lst is empty, when the lst is length 1 (reduce the size)
-    # if n == len(lst): this covers zero case,
-    # elif: deal with the first index, if n==0, sumPrevious(lst, n+1)
-    # else
     if n == len(lst):
         return newLst
     elif n == 0:
         return sumPrevious(lst, n+1, newLst + [lst[n]])
     else:
-        return sumPrevious(lst, n+1, newLst + [somme(lst[:n+1])])
-        
-
-print(sumPrevious([3, 8, 10, 1]))
-    # create new list
-    # sum(lst[0])
-    #
-
-
+        return sumPrevious(lst, n+1, newLst + [somme(lst[:n+1])])        
 
 
 def somme_prefixe(lst, n = 0):

@@ -75,7 +75,3 @@ def comptepairs(lst):
 	return l
 
 
-
-exampleLst = [1] + [2,0,8] # = [2,0,8]
-
-print(exampleLst)
