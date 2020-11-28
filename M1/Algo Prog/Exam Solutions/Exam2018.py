@@ -51,4 +51,26 @@ def whiteScarfPoster(lngth, bandWidth):
         print(starsBandWhiteDup(lngth, i,bandWidth))
     return None
 
-whiteScarfPoster(10,3)
+# 2.1 sumList function
+# input: list of numbers
+# output: one integer --> sum of elements in list
+# Loop
+# Recursive
+
+def sumListLoop(lst):
+    if lst == []:
+        return 0
+    else:
+        storeInt = 0
+        for i in range(len(lst)):
+            storeInt += lst[i]
+        return storeInt
+
+def sumListRecurs(lst, theSum = 0):
+    if lst == []:
+        return theSum
+    else:
+        return sumListRecurs(lst[1:], lst[0]+lst[1])
+
+print(sumListRecurs([1,2,3]))
+
