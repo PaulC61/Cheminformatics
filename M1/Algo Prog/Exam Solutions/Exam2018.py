@@ -1,3 +1,5 @@
+
+#%%
 # Question 1: The White Scarf
 # for each exercise write two functions that
 # i) duplicates the inputs to accomplish the task
@@ -87,6 +89,7 @@ def createNorm(lst):
 
 # 2.4 cumul (same as sumPrevious as seen in 2020, Q 2.4)
 # except making this recursive is not required
+# specifically states we need to create a new list
 # two versions done: Loop and Recursive
 
 def cumulLoop(lst):
@@ -101,9 +104,23 @@ def cumulLoop(lst):
             newLst += [lst[i] + newLst[i-1]]
     return newLst
 
+def cumulRecurs(lst, newLst = []):
+    if lst == []:
+        return newLst
+    elif newLst == []:
+        return cumulRecurs(lst[1:], newLst + [lst[0]])
+    else:
+        return cumulRecurs(lst[1:], newLst + [newLst[-1] + lst[0]])
+
+
 
 checklst = [1,2,3]
 print(createNorm(checklst))
 print(checklst)
 print(cumulLoop(checklst))
+print(cumulRecurs(checklst))
+emptyList = [1,2 ,3]
+print(emptyList[1:])
 
+
+# %%
