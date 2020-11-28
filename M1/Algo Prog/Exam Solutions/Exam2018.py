@@ -54,10 +54,7 @@ def whiteScarfPoster(lngth, bandWidth):
 # 2.1 sumList function
 # input: list of numbers
 # output: one integer --> sum of elements in list
-# Loop
-# Recursive
-
-def sumListLoop(lst):
+def sumList(lst):
     if lst == []:
         return 0
     else:
@@ -66,11 +63,47 @@ def sumListLoop(lst):
             storeInt += lst[i]
         return storeInt
 
-def sumListRecurs(lst, theSum = 0):
-    if lst == []:
-        return theSum
-    else:
-        return sumListRecurs(lst[1:], lst[0]+lst[1])
+#2.2 normalise
+# input: lst
+# output: None
+# aim is to directly modify the list to be normalised (divided by the sum of the list)
 
-print(sumListRecurs([1,2,3]))
+def normalise(lst):
+    normBase = sumList(lst)
+    for i in range(len(lst)):
+        lst[i] = lst[i]/normBase
+    return None
+
+# 2.3 creeNorm
+# Same as befor but we're returning a brand new normalised list
+# Where the inputted list is unchanged
+
+def createNorm(lst):
+    normBase = sumList(lst)
+    normLst = []
+    for i in range(len(lst)):
+        normLst += [lst[i]/normBase]
+    return normLst
+
+# 2.4 cumul (same as sumPrevious as seen in 2020, Q 2.4)
+# except making this recursive is not required
+# two versions done: Loop and Recursive
+
+def cumulLoop(lst):
+    newLst = []
+    if lst ==[]:
+        return newLst
+    elif len(lst) ==1:
+        newLst += lst
+    else:
+        newLst += [lst[0]]
+        for i in range(1, len(lst)):
+            newLst += [lst[i] + newLst[i-1]]
+    return newLst
+
+
+checklst = [1,2,3]
+print(createNorm(checklst))
+print(checklst)
+print(cumulLoop(checklst))
 
