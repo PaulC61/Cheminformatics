@@ -65,6 +65,25 @@ def somme(lst):
     else:
         return lst[0]+somme(lst[1:])
 
+<<<<<<< HEAD
+=======
+  # 2.4. Somme préfixe
+  # every element in new list must be the sum of previous elements
+lst = [1,5,7]
+newlst= [1,6,13]
+#Polina's version 
+''' seems to be not recursive, cause only use the recursive function somme'''
+
+def somme_prefixe(lst):
+    lst2=[]
+    if len(lst)<=1:
+        return lst
+    else:
+        for i in range(len(lst)):
+            lst2+=[somme(lst[:i+1])]
+            i+=1
+        return lst2
+>>>>>>> f6ab5fe15d08636687d96ab409a41954c639b6a3
 
 def sumPrevious(lst, n=0, newLst = []):
     if n == len(lst):
