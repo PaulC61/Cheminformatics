@@ -205,7 +205,15 @@ def est_sur_echiquier(lgn,col):
   # 1.4. Même chose que dans 1.2. mais pour une échiquier finie
 ''' this is not an elegant way, just the simpliest. If you know how
 to choose the right elements in lst_voisins_inf created by function
-N_pas_dame_inf and add it to lst_voisins_fini,let my know :) '''
+N_pas_dame_inf and add it to lst_voisins_fini,let my know :) 
+it should be smth like this:
+def N_pas_dame_fini(lgn,col,N):
+    lst_voisins_fini=[]
+    lst_voisins_inf=N_pas_dame_inf(lgn,col,N)
+    for (ligne,colonne) in lst_voisins_inf:
+        if est_sur_echiquier(ligne,colonne):
+            lst_voisins_fini+=[(lst_voisins_inf[i])] ---- here idk how to define i
+    return lst_voisins_fini '''
 
 def N_pas_dame_fini(lgn,col,N):
     deplacements=[(-N,-N),(-N,0),(-N,N),(0,-N),(0,N),(N,-N),(N,0),(N,N)]
@@ -214,6 +222,8 @@ def N_pas_dame_fini(lgn,col,N):
         if est_sur_echiquier(lgn+dy,col+dx):
             lst_voisins+=[(dy+lgn,dx+col)]
     return lst_voisins
+
+
 
 print(N_pas_dame_fini(3,7,3))
  
