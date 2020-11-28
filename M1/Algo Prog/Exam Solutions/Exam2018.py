@@ -1,5 +1,4 @@
 
-#%%
 # Question 1: The White Scarf
 # for each exercise write two functions that
 # i) duplicates the inputs to accomplish the task
@@ -114,13 +113,4 @@ def cumulRecurs(lst, newLst = []):
 
 
 
-checklst = [1,2,3]
-print(createNorm(checklst))
-print(checklst)
-print(cumulLoop(checklst))
-print(cumulRecurs(checklst))
-emptyList = [1,2 ,3]
-print(emptyList[1:])
 
-
-# %%
