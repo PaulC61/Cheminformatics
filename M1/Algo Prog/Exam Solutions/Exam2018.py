@@ -120,7 +120,7 @@ def cumulRecurs(lst, newLst = []):
 def insert(lst, num, ind):
     if ind > len(lst):
         lst += [num]
-    else:
+    else:  
         return lst[:ind] + [num] + lst[ind:]
         
 # 3.2
@@ -140,6 +140,19 @@ def indiceIns(lst, n):
                 return i
         return len(lst)
 
+# 3.3 triInsertion
+# order a list in the ascending direction
 
-lst = [1,2,6,2,3,8,10]
-print(indiceIns(lst, 20))
+def orderLst(lst, newLst = []):
+    if lst == []:
+        return newLst
+    elif newLst == []:
+        return orderLst(lst[1:], newLst + [lst[0]])
+    else:
+        return orderLst(lst[1:], insert(newLst, lst[0], indiceIns(newLst, lst[0])))
+  
+
+
+q3Lst = [4, 10, 3, 45, 7, 2, 19]
+
+print(orderLst(q3Lst))
