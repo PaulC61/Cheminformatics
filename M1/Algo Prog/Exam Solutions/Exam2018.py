@@ -142,6 +142,7 @@ def indiceIns(lst, n):
 
 # 3.3 triInsertion
 # order a list in the ascending direction
+# in 2018 they got them to build useful functions above that help
 
 def orderLst(lst, newLst = []):
     if lst == []:
@@ -152,7 +153,84 @@ def orderLst(lst, newLst = []):
         return orderLst(lst[1:], insert(newLst, lst[0], indiceIns(newLst, lst[0])))
   
 
+# Question 4
+# 4.1
+# sumDiv23 
+# input: integer n 
+# return: sum of every smaller number of n divisble by2/3 
+def sumDiv23(n, somme = 0):
+    if n == 0:
+        return somme
+    elif n % 2 == 0 or n % 3 == 0:
+        return sumDiv23(n-1, somme + n)
+    else:
+        return sumDiv23(n-1, somme)
 
-q3Lst = [4, 10, 3, 45, 7, 2, 19]
 
-print(orderLst(q3Lst))
+# 4.2 
+# recursive version of sumList in Q 2.1
+# want to try not have a counter or keeper
+# store sum in lst itself
+
+def sumListRecurs(lst):
+    if len(lst) == 1:
+        return lst[0]
+    else:
+        lst[1] = lst[0] + lst[1]
+        return sumListRecurs(lst[1:])
+
+# 4.3
+# minimum
+# input non-empty list
+# return smallest element of the list
+
+def minimum(lst):
+    if len(lst) == 1:
+        return lst[0]
+    elif lst[0] < lst[1]:
+        return minimum(lst[2:]+[lst[0]])
+    else:
+        return minimum(lst[2:]+[lst[1]])
+
+# Question 5
+# 5.1 
+# How many comparisons?
+# it makes n comparisons 0 --> n-1
+
+# 5.2
+# How is the complexity of this algorithm?
+# Defn: complexity of an algorithm is a measure of time and/or space 
+# required by an algorithm for an input of a given size (n)
+
+# complexity in terms of time: large as it looks at each
+# element one-by-one (main complexity based on time)
+# complexity in terms of space: in-place: only requires a constant amount
+# of additional memory space
+
+# 5.3 
+# How many comparisons does the function make?
+# n again; I don't see where there's more comparisons but I guess there shooul be more
+# I would have thought n + how many times it takes to swap with makes
+
+# 5.4 
+# time complexity is the same or larger as we have to first compare each element as before
+# and then again for each swap, also each element is checked twice individually
+
+# Question 6
+# decomposer
+# input a the list given and a money amount
+# return a list of the smallest possible size that gives
+# the money amount with the elements from the given list
+
+demOptions = [500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01]
+
+def decompose(demOptions, datMoney, moneyList = []):
+    limitDatMoney = round(datMoney, 2)
+    if limitDatMoney == 0:
+        return moneyList
+    elif demOptions[0] > limitDatMoney:
+        return decompose(demOptions[1:], limitDatMoney, moneyList)
+    else:
+        return decompose(demOptions, limitDatMoney - demOptions[0], moneyList + [demOptions[0]])
+  
+print(decompose(demOptions, 472.32))
