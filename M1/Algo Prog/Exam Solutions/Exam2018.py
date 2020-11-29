@@ -142,6 +142,7 @@ def indiceIns(lst, n):
 
 # 3.3 triInsertion
 # order a list in the ascending direction
+# in 2018 they got them to build useful functions above that help
 
 def orderLst(lst, newLst = []):
     if lst == []:
@@ -152,7 +153,44 @@ def orderLst(lst, newLst = []):
         return orderLst(lst[1:], insert(newLst, lst[0], indiceIns(newLst, lst[0])))
   
 
+# Question 4
+# 4.1
+# sumDiv23 
+# input: integer n 
+# return: sum of every smaller number of n divisble by2/3 
+def sumDiv23(n, somme = 0):
+    if n == 0:
+        return somme
+    elif n % 2 == 0 or n % 3 == 0:
+        return sumDiv23(n-1, somme + n)
+    else:
+        return sumDiv23(n-1, somme)
 
-q3Lst = [4, 10, 3, 45, 7, 2, 19]
 
-print(orderLst(q3Lst))
+# 4.2 
+# recursive version of sumList in Q 2.1
+# want to try not have a counter or keeper
+# store sum in lst itself
+
+def sumListRecurs(lst):
+    if len(lst) == 1:
+        return lst[0]
+    else:
+        lst[1] = lst[0] + lst[1]
+        return sumListRecurs(lst[1:])
+
+# 4.3
+# minimum
+# input non-empty list
+# return smallest element of the list
+
+def minimum(lst):
+    print(lst)
+    if len(lst) == 1:
+        return lst[0]
+    elif lst[0] < lst[1]:
+        return minimum(lst[2:]+[lst[0]])
+    else:
+        return minimum(lst[2:]+[lst[1]])
+
+print(minimum([6,13,8,1,9,10,3,7,5]))
