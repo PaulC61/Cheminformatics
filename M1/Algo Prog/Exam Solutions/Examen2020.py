@@ -138,9 +138,6 @@ def insertSommet(listePoly,p,k):
 
   # 4. Tri d’une liste
   # 4.1. Compte
-''' *j'ai pas trop compris la consigne: les elements inférieures à lst[i]
-doivent aussi être avant l'indice i dans la liste? En tout cas, j'ai considéré
-que non, mais c'est simplement corrigible si jamais'''
 def compte(lst,i):
     nombreElemInfOuEg=0
     for elem in lst:
