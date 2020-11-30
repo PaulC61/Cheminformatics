@@ -58,16 +58,15 @@ def draw_bands(bandLst, height_band, width_band):
 				graph.plot(y,x)
 	graph.attend_fenetre()
 
-def rectangle(y1, y2, x1, x2):
+def rectangle(y1, y2, x1, x2, color):
 	for x in range(x1, x2):
 		for y in range(y1, y2):
-			graph.plot(y,x)
+			graph.plot(y,x, color)
 
 def draw_bands2(bandLst, height_band, width_band):
 	totalLength = lengthOfImage(bandLst, width_band)
 	graph.ouvre_fenetre(height_band, totalLength)
-	
-	
+
 	for bandStart in range(0,totalLength, width_band):
 		if bandLst[band_num(bandStart,width_band)] == 1:
 			rectangle(0, height_band, bandStart, bandStart + width_band)
