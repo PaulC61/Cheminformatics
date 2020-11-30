@@ -138,9 +138,6 @@ def insertSommet(listePoly,p,k):
 
   # 4. Tri d’une liste
   # 4.1. Compte
-''' *j'ai pas trop compris la consigne: les elements inférieures à lst[i]
-doivent aussi être avant l'indice i dans la liste? En tout cas, j'ai considéré
-que non, mais c'est simplement corrigible si jamais'''
 def compte(lst,i):
     nombreElemInfOuEg=0
     for elem in lst:
@@ -162,8 +159,6 @@ def ordre(lst):
         lst2+=[compte(lst,i)]
     return lst2
 
-lst=[3,9,3,4,1,8]
-
 ''' réponse: cette fonction rend la liste (lst2) dont les éléments représentent
 le nombre d'éléments de la liste donnée (lst) inférieurs ou égaux à l'élément 
 lst[i] (*et dans le dernier cas ces éléments sont de plus situés avant lst[i])
@@ -171,13 +166,35 @@ de chaque éléments de liste donnée (lst). Donc, elle affiche nouvelle liste (
 qui dans le cas de lst=[3,9,3,4,1,8] est celle-ci: lst2=[1,5,3,3,0,4] '''
 
   # 4.3. Tri
-''' ehm, je comprends pas ce qu'il faut faire '''
+''' "Trier une liste" means order it in the ascending direction 
+the elegant recursive version is in 2018 exam's solution made by Paul (3.3),
+here is an iterated version of this function
+
+So, as I understood, this function should sort the list lst based on lst2 obtained
+by function ordre, which actually gives us the information of future index of the element 
+in new list lst2 created by function tri. It means that for 1 in lst we obtain 0 in lst2,
+so this is the min number in lst. For 9 in lst we obtain 5 in lst2 == len(lst), so this 
+is the max number, cause other 4 elements is smaller than this element'''
+
 def tri(lst):
     lst2=lst
     lstOrdre=ordre(lst)
+    for i in range(len(lstOrdre)-1):
+        minimum=i
+        nextElement=i+1
+        while nextElement<len(lstOrdre):
+            if lst2[nextElement]<lst2[minimum]:
+                minimum=nextElement
+            nextElement+=1
+        lst2[i],lst2[minimum]=lst2[minimum],lst2[i]
+    return lst2
 
   # 4.4. Propriétés
-
+''' les algorithmes de tri élémentaires (2 types): par sélection et par insertion
+--- Version de Paul est par insertion, qui est un tri stable (conservant l'ordre d'apparition des éléments égaux) 
+et un tri en place (il n'utilise pas de tableau auxiliaire). La complexité du tri par insertion est Θ(n^2).
+--- Version de moi est par sélection, qui est un tri en place (les éléments sont triés directement dans la structure),
+un tri stable (l'ordre d'apparition des éléments égaux est préservé) ''' 
 
 ## TP noté
   # 1. Les cases accessibles
@@ -248,6 +265,6 @@ def dessine_case_accessiles(lgn,col,lcase):
     for (ligne,colonne) in lst_cases_accessibles:
         partie_rouge=dessine_case(ligne,colonne,lcase,"red")
     
-graph.ouvre_fenetre(300,400)
+'''graph.ouvre_fenetre(300,400)
 
-graph.attend_fenetre()
+graph.attend_fenetre()'''

@@ -33,7 +33,7 @@ def rectangle_noir(haut,larg,y1,y2,x1,x2):
 			graph.plot(y,x)
 
 # 3.3.1. Un rectangle blanc VERSION 1
-def rectangle_blanc(haut,larg,y1,y2,x1,x2):
+def rectangle_blanc_1(haut,larg,y1,y2,x1,x2):
 	for y in range(haut):
 		for x in range(x1):
 			graph.plot(y,x)
@@ -48,7 +48,7 @@ def rectangle_blanc(haut,larg,y1,y2,x1,x2):
 			graph.plot(y,x)
 
 # 3.3.2. Un rectangle blanc VERSION 2
-def rectangle_blanc(haut,larg,y1,y2,x1,x2):
+def rectangle_blanc_2(haut,larg,y1,y2,x1,x2):
 	for y in range(haut):
 		for x in range(larg):
 			if x1>x or x>x2 or y1>y or y>y2:
@@ -70,10 +70,10 @@ def rayures_vertic_new(haut,larg,larg_bande):
 ''' or like this:
 x_i=x%(2*larg_bande)
 if a<=x_i<=2*larg_bande:
-graph.plot(y,x)
-'''
+graph.plot(y,x)'''
+
 #  9.1. Un damier avec comparaison VERSION 1
-def damier_new(haut,larg,larg_bande):
+def damier_1(haut,larg,larg_bande):
 	for y in range(haut):
 		for x in range(larg):
 			num_bande_horiz=x//larg_bande
@@ -82,7 +82,7 @@ def damier_new(haut,larg,larg_bande):
 				graph.plot(y,x)
 
 # 9.2. Un damier avec comparaison VERSION 2
-def damier_new(haut,larg,larg_bande):
+def damier_2(haut,larg,larg_bande):
 	for y in range(haut):
 		for x in range(larg):
 			x_i=x%(2*larg_bande)
