@@ -1,6 +1,7 @@
 import graph
+import TP4
 
-
+#%%
 def isOnChessboard(row,column):
     return (row >= 0 and row < 8) and (column >= 0 and column < 8)
 
@@ -30,6 +31,35 @@ def availableMoves(row, column):
             return lstAvailSpaces
 
 
+# now drawing the chess board
+# graph.plot(y, x, color)
 
-print(availableMoves(3,2))
+# def rectangle(y1, y2, x1, x2, color):
+# 	for x in range(x1, x2):
+# 		for y in range(y1, y2):
+# 			graph.plot(y,x, color)
 
+def drawCell(row, column, size, color):
+    TP4.rectangle(row*size, row*size+size, column*size, column*size+size, color)
+    return None
+
+def chessBoard(cellSize): 
+    graph.ouvre_fenetre(cellSize*8,cellSize*8)
+    for y in range(cellSize*8):
+        for x in range(cellSize*8):
+            if ((x%cellSize == 0) and (y%cellSize == 0)) and (((x//cellSize)+(y//cellSize))%2 == 0):
+                drawCell(x//cellSize, y//cellSize, cellSize, "black")
+            elif (x%cellSize == 0) and (y%cellSize==0):
+                drawCell(x//cellSize, y//cellSize, cellSize, "white")
+
+def drawAvailableMoves(row, column, cellSize):
+    drawLst = availableMoves(row, column)
+    for i in range(len(drawLst)):
+        drawCell(drawLst[i][0], drawLst[i][1], cellSize, "red")
+    return None
+
+chessBoard(10)
+drawAvailableMoves(3,6, 10)
+graph.attend_fenetre()
+
+# %%

@@ -30,13 +30,15 @@ def profMethod_vertical_strip(height, length, band_width):
 			if c%(2*band_width) > band_width:
 				graph.plot(l,c)
 				
-def conditional_checkerboard(height, length, box_width):
-	for y in range(height):
-		for x in range(length):
-			if (x%(2*box_width) < box_width or y%(2*box_width) < box_width) and (x%(2*box_width) > box_width or y%(2*box_width) > box_width):
-				graph.plot(y,x)
+def chessboard(cell_size):
+	for y in range(cell_size*8):
+		for x in range(cell_size*8):
+			if (x%(2*cell_size) < cell_size and y%(2*cell_size) < cell_size) or (x%(2*cell_size) > cell_size and y%(2*cell_size) > cell_size):
+				graph.plot(y, x, "black")
+			else:
+				graph.plot(y, x, "white")
 			
-
+		
 
 def nh(x, box_width):
 	whichBand = x//box_width
@@ -48,6 +50,6 @@ def nv(y, box_width):
 	
 	return whichBand
 
-graph.ouvre_fenetre(400, 500)
-conditional_checkerboard(400, 500, 20)
+graph.ouvre_fenetre(160, 160)
+chessboard(10)
 graph.attend_fenetre()
