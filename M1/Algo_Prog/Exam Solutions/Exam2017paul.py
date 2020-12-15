@@ -69,8 +69,7 @@ def groceries(recipe, cupboard):
         if search_quantity(recipe[i][0], cupboard) == 0:
             groceryLst += [recipe[i]]
         elif search_quantity(recipe[i][0], cupboard) < recipe[i][1]:
-            recipe[i][1] = recipe[i][1] - cupboard[index(recipe[i][0], cupboard)][1]
-            groceryLst += [recipe[i]]
+            groceryLst += [(recipe[i][0], recipe[i][1] - cupboard[index(recipe[i][0], cupboard)][1])]
     return groceryLst
 
 print(groceries([("pears", 10), ("blue-cheese", 3)], [("blue-cheese", 2)]))
