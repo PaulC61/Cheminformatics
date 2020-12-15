@@ -72,5 +72,21 @@ def groceries(recipe, cupboard):
             groceryLst += [(recipe[i][0], recipe[i][1] - cupboard[index(recipe[i][0], cupboard)][1])]
     return groceryLst
 
-print(groceries([("pears", 10), ("blue-cheese", 3)], [("blue-cheese", 2)]))
+# combine function
+# given two lists of ingredients
+# returns a list containing the ingredients needed for both recipes
+# !! without redundancy
+# we could define one list as the cupboard and one as the recipe, using the previous function
+
+def combine(recipe1, recipe2):
+    groceryLst = recipe1
+    for i in range(len(recipe2)):
+        if search_quantity(recipe2[i][0], groceryLst) == 0:
+            groceryLst += [recipe2[i]]
+        elif search_quantity(recipe2[i][0], groceryLst) != recipe2[i][1]:
+            groceryLst = groceryLst[0:index(recipe2[i][0], groceryLst)] + [(recipe2[i][0], recipe2[i][1] + recipe1[index(recipe2[i][0], recipe1)][1])] + groceryLst[index(recipe2[i][0], groceryLst)+1:]
+    
+    return groceryLst
+
+print(combine([('bread', 3),('brie',1),('butter',3)], [('bread', 2),('pears',10),('gnocchi',50),('butter',1),('brie',4)]))
 
