@@ -36,6 +36,12 @@ def total_weight(ingLst):
 
     return "Shop has weighted goods of " + str(weight) + "kg, items with " + str(volume) + " volume (mL) and " + str(quant) + " small items." 
 
+def total_weight_simple(ingLst):
+    quant = 0
+    for i in range(len(ingLst)):
+        quant += ingLst[i][1]
+    return quant
+
 def needs_fridge(ingLst, fridgeLst = []):
     if ingLst == []:
         return fridgeLst
@@ -52,5 +58,20 @@ def search_quantity(name, ingLst):
             quant += ingLst[i][1]
     return quant
 
-print(search_quantity("cookie", smolList))
+def index(name, ingrLst):
+    for i in range(len(ingrLst)):
+        if ingrLst[i][0] == name:
+            return i
+
+def groceries(recipe, cupboard):
+    groceryLst = []
+    for i in range(len(recipe)):
+        if search_quantity(recipe[i][0], cupboard) == 0:
+            groceryLst += [recipe[i]]
+        elif search_quantity(recipe[i][0], cupboard) < recipe[i][1]:
+            recipe[i][1] = recipe[i][1] - cupboard[index(recipe[i][0], cupboard)][1]
+            groceryLst += [recipe[i]]
+    return groceryLst
+
+print(groceries([("pears", 10), ("blue-cheese", 3)], [("blue-cheese", 2)]))
 

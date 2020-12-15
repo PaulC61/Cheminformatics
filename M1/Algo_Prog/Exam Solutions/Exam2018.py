@@ -1,5 +1,3 @@
-### Examen 2018-2019
- ## Contrôle écrit (seulement)
 
 # Question 1: The White Scarf
 # for each exercise write two functions that
@@ -235,4 +233,3 @@ def decompose(demOptions, datMoney, moneyList = []):
     else:
         return decompose(demOptions, limitDatMoney - demOptions[0], moneyList + [demOptions[0]])
   
-print(decompose(demOptions, 472.32))
