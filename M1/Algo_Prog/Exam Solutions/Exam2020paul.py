@@ -1,3 +1,4 @@
+import math
 # question 1
 # a number is considered a perfect number when 
 # the sum of it's divisors returns said number
@@ -90,4 +91,51 @@ def somme_prefixe(origLst, newLst = []):
     else:
         return somme_prefixe(origLst[1:], newLst + [newLst[-1] + origLst[0]])
 
-print(somme_prefixe([1,2,3,4,5,6]))
+def elucideanDistance(coord1, coord2):
+    diff1 = coord1[0] - coord2[0]
+    diff2 = coord1[1] - coord2[1]
+    diffsq1 = diff1**2
+    diffsq2 = diff2**2
+    sumsq = diffsq1 + diffsq2
+    return math.sqrt(sumsq)
+
+def constructPolygon(tupleLst):
+    poly = []
+    for i in range(len(tupleLst)):
+        if i == 0:
+            poly += [(tupleLst[0],tupleLst[1])]
+        elif i == len(tupleLst)-1:
+            poly += [(tupleLst[i],tupleLst[0])]
+        else:
+            poly += [(tupleLst[i],tupleLst[i+1])]
+    return poly
+
+def perimPoly(polygon):
+    perim = 0
+    for i in range(len(polygon)):
+        sideDist = elucideanDistance(polygon[i][0],polygon[i][1])
+        perim += sideDist
+    return perim
+
+def split(k, polygon):
+    beforeK = []
+    afterK = []
+    for i in range(len(polygon)):
+        if i <= k-1:
+            beforeK += [polygon[i][0]]
+        else:
+            afterK += [polygon[i][0]]
+
+    return beforeK, afterK
+
+
+def insertCoord(k, point, polygon):
+    thesplit = split(k, polygon)
+    newCoord = thesplit[0] + [point] + thesplit[1]
+    return constructPolygon(newCoord)
+
+poly = constructPolygon([(4,3),(-1,1),(0,0)])
+print(poly)
+
+
+print(insertCoord(1, (-6,-6),[((4,3),(-1,1)), ((-1,1),(0,0)), ((0,0),(4,3))]))
