@@ -56,4 +56,38 @@ def justifieParfait(n):
     else:
         return str(n) + " is not a perfect number as the sum of its divisors are not equal to itself:\n" + sommeVersChaine(check[1]) + " = " + str(sommeLstLoop(check[1]))
 
-print(justifieParfait(16))
+
+# 2. Recursivity
+# 2.1
+
+def indices(char, charLst, indexLst = [], count = 0):
+    if charLst == []:
+        return indexLst
+    elif char == charLst[0]:
+        return indices(char, charLst[1:], indexLst + [count], count+1)
+    else:
+        return indices(char, charLst[1:], indexLst, count+1)
+
+def maximum(lst):
+    if len(lst) == 1:
+        return lst[0]
+    elif lst[0] > lst[1]:
+        return maximum([lst[0]] + lst[2:])
+    else:
+        return maximum(lst[1:])
+        
+def somme(lst):
+    if len(lst) == 1:
+        return lst[0]
+    else:
+        return somme([lst[0] + lst[1]] + lst[2:])
+
+def somme_prefixe(origLst, newLst = []):
+    if origLst == []:
+        return newLst
+    elif newLst == []:
+        return somme_prefixe(origLst[1:], newLst + [origLst[0]])
+    else:
+        return somme_prefixe(origLst[1:], newLst + [newLst[-1] + origLst[0]])
+
+print(somme_prefixe([1,2,3,4,5,6]))
