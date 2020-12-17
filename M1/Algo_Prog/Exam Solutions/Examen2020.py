@@ -43,7 +43,16 @@ def justifieParfait(n):
     
   # 2. Récursivité
   # 2.1. Indices
-def indices(elem,lst):
+def indices(elem,lst,i=0,listeDesIndices=[]):
+    if i>(len(lst)-1):
+        return listeDesIndices
+    elif elem==lst[i]:
+        return indices(elem,lst,i+1,listeDesIndices+[i])        
+    else:
+        return indices(elem,lst,i+1,listeDesIndices)
+
+ # itérative
+def indices_i(elem,lst):
     listeDesIndices=[]
     for i in range(len(lst)):
         if elem==lst[i]:

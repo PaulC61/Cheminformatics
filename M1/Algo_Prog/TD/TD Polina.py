@@ -68,12 +68,12 @@ def jourApres(jour,mois,annee):
 
 # 4: tirage au sort
 # 4.3. produit la chaine de caracters (40 caracteres) contienne 
-# des * et O # distribue de facon aleatoire 
+# des * et O  distribue de facon aleatoire 
 # et que la probabilite d'avoir * soit de 80%
 import random
 ligne=""
 for i in range(40):
-    if random.random() < 0.2:
+    if random.random() < 0.8:
         ligne=ligne+"*"
     else:
         ligne=ligne+"O"
