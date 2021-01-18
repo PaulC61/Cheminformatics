@@ -134,8 +134,64 @@ def insertCoord(k, point, polygon):
     newCoord = thesplit[0] + [point] + thesplit[1]
     return constructPolygon(newCoord)
 
-poly = constructPolygon([(4,3),(-1,1),(0,0)])
-print(poly)
+# Question 4
+# return number of elements that are less than or equal to lst[i]
+def compte(i, lst):
+    count = 0
+    for j in range(i):
+        if lst[j] <= lst[i]:
+            count += 1
+    return count
+
+def ordre(lst):
+    lst2 = []
+    for i in range(len(lst)):
+        lst2 += [compte(i, lst)]
+    return lst2
 
 
-print(insertCoord(1, (-6,-6),[((4,3),(-1,1)), ((-1,1),(0,0)), ((0,0),(4,3))]))
+
+
+def tri(lst):
+    lst2 = []
+    otherLst = ordre(lst)
+    for i in range(len(lst)):
+        if i == otherLst[i]:
+            lst2 += [lst[i]]
+        elif otherLst[i] - len(lst) == len(lst):
+            lst2 = [lst[i]] + lst2
+        elif otherLst[i] - len(lst) == 0:
+            lst2 = lst2 + [lst[i]]
+        else:
+            lst2 = lst[0: i - otherLst[i]] + [lst[i]] + lst[i-otherLst[i]:]
+    return lst2
+    
+def index(num, lst):
+    for i in range(len(lst)):
+        if lst[i] >= num:
+            return i
+    return 0
+
+def insert(num, lst, index):
+    if index > len(lst):
+        lst += [num]
+    else:
+        for i in range(len(lst)):
+            if i == index:
+                lst = lst[0:i] + [num] + lst[i:]
+    return lst
+
+
+
+
+def sort(lst, newLst = []):
+    if lst == []:
+        return newLst
+    elif newLst == []:
+        return sort(lst[1:], newLst + [lst[0]])
+    else:
+        return sort(lst[1:], insert(lst[0], newLst, index(lst[0],newLst)))
+
+lst = [3,9,3,4,1,8]
+ 
+print(sort(lst))

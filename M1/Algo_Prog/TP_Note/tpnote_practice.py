@@ -1,7 +1,8 @@
 import graph
 import TP4
 
-#%%
+
+
 def isOnChessboard(row,column):
     return (row >= 0 and row < 8) and (column >= 0 and column < 8)
 
@@ -12,7 +13,6 @@ def nextToQueenFini(row, column):
         if isOnChessboard(infinBoardLst[i][0], infinBoardLst[i][1]) == True:
             restrBoardLst += [infinBoardLst[i]]
     return restrBoardLst
-
 
 def N_ToQueenFini(row, column, n):
     infinBoardLst = [(row-n,column), (row-n,column+n), (row,column+n), (row+n,column+n), (row+n,column), (row+n,column-n), (row,column-n), (row-n,column-n)]
@@ -29,10 +29,6 @@ def availableMoves(row, column):
             lstAvailSpaces += N_ToQueenFini(row, column, i)
         else:
             return lstAvailSpaces
-
-
-# now drawing the chess board
-# graph.plot(y, x, color)
 
 # def rectangle(y1, y2, x1, x2, color):
 # 	for x in range(x1, x2):
@@ -51,6 +47,7 @@ def chessBoard(cellSize):
                 drawCell(x//cellSize, y//cellSize, cellSize, "black")
             elif (x%cellSize == 0) and (y%cellSize==0):
                 drawCell(x//cellSize, y//cellSize, cellSize, "white")
+    
 
 def drawAvailableMoves(row, column, cellSize):
     drawLst = availableMoves(row, column)
@@ -58,8 +55,6 @@ def drawAvailableMoves(row, column, cellSize):
         drawCell(drawLst[i][0], drawLst[i][1], cellSize, "red")
     return None
 
-chessBoard(10)
-drawAvailableMoves(3,6, 10)
+chessBoard(40)
+drawAvailableMoves(3, 4, 40)
 graph.attend_fenetre()
-
-# %%

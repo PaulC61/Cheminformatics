@@ -81,6 +81,11 @@ def rectangle(y1,y2,x1,x2):
 			graph.plot(y,x)
 
 # 2.2.3 Les rayures
+def rectangle(y1,y2,x1,x2):
+	for x in range(x1,x2):
+		for y in range(y1,y2):
+			graph.plot(y,x)
+
 def rayures_vertic(haut,larg,larg_bande):
 	nombre=larg//larg_bande
 	for n in range(1,nombre,2):
@@ -88,6 +93,11 @@ def rayures_vertic(haut,larg,larg_bande):
 
 # 2.3. Pour aller plus loin (difficile) :))
 # 2.3.1. Un damier
+def rectangle(y1,y2,x1,x2):
+	for x in range(x1,x2):
+		for y in range(y1,y2):
+			graph.plot(y,x)
+
 def damier(haut,larg, cote):
 	nombre_horiz=larg//cote
 	nombre_vertic=haut//cote
@@ -98,28 +108,22 @@ def damier(haut,larg, cote):
 			for n in range(1,nombre_horiz,2):
 				dame_2=rectangle(m*cote,(m+1)*cote, n*cote, (n+1)*cote)
 
-# 2.3.2. Un sapin
-''' Idk how to do this :( '''
+# 2.3.2. Un sapin 
+# принцип как с ёлкой из звёздочек
+# только здесь вместо звёздочек пиксели
 import graph
-
-'''haut=n - высота - коичество строк
-larg - ширина - количество элементов в строке (пиксели+белое)'''
-def sapin_graph(haut, larg):
-	Espace=haut-1
-	LongLigne=1
-	for y in range(0,9*haut):
+def sapin(haut, larg):
+	Numb_espace=haut-1
+	Numb_point=1
+	for i in range(0,9*haut):
 		for x in range(larg):
-			graph.plot(y,x)
-			Espace-=1
-			LongLigne+=2
+			graph.plot (haut,Numb_espace)
+			Numb_espace-=1
+			Numb_point+=2
+	###for larg in range(haut-2,haut+38):
+		###graph.plot(haut,larg)
 
-'''def sapin_graph(haut, larg):
-	while y<(0,9*haut) and x<larg:
-		ligne_horiz(y,x)
-		x+=2
-		y-=1'''
 
-graph.ouvre_fenetre(120,160)
-sapin_graph(40,20)	
-graph.attend_fenetre() 
+
+	
 

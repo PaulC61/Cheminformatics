@@ -43,16 +43,7 @@ def justifieParfait(n):
     
   # 2. Récursivité
   # 2.1. Indices
-def indices(elem,lst,i=0,listeDesIndices=[]):
-    if i>(len(lst)-1):
-        return listeDesIndices
-    elif elem==lst[i]:
-        return indices(elem,lst,i+1,listeDesIndices+[i])        
-    else:
-        return indices(elem,lst,i+1,listeDesIndices)
-
- # itérative
-def indices_i(elem,lst):
+def indices(elem,lst):
     listeDesIndices=[]
     for i in range(len(lst)):
         if elem==lst[i]:
@@ -74,19 +65,7 @@ def somme(lst):
     else:
         return lst[0]+somme(lst[1:])
 
-  # 2.4. Somme préfixe
-  # Polina's version 
-''' seems to be not recursive, cause only use the recursive function somme'''
-def somme_prefixe(lst):
-    lst2=[]
-    if len(lst)<=1:
-        return lst
-    else:
-        for i in range(len(lst)):
-            lst2+=[somme(lst[:i+1])]
-            i+=1
-        return lst2
-# Paul's version (brilliant)
+
 def sumPrevious(lst, n=0, newLst = []):
     if n == len(lst):
         return newLst
@@ -94,6 +73,12 @@ def sumPrevious(lst, n=0, newLst = []):
         return sumPrevious(lst, n+1, newLst + [lst[n]])
     else:
         return sumPrevious(lst, n+1, newLst + [somme(lst[:n+1])])        
+
+
+def somme_prefixe(lst, n = 0):
+    lst2=[]
+    lst2=[lst[0]+somme(lst[1:])]
+    return lst2
 
   # 3. Listes et Tuples
   # 3.1. Distance euclidienne
@@ -147,6 +132,9 @@ def insertSommet(listePoly,p,k):
 
   # 4. Tri d’une liste
   # 4.1. Compte
+''' *j'ai pas trop compris la consigne: les elements inférieures à lst[i]
+doivent aussi être avant l'indice i dans la liste? En tout cas, j'ai considéré
+que non, mais c'est simplement corrigible si jamais'''
 def compte(lst,i):
     nombreElemInfOuEg=0
     for elem in lst:
@@ -168,6 +156,8 @@ def ordre(lst):
         lst2+=[compte(lst,i)]
     return lst2
 
+lst=[3,9,3,4,1,8]
+
 ''' réponse: cette fonction rend la liste (lst2) dont les éléments représentent
 le nombre d'éléments de la liste donnée (lst) inférieurs ou égaux à l'élément 
 lst[i] (*et dans le dernier cas ces éléments sont de plus situés avant lst[i])
@@ -175,105 +165,15 @@ de chaque éléments de liste donnée (lst). Donc, elle affiche nouvelle liste (
 qui dans le cas de lst=[3,9,3,4,1,8] est celle-ci: lst2=[1,5,3,3,0,4] '''
 
   # 4.3. Tri
-''' "Trier une liste" means order it in the ascending direction 
-the elegant recursive version is in 2018 exam's solution made by Paul (3.3),
-here is an iterated version of this function
-
-So, as I understood, this function should sort the list lst based on lst2 obtained
-by function ordre, which actually gives us the information of future index of the element 
-in new list lst2 created by function tri. It means that for 1 in lst we obtain 0 in lst2,
-so this is the min number in lst. For 9 in lst we obtain 5 in lst2 == len(lst), so this 
-is the max number, cause other 4 elements is smaller than this element'''
-
+''' ehm, je comprends pas ce qu'il faut faire '''
 def tri(lst):
     lst2=lst
     lstOrdre=ordre(lst)
-    for i in range(len(lstOrdre)-1):
-        minimum=i
-        nextElement=i+1
-        while nextElement<len(lstOrdre):
-            if lst2[nextElement]<lst2[minimum]:
-                minimum=nextElement
-            nextElement+=1
-        lst2[i],lst2[minimum]=lst2[minimum],lst2[i]
-    return lst2
 
   # 4.4. Propriétés
-''' les algorithmes de tri élémentaires (2 types): par sélection et par insertion
---- Version de Paul est par insertion, qui est un tri stable (conservant l'ordre d'apparition des éléments égaux) 
-et un tri en place (il n'utilise pas de tableau auxiliaire). La complexité du tri par insertion est Θ(n^2).
---- Version de moi est par sélection, qui est un tri en place (les éléments sont triés directement dans la structure),
-un tri stable (l'ordre d'apparition des éléments égaux est préservé) ''' 
 
-## TP noté
-  # 1. Les cases accessibles
-  # 1.1. Les cases voisines de (lgn,col)
-def un_pas_de_dame_inf(lgn,col):
-    deplacements=[(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]
-    lst_voisins=[]
-    for (dy,dx) in deplacements:
-        lst_voisins+=[(dy+lgn,dx+col)]
-    return lst_voisins
+ 
 
-  # 1.2. Les cases situées dans la même direction que les voisins de (lgn,col), mais à N cases de (lgn,col)
-  # cas d'une échiquier infinie
-def N_pas_dame_inf(lgn,col,N):
-    deplacements=[(-N,-N),(-N,0),(-N,N),(0,-N),(0,N),(N,-N),(N,0),(N,N)]
-    lst_voisins=[]
-    for (dy,dx) in deplacements:
-        lst_voisins+=[(dy+lgn,dx+col)]
-    return lst_voisins
 
-  # 1.3. Savoir si la case(lgn,col) est sur l’échiquier
-def est_sur_echiquier(lgn,col):
-    return 0<=lgn<8 and 0<=col<8
 
-  # 1.4. Même chose que dans 1.2. mais pour une échiquier finie
-def N_pas_dame_fini(lgn,col,N):
-    lst_voisins_fini=[]
-    lst_voisins_inf=N_pas_dame_inf(lgn,col,N)
-    for i in range (len(lst_voisins_inf)):
-            if est_sur_echiquier(lst_voisins_inf[i][0],lst_voisins_inf[i][1]):
-                lst_voisins_fini+=[lst_voisins_inf[i]]
-    return lst_voisins_fini
 
-  # 1.5. Tous les cases accessibles pour una dame
-def cases_accessibles_dame(lgn,col):
-    lst_cases=[]
-    for N in range(1,7):
-        lst_cases+=N_pas_dame_fini(lgn,col,N)
-    return lst_cases
-
-  # 2. Dessiner des cases
-import graph
-  # 2.1. Colorier la case de l'échiquier
-def dessine_case(lgn,col,lcase,color):
-    for x in range(lcase*col,lcase*(col+1)):
-        for y in range(lcase*lgn,lcase*(lgn+1)):
-            graph.plot(y,x,color)
-
-  # 2.2. Dessine l'échiquier
-def rectangle(y1,y2,x1,x2):
-	for x in range(x1,x2):
-		for y in range(y1,y2):
-			graph.plot(y,x)
-
-def echiquier(lcase):
-    for m in range (0,8,2):
-        for n in range(0,8,2):
-            echiquier_1=rectangle(m*lcase,(m+1)*lcase, n*lcase, (n+1)*lcase)
-    for m in range (1,8,2):
-        for n in range(1,8,2):
-            echiquier_2=rectangle(m*lcase,(m+1)*lcase, n*lcase, (n+1)*lcase)
-    return echiquier_1,echiquier_2
-
-  # 3. Dessiner les cases accessibles
-def dessine_case_accessiles(lgn,col,lcase):
-    partie_echiquier=echiquier(lcase)
-    lst_cases_accessibles=cases_accessibles_dame(lgn,col)
-    for (ligne,colonne) in lst_cases_accessibles:
-        partie_rouge=dessine_case(ligne,colonne,lcase,"red")
-    
-'''graph.ouvre_fenetre(300,400)
-
-graph.attend_fenetre()'''

@@ -61,10 +61,6 @@ def towersOfHanoi(towerlst, dep, dest):
 finalTowerLst = [[],[1,2,3],[]]
 
 
-def estPremiers(n):
-    for i in range (2,n):
-        return n%i == 0 # will return True or False
-
 print(movementIsValid(towerlst, 2, 0))
 
 # movementMultiDisk(towerLst, 0, 2, 2)

@@ -85,8 +85,16 @@ def combine(recipe1, recipe2):
             groceryLst += [recipe2[i]]
         elif search_quantity(recipe2[i][0], groceryLst) != recipe2[i][1]:
             groceryLst = groceryLst[0:index(recipe2[i][0], groceryLst)] + [(recipe2[i][0], recipe2[i][1] + recipe1[index(recipe2[i][0], recipe1)][1])] + groceryLst[index(recipe2[i][0], groceryLst)+1:]
-    
     return groceryLst
+
+
+# Question 8 
+# my_recipe list
+# 5 ingredients
+# my_cupboard list
+
+
+
 
 print(combine([('bread', 3),('brie',1),('butter',3)], [('bread', 2),('pears',10),('gnocchi',50),('butter',1),('brie',4)]))
 
