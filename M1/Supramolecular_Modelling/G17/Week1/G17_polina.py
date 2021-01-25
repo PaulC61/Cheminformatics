@@ -5,7 +5,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import mlab as mlab
 
-import scipy.stats as stats
+
 
 bnddata = np.genfromtxt('rmsd-bnd.txt', delimiter=' ')
 
@@ -31,6 +31,8 @@ data6,bins6,_=plt.hist(rmsd2000, bins=100, edgecolor='red', histtype=u'step')
 # %%
 
 #%%
+import scipy.stats as stats
+
 density1=stats.gaussian_kde(rmsd50)
 density2=stats.gaussian_kde(rmsd100)
 density3=stats.gaussian_kde(rmsd200)
