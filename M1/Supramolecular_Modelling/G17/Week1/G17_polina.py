@@ -26,7 +26,8 @@ data4,bins4,_=plt.hist(rmsd500, bins=100, edgecolor='green', histtype=u'step')
 data5,bins5,_=plt.hist(rmsd1000, bins=100, edgecolor='purple', histtype=u'step')
 data6,bins6,_=plt.hist(rmsd2000, bins=100, edgecolor='red', histtype=u'step')
 
-
+plt.xlabel("RMSD")
+plt.ylabel("Frequency")
 
 # %%
 
@@ -41,13 +42,15 @@ density5=stats.gaussian_kde(rmsd1000)
 density6=stats.gaussian_kde(rmsd2000)
 
 
-plt.xlabel('rmsd')
+
 plt.plot(bins1, density1(bins1))
 plt.plot(bins2, density2(bins2))
 plt.plot(bins3, density3(bins3))
 plt.plot(bins4, density4(bins4))
 plt.plot(bins5, density5(bins5))
 plt.plot(bins6, density6(bins6))
+plt.xlabel('RMSD')
+plt.ylabel('Density')
 plt.show()
 # %%
 
