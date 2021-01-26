@@ -1,10 +1,32 @@
 #%%
+from matplotlib.markers import MarkerStyle
 import numpy as np
 from matplotlib import pyplot as plt
-
-
+import math as math
 
 bnddata = np.genfromtxt('rmsd-bnd.txt', delimiter=' ')
+bnddata_vmd = np.loadtxt('bound-rmsd-vmd.txt', skiprows=1)
+
+plt.scatter(bnddata[1:,0], bnddata[1:,1], marker='X', label='Plumed')
+plt.scatter(bnddata_vmd[:,0],bnddata_vmd[:,1], marker='X', color='green', label='VMD')
+
+plt.ylabel('RMSD')
+plt.xlabel('Frame')
+plt.legend()
+
+#%%
+plt.scatter(bnddata[1:,0], bnddata[1:,1]*10, marker='X', label='Plumed')
+plt.scatter(bnddata_vmd[:,0],bnddata_vmd[:,1], marker='X', color='green', alpha=0.2, label='VMD')
+
+plt.ylabel('RMSD')
+plt.xlabel('Frame')
+plt.legend()
+
+averageRMSD = round(np.mean(bnddata[1:,1]), 5)
+
+print(str(averageRMSD) + ' A ' + 'mol-1 ' + 'kcal-1')
+
+#%%
 
 bound_rmsd50 = bnddata[1:50,1]
 bound_rmsd100 = bnddata[1:100,1]
