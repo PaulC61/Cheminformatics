@@ -1,8 +1,6 @@
 #%%
 import numpy as np
-
 from matplotlib import pyplot as plt
-from matplotlib import mlab as mlab
 
 
 
@@ -56,12 +54,12 @@ plt.show()
 
 unbdata = np.genfromtxt('rmsd-unb.txt', delimiter = ' ')
 
-unbound_rmsd50 = unbdata[:50,1]
-unbound_rmsd100 = unbdata[:100,1]
-unbound_rmsd200 = unbdata[:200,1]
-unbound_rmsd500 = unbdata[:500,1]
-unbound_rmsd1000 = unbdata[:1000,1]
-unbound_rmsd2000 = unbdata[:2000,1]
+unbound_rmsd50 = unbdata[1:50,1]
+unbound_rmsd100 = unbdata[1:100,1]
+unbound_rmsd200 = unbdata[1:200,1]
+unbound_rmsd500 = unbdata[1:500,1]
+unbound_rmsd1000 = unbdata[1:1000,1]
+unbound_rmsd2000 = unbdata[1:2000,1]
 
 unbound_data1,unbnd_bins1,_=plt.hist(unbound_rmsd50, bins=100, edgecolor='black', histtype=u'step')
 unbound_data2,unbnd_bins2,_=plt.hist(unbound_rmsd100, bins=100, edgecolor='blue', histtype=u'step')
@@ -74,7 +72,7 @@ plt.xlabel("Unbound RMSD")
 plt.ylabel("Frequency")
 
 
-# %%
+#%%
 
 import scipy.stats as stats
 
