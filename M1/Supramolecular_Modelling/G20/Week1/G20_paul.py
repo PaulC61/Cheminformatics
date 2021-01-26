@@ -22,9 +22,6 @@ plt.ylabel('RMSD')
 plt.xlabel('Frame')
 plt.legend()
 
-averageRMSD = round(np.mean(bnddata[1:,1]), 5)
-
-print(str(averageRMSD) + ' A ' + 'mol-1 ' + 'kcal-1')
 
 #%%
 
@@ -76,6 +73,18 @@ plt.show()
 
 unbdata = np.genfromtxt('rmsd-unb.txt', delimiter = ' ')
 
+plt.scatter(unbdata[1:,0], unbdata[1:,1], marker='X')
+
+plt.ylabel('RMSD')
+plt.xlabel('Frame')
+
+bndMeanRMSD = round(np.mean(bnddata[1:,1]), 5)
+unbMeanRMSD = round(np.mean(unbdata[1:,1]), 5)
+
+print('Bound RMSD = '+ str(bndMeanRMSD) + ' A ' + 'mol-1 ' + 'kcal-1')
+print('Unbound RMSD = '+ str(unbMeanRMSD) + ' A ' + 'mol-1 ' + 'kcal-1')
+
+#%%
 unbound_rmsd50 = unbdata[1:50,1]
 unbound_rmsd100 = unbdata[1:100,1]
 unbound_rmsd200 = unbdata[1:200,1]
