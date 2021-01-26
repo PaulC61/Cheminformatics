@@ -28,7 +28,7 @@ Urest10 = file10[1:,2]
 
 data1,bins1,_=plt.hist(Urest02, bins=100, edgecolor='black', histtype=u'step')
 data2,bins2,_=plt.hist(Urest04, bins=100, edgecolor='blue', histtype=u'step')
-data3,bins3,_=plt.hist(Urest06, bins=101, edgecolor='red', histtype=u'step')
+data3,bins3,_=plt.hist(Urest06, bins=100, edgecolor='red', histtype=u'step')
 data4,bins4,_=plt.hist(Urest08, bins=100, edgecolor='green', histtype=u'step')
 data5,bins5,_=plt.hist(Urest10, bins=100, edgecolor='purple', histtype=u'step')
 
