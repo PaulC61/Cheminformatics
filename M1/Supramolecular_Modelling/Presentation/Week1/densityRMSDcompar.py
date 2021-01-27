@@ -27,11 +27,12 @@ g17_density = stats.gaussian_kde(g17_rmsd)
 g19_density = stats.gaussian_kde(g19_rmsd)
 g20_density = stats.gaussian_kde(g20_rmsd)
 
-plt.plot(g17_bins,g17_density(g17_bins))
-plt.plot(g19_bins,g19_density(g19_bins))
-plt.plot(g20_bins,g20_density(g20_bins))
+plt.plot(g17_bins,g17_density(g17_bins), label='G-17: Hexane')
+plt.plot(g19_bins,g19_density(g19_bins), label='G-19: Cyclohexane')
+plt.plot(g20_bins,g20_density(g20_bins), label ='G-20: Benzene')
 
 plt.xlabel('Bound RMSD')
 plt.ylabel('Density')
-plt.xlim([0,250])
+plt.legend()
+plt.ylim([0,250])
 # %%
