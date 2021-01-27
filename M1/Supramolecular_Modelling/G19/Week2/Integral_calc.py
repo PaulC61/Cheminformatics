@@ -6,19 +6,22 @@ Calcul de x*log(x) par la methode des trapezes
 import math
 
 '''
-First step : Rempli dans un tableau toutes les valeurs
+First fonction : Rempli dans un tableau toutes les valeurs
 de de la fonction x*log(x) dans un intervale defini
-Second step : Calcul la valeur de l'integral en utilisant la methode des trapezes
+Second fonction : Calcul la valeur de l'integral en utilisant la methode des trapezes
 '''
 
-def methodeTrapeze(nbVal, borneInf, borneSup):
+def lstValF(nbVal, borneInf, borneSup):
+    stp = (borneSup-borneInf)*(1/nbVal) #Step 
     lst_f = []
     i = borneInf
-    stp = (borneSup-borneInf)*(1/nbVal)
     while i <= borneSup:
         lst_f.append(i*math.log(i))
         i += stp
-         
+    return lst_f
+
+def methodeTrapeze(nbVal, borneInf, borneSup, lst_f):
+    stp = (borneSup-borneInf)*(1/nbVal) #Step    
     A = 0
     h = borneInf
     
@@ -28,5 +31,8 @@ def methodeTrapeze(nbVal, borneInf, borneSup):
         
     return A
 
-print(methodeTrapeze(100,1,2))
+nbstep = 1000
+lst_f = lstValF(nbstep,1,2)
+
+print(methodeTrapeze(nbstep,1,2, lst_f))
 
