@@ -14,8 +14,8 @@ g20_rmsd = g20_bnddata[1:,1]
 
 
 g17_data, g17_bins,_ = plt.hist(g17_rmsd, bins=100, edgecolor='blue',histtype=u'step', label='G-17: Hexane')
-g19_data, g19_bins,_ = plt.hist(g19_rmsd, bins=100, edgecolor='orange',histtype=u'step', label='G-19: Hexane')
-g20_data, g20_bins,_ = plt.hist(g20_rmsd, bins=100, edgecolor='green',histtype=u'step', label='G-20: Hexane')
+g19_data, g19_bins,_ = plt.hist(g19_rmsd, bins=100, edgecolor='orange',histtype=u'step', label='G-19: Cyclohexane')
+g20_data, g20_bins,_ = plt.hist(g20_rmsd, bins=100, edgecolor='green',histtype=u'step', label='G-20: Benzene')
 
 plt.xlabel('Bound RMSD')
 plt.ylabel('Frequency')

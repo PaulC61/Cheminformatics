@@ -78,8 +78,8 @@ plt.scatter(unbdata[1:,0], unbdata[1:,1]*10, marker='X')
 plt.ylabel('RMSD')
 plt.xlabel('Frame')
 
-bndMeanRMSD = round(np.mean(bnddata[1:,1]), 5)
-unbMeanRMSD = round(np.mean(unbdata[1:,1]), 5)
+bndMeanRMSD = round(np.mean(bnddata[1:,1]*10), 5)
+unbMeanRMSD = round(np.mean(unbdata[1:,1]*10), 5)
 
 print('Bound RMSD = '+ str(bndMeanRMSD) + ' A' + '/mol' + '/kcal')
 print('Unbound RMSD = '+ str(unbMeanRMSD) + ' A' + '/mol' + '/kcal')
@@ -88,16 +88,12 @@ print('Unbound RMSD = '+ str(unbMeanRMSD) + ' A' + '/mol' + '/kcal')
 unbound_rmsd50 = unbdata[1:50,1]*10
 unbound_rmsd100 = unbdata[1:100,1]*10
 unbound_rmsd200 = unbdata[1:200,1]*10
-unbound_rmsd500 = unbdata[1:500,1]*10
-unbound_rmsd1000 = unbdata[1:1000,1]*10
-unbound_rmsd2000 = unbdata[1:2000,1]*10
+unbound_rmsd400 = unbdata[1:400,1]*10
 
 unbound_data1,unbnd_bins1,_=plt.hist(unbound_rmsd50, bins=100, edgecolor='black', histtype=u'step', label='n = 50')
 unbound_data2,unbnd_bins2,_=plt.hist(unbound_rmsd100, bins=100, edgecolor='blue', histtype=u'step', label='n = 100')
 unbound_data3,unbnd_bins3,_=plt.hist(unbound_rmsd200, bins=100, edgecolor='orange', histtype=u'step', label='n = 200')
-unbound_data4,unbnd_bins4,_=plt.hist(unbound_rmsd500, bins=100, edgecolor='green', histtype=u'step', label='n = 500')
-unbound_data5,unbnd_bins5,_=plt.hist(unbound_rmsd1000, bins=100, edgecolor='purple', histtype=u'step', label='n = 1000')
-unbound_data6,unbnd_bins6,_=plt.hist(unbound_rmsd2000, bins=100, edgecolor='red', histtype=u'step', label='n = 2000', linewidth=1.5)
+unbound_data4,unbnd_bins4,_=plt.hist(unbound_rmsd400, bins=100, edgecolor='green', histtype=u'step', label='n = 400', edgecolor='red', linewidth=1.5)
 
 plt.xlabel("Unbound RMSD")
 plt.ylabel("Frequency")
@@ -110,18 +106,15 @@ import scipy.stats as stats
 unbound_density1=stats.gaussian_kde(unbound_rmsd50)
 unbound_density2=stats.gaussian_kde(unbound_rmsd100)
 unbound_density3=stats.gaussian_kde(unbound_rmsd200)
-unbound_density4=stats.gaussian_kde(unbound_rmsd500)
-unbound_density5=stats.gaussian_kde(unbound_rmsd1000)
-unbound_density6=stats.gaussian_kde(unbound_rmsd2000)
+unbound_density4=stats.gaussian_kde(unbound_rmsd400)
+
 
 
 
 plt.plot(unbnd_bins1, bound_density1(unbnd_bins1), label = 'n = 50')
 plt.plot(unbnd_bins2, bound_density2(unbnd_bins2), label = 'n = 100')
 plt.plot(unbnd_bins3, bound_density3(unbnd_bins3), label = 'n = 200')
-plt.plot(unbnd_bins4, bound_density4(unbnd_bins4), label = 'n = 500')
-plt.plot(unbnd_bins5, bound_density5(unbnd_bins5), label = 'n = 1000')
-plt.plot(unbnd_bins6, bound_density6(unbnd_bins6), label = 'n = 2000', color = 'red', linewidth = 1.5)
+plt.plot(unbnd_bins4, bound_density4(unbnd_bins4), label = 'n = 400', color = 'red', linewidth = 1.5)
 plt.xlabel('Bound RMSD')
 plt.ylabel('Density')
 plt.legend()
