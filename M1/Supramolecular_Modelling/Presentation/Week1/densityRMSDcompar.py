@@ -33,8 +33,5 @@ plt.plot(g20_bins,g20_density(g20_bins))
 
 plt.xlabel('Bound RMSD')
 plt.ylabel('Density')
-
-
-
-
+plt.xlim([0,250])
 # %%
