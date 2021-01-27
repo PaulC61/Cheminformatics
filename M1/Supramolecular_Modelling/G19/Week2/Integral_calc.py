@@ -6,8 +6,9 @@ Calcul de x*log(x) par la methode des trapezes
 import math
 
 '''
-Fonction remplissannt dans un tableau toutes les valeurs
-de l'integrale entre les deux bornes
+First step : Rempli dans un tableau toutes les valeurs
+de de la fonction x*log(x) dans un intervale defini
+Second step : Calcul la valeur de l'integral en utilisant la methode des trapezes
 '''
 
 def methodeTrapeze(nbVal, borneInf, borneSup):
