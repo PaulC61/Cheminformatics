@@ -14,15 +14,17 @@ Second step : Calcul la valeur de l'integral en utilisant la methode des trapeze
 def methodeTrapeze(nbVal, borneInf, borneSup):
     lst_f = []
     i = borneInf
+    stp = (borneSup-borneInf)*(1/nbVal)
     while i <= borneSup:
         lst_f.append(i*math.log(i))
-        i += (borneSup-borneInf)*(1/nbVal)
-        
+        i += stp
+         
     A = 0
     h = borneInf
+    
     for i in range(0,len(lst_f)-1):
-        A += (lst_f[i+1]+lst_f[i])*(h+0.01-h)*(1/2)
-        h += (borneSup-borneInf)*(1/nbVal)
+        A += (lst_f[i+1]+lst_f[i])*(h+stp-h)*(1/2)
+        h += stp
         
     return A
 
