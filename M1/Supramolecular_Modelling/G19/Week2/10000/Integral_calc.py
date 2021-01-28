@@ -43,7 +43,7 @@ decimals = 2
 lstUrest = []
 lbd = round(1/steps,decimals)
 for i in range(steps):
-    file = np.genfromtxt(str(round(lbd,decimals))+'.txt', delimiter=' ')
+    file = np.genfromtxt(str(round(lbd,decimals))+'.rms', delimiter=' ')
     lstUrest.append(file[1:,2])
     lbd += round(1/steps,decimals)
     

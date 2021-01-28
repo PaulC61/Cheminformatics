@@ -7,8 +7,6 @@ import math
 import numpy as np
 
 
-
-
 def methodeTrapeze(nbVal, borneInf, borneSup, lst_f):
     stp = (borneSup-borneInf)*(1/nbVal) #Step  
     A = 0
@@ -35,6 +33,7 @@ def avgList(lst):
     
     return somme/len(lst)
 
+
 def createAvgList(lst, steps):
     lst_avg = []
     lbd = 1/steps
@@ -51,7 +50,7 @@ lstUrest = []
 lbd = round(1/steps,decimals)
 
 for i in range(steps):
-    file = np.genfromtxt(str(round(lbd,decimals))+'.txt', delimiter=' ')
+    file = np.genfromtxt(str(round(lbd,decimals))+'.rms', delimiter=' ')
     lstUrest.append(file[1:,2])
     lbd += round(1/steps,decimals)
 
