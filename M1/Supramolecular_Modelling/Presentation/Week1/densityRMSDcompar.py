@@ -8,9 +8,9 @@ g17_bnddata = np.genfromtxt('g17-rmsd-bnd.txt', delimiter=' ')
 g19_bnddata = np.genfromtxt('g19-rmsd-bnd.txt', delimiter=' ')
 g20_bnddata = np.genfromtxt('g20-rmsd-bnd.txt', delimiter=' ')
 
-g17_rmsd = g17_bnddata[1:,1]
-g19_rmsd = g19_bnddata[1:,1]
-g20_rmsd = g20_bnddata[1:,1]
+g17_rmsd = g17_bnddata[1:,1]*10
+g19_rmsd = g19_bnddata[1:,1]*10
+g20_rmsd = g20_bnddata[1:,1]*10
 
 
 g17_data, g17_bins,_ = plt.hist(g17_rmsd, bins=100, edgecolor='blue',histtype=u'step', label='G-17: Hexane')
@@ -34,5 +34,5 @@ plt.plot(g20_bins,g20_density(g20_bins), label ='G-20: Benzene')
 plt.xlabel('Bound RMSD')
 plt.ylabel('Density')
 plt.legend()
-plt.ylim([0,250])
+plt.ylim([0,25])
 # %%
