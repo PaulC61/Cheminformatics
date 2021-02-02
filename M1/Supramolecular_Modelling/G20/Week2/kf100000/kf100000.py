@@ -22,17 +22,17 @@ _,extractBins1_0_org,_ = plt.hist(kf100000_RMSD_matrix[:,5], bins=100, histtype=
 
 
 # %%
-density_ll_0_2_kf_Org = stats.gaussian_kde(kf100000_RMSD_matrix[:,1])
-density_ll_0_4_kf_Org = stats.gaussian_kde(kf100000_RMSD_matrix[:,2])
-density_ll_0_6_kf_Org = stats.gaussian_kde(kf100000_RMSD_matrix[:,3])
-density_ll_0_8_kf_Org = stats.gaussian_kde(kf100000_RMSD_matrix[:,4])
-density_ll_1_0_kf_Org = stats.gaussian_kde(kf100000_RMSD_matrix[:,5])
+density_ll_0_2_kf_10 = stats.gaussian_kde(kf100000_RMSD_matrix[:,1])
+density_ll_0_4_kf_10 = stats.gaussian_kde(kf100000_RMSD_matrix[:,2])
+density_ll_0_6_kf_10 = stats.gaussian_kde(kf100000_RMSD_matrix[:,3])
+density_ll_0_8_kf_10 = stats.gaussian_kde(kf100000_RMSD_matrix[:,4])
+density_ll_1_0_kf_10 = stats.gaussian_kde(kf100000_RMSD_matrix[:,5])
 
-plt.plot(extractBins0_2_org, density_ll_0_2_kf_Org(extractBins0_2_org))
-plt.plot(extractBins0_4_org, density_ll_0_4_kf_Org(extractBins0_4_org))
-plt.plot(extractBins0_6_org, density_ll_0_6_kf_Org(extractBins0_6_org))
-plt.plot(extractBins0_8_org, density_ll_0_8_kf_Org(extractBins0_8_org))
-plt.plot(extractBins1_0_org, density_ll_1_0_kf_Org(extractBins1_0_org))
+plt.plot(extractBins0_2_org, density_ll_0_2_kf_10(extractBins0_2_org))
+plt.plot(extractBins0_4_org, density_ll_0_4_kf_10(extractBins0_4_org))
+plt.plot(extractBins0_6_org, density_ll_0_6_kf_10(extractBins0_6_org))
+plt.plot(extractBins0_8_org, density_ll_0_8_kf_10(extractBins0_8_org))
+plt.plot(extractBins1_0_org, density_ll_1_0_kf_10(extractBins1_0_org))
 
 
 
