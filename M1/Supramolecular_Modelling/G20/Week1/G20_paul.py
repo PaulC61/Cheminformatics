@@ -1,5 +1,4 @@
 #%%
-from matplotlib.markers import MarkerStyle
 import numpy as np
 from matplotlib import pyplot as plt
 import math as math
@@ -92,8 +91,8 @@ unbound_rmsd400 = unbdata[1:400,1]*10
 
 unbound_data1,unbnd_bins1,_=plt.hist(unbound_rmsd50, bins=100, edgecolor='black', histtype=u'step', label='n = 50')
 unbound_data2,unbnd_bins2,_=plt.hist(unbound_rmsd100, bins=100, edgecolor='blue', histtype=u'step', label='n = 100')
-unbound_data3,unbnd_bins3,_=plt.hist(unbound_rmsd200, bins=100, edgecolor='orange', histtype=u'step', label='n = 200')
-unbound_data4,unbnd_bins4,_=plt.hist(unbound_rmsd400, bins=100, edgecolor='green', histtype=u'step', label='n = 400', edgecolor='red', linewidth=1.5)
+unbound_data3,unbnd_bins3,_=plt.hist(unbound_rmsd200, bins=100, edgecolor='purple', histtype=u'step', label='n = 200')
+unbound_data4,unbnd_bins4,_=plt.hist(unbound_rmsd400, bins=100, edgecolor='red', histtype=u'step', label='n = 400', linewidth=1.5)
 
 plt.xlabel("Unbound RMSD")
 plt.ylabel("Frequency")
@@ -115,7 +114,7 @@ plt.plot(unbnd_bins1, bound_density1(unbnd_bins1), label = 'n = 50')
 plt.plot(unbnd_bins2, bound_density2(unbnd_bins2), label = 'n = 100')
 plt.plot(unbnd_bins3, bound_density3(unbnd_bins3), label = 'n = 200')
 plt.plot(unbnd_bins4, bound_density4(unbnd_bins4), label = 'n = 400', color = 'red', linewidth = 1.5)
-plt.xlabel('Bound RMSD')
+plt.xlabel('Unbound RMSD')
 plt.ylabel('Density')
 plt.legend()
 
@@ -124,7 +123,7 @@ plt.legend()
 # %%
 
 
-plt.hist(unbound_rmsd2000, bins=100, edgecolor='blue', histtype=u'step', label = "Unbound")
+plt.hist(unbound_rmsd400, bins=100, edgecolor='blue', histtype=u'step', label = "Unbound")
 plt.hist(bound_rmsd2000, bins=100, edgecolor='red', histtype=u'step', label = "Bound")
 
 
@@ -135,7 +134,7 @@ plt.legend()
 # %%
 
 plt.plot(bnd_bins6, bound_density6(bnd_bins6), label="Bound", color='red')
-plt.plot(unbnd_bins6, bound_density6(unbnd_bins6), label="Unbound")
+plt.plot(unbnd_bins4, bound_density6(unbnd_bins4), label="Unbound")
 
 plt.xlabel('RMSD')
 plt.ylabel('Density')
