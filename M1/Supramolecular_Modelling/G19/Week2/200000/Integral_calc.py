@@ -5,6 +5,7 @@ Calcul de l'energie libre
 
 import math
 import numpy as np
+import matplotlib.pyplot as plt
 
 #---------------Functions---------------
 
@@ -27,28 +28,33 @@ def avgList(lst):
     return somme/len(lst)
 
 
-def createAvgList(lst, steps):
+def createAvgList(lstUrest, steps, listLbd):
     lst_avg = []
-    lbd = 1/steps
-    for i in lst:
-        lst_avg.append(avgList(i)/lbd)
-        lbd += 1/steps
+    comptSteps = 0
+    for i in lstUrest:
+        lst_avg.append(avgList(i)/listLbd[comptSteps])
+        comptSteps += 1
+        
 
     return lst_avg
 
 #---------------Core---------------
 
 steps = 5
-decimals = 2
 lstUrest = []
-lbd = round(1/steps,decimals)
+listLbd = [0.2, 0.4, 0.6, 0.8, 1.0]
 for i in range(steps):
-    file = np.genfromtxt(str(round(lbd,decimals))+'.rms', delimiter=' ')
+    file = np.genfromtxt(str(listLbd[i])+'.rms', delimiter=' ')
     lstUrest.append(file[1:,2])
-    lbd += round(1/steps,decimals)
-    
+       
 
-lst_avg = createAvgList(lstUrest,5)
+lst_avg = createAvgList(lstUrest, steps, listLbd)
 
-print(methodeTrapeze(5,0,1,lst_avg))
+plt.figure()
+plt.plot(listLbd, lst_avg, 'o')
+plt.xlabel('Lambda')
+plt.ylabel('avg_Urest')
+plt.show()
+
+print(methodeTrapeze(steps, 0, 1, lst_avg))
 
