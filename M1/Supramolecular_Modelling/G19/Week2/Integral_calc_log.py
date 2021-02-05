@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#%%
 """
 Calcul de x*log(x) par la methode des trapezes 
 """
@@ -34,6 +34,7 @@ nbstep = 1000000
 lst_f = lstValF(nbstep,1,2)
 
 print(methodeTrapeze(nbstep,1,2, lst_f))
-
 print(np.trapz(lst_f, dx = 1/nbstep))
 
+
+# %%
