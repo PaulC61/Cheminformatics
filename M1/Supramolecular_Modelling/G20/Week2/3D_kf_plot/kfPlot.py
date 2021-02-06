@@ -1,7 +1,6 @@
 #%%
 import numpy as np
 import matplotlib.pyplot as plt
-from numpy.lib.function_base import angle, extract
 import scipy.stats as stats
 from mpl_toolkits.mplot3d import Axes3D
 
@@ -383,12 +382,14 @@ ax.plot3D(extrctBins0_8_45, [450000]*101, dens0_8_45(extrctBins0_8_45), 'C3')
 ax.plot3D(extrctBins1_0_45, [450000]*101, dens1_0_45(extrctBins1_0_45), 'C4')
 
 ax.legend()
-ax.set_xlabel('RMSD', fontweight='bold', fontstyle='italic')
-ax.set_ylabel('Kf', fontweight='bold', fontstyle='italic')
-ax.set_zlabel('Density', fontweight='bold', fontstyle='italic')
+ax.set_xlabel('RMSD', fontweight='bold', fontstyle='italic', linespacing=3.4)
+ax.set_ylabel('Kf', fontweight='bold', fontstyle='italic', linespacing=3.4)
+ax.set_zlabel('Density', fontweight='bold', fontstyle='italic', linespacing=3.4)
 # ax.xaxis.set_pane_color((1.0,1.0,1.0,0.0))
 # ax.yaxis.set_pane_color((1.0,1.0,1.0,0.0))
 # ax.zaxis.set_pane_color((1.0,1.0,1.0,0.0))
 # ax.grid(False)
+
+# 0.0001, 0.001, 0.01, 0.1, 0.2, 0.5, 0.7, 1.0
 
 # %%
