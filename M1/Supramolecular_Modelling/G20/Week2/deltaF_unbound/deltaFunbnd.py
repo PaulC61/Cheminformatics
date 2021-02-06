@@ -27,10 +27,10 @@ lstUrest = [np.mean(lambda0_0025[:,2])/0.0025, np.mean(lambda0_005[:,2])/0.005, 
             np.mean(lambda0_7[:,2])/0.7, np.mean(lambda1_0[:,2])/1.0]
 
 plt.plot(lstLbd, lstUrest)
-plt.xlim(0, 1)
+
 plt.xlabel('\u03BB')
 plt.ylabel('Urest/\u03BB (kJ/mol)')
-
+plt.xlim(0,1)
 print(lstUrest)
 
 
@@ -41,17 +41,12 @@ xlogx = []
 for i in range(len(x)):
     xlogx.append(x[i]*(math.log(x[i])))
 
-plt.plot(x, xlogx)
-plt.xlabel('x')
-plt.ylabel('x log (x)')
-
 def trapzIntegration(x, y):
     sumArea = 0
     for i in range(1, len(x)):
         sumArea += 0.5*(y[i]+y[i-1])*(x[i]-x[i-1])
     return sumArea
 
-print(trapzIntegration(x, xlogx))
 
 # for deltaF
 
@@ -107,9 +102,6 @@ plt.plot(extrctBins0_6, dens0_6(extrctBins0_6))
 plt.plot(extrctBins0_7, dens0_7(extrctBins0_7))
 plt.plot(extrctBins1_0, dens1_0(extrctBins1_0))
 
-
-plt.xlabel('RMSD (kJ/mol)')
+plt.xlabel('RMSD')
 plt.ylabel('Probability Density')
 plt.ylim(bottom=0)
-
-# %%
