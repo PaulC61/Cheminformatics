@@ -50,16 +50,13 @@ unbdata = np.genfromtxt('rmsd-unb.txt', delimiter = ' ')
 unbound_rmsd50 = unbdata[1:50,1]
 unbound_rmsd100 = unbdata[1:100,1]
 unbound_rmsd200 = unbdata[1:200,1]
-unbound_rmsd500 = unbdata[1:500,1]
-unbound_rmsd1000 = unbdata[1:1000,1]
-unbound_rmsd2000 = unbdata[1:2000,1]
+unbound_rmsd400 = unbdata[1:400,1]
+
 
 unbound_data1,unbnd_bins1,_=plt.hist(unbound_rmsd50, bins=100, edgecolor='black', histtype=u'step')
 unbound_data2,unbnd_bins2,_=plt.hist(unbound_rmsd100, bins=100, edgecolor='blue', histtype=u'step')
 unbound_data3,unbnd_bins3,_=plt.hist(unbound_rmsd200, bins=100, edgecolor='orange', histtype=u'step')
-unbound_data4,unbnd_bins4,_=plt.hist(unbound_rmsd500, bins=100, edgecolor='green', histtype=u'step')
-unbound_data5,unbnd_bins5,_=plt.hist(unbound_rmsd1000, bins=100, edgecolor='purple', histtype=u'step')
-unbound_data6,unbnd_bins6,_=plt.hist(unbound_rmsd2000, bins=100, edgecolor='red', histtype=u'step', density=True)
+unbound_data4,unbnd_bins4,_=plt.hist(unbound_rmsd400, bins=100, edgecolor='green', histtype=u'step')
 
 plt.xlabel("Unbound RMSD")
 plt.ylabel("Frequency")
@@ -71,23 +68,21 @@ import scipy.stats as stats
 unbound_density1=stats.gaussian_kde(unbound_rmsd50)
 unbound_density2=stats.gaussian_kde(unbound_rmsd100)
 unbound_density3=stats.gaussian_kde(unbound_rmsd200)
-unbound_density4=stats.gaussian_kde(unbound_rmsd500)
-unbound_density5=stats.gaussian_kde(unbound_rmsd1000)
-unbound_density6=stats.gaussian_kde(unbound_rmsd2000)
+unbound_density4=stats.gaussian_kde(unbound_rmsd400)
+
 
 plt.plot(unbnd_bins1, bound_density1(unbnd_bins1))
 plt.plot(unbnd_bins2, bound_density2(unbnd_bins2))
 plt.plot(unbnd_bins3, bound_density3(unbnd_bins3))
 plt.plot(unbnd_bins4, bound_density4(unbnd_bins4))
-plt.plot(unbnd_bins5, bound_density5(unbnd_bins5))
-plt.plot(unbnd_bins6, bound_density6(unbnd_bins6))
+
 plt.xlabel('Unbound RMSD')
 plt.ylabel('Density')
 plt.show()
 
 # %%
 
-plt.hist(unbound_rmsd2000, bins=100, edgecolor='blue', histtype=u'step')
+plt.hist(unbound_rmsd400, bins=100, edgecolor='blue', histtype=u'step')
 plt.hist(bound_rmsd2000, bins=100, edgecolor='maroon', histtype=u'step')
 
 plt.xlabel("RMSD")
@@ -96,7 +91,7 @@ plt.ylabel("Frequency")
 # %%
 
 plt.plot(bnd_bins6, bound_density6(bnd_bins6))
-plt.plot(unbnd_bins6, bound_density6(unbnd_bins6))
+plt.plot(unbnd_bins4, bound_density6(unbnd_bins4))
 
 plt.xlabel('Unbound RMSD')
 plt.ylabel('Density')
