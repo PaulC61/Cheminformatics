@@ -43,3 +43,12 @@ plt.ylabel('Energy')
 plt.legend()
 plt.show()
 # %%
+g17deltaF = np.trapz(lst_avg_g17, listLbd)*0.239006
+g19deltaF = np.trapz(lst_avg_g19, listLbd)*0.239006
+g20deltaF = np.trapz(lst_avg_g20, listLbd)*0.239006
+
+
+print('G-17 \u0394F = ' + str(round(g17deltaF, 2)))
+print('G-19 \u0394F = ' + str(round(g19deltaF, 2)))
+print('G-20 \u0394F = ' + str(round(g20deltaF,3)))
+# %%
