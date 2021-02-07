@@ -2,15 +2,15 @@
 """
 Calcul de x*log(x) par la methode des trapezes 
 """
-
-import math
-import numpy as np
-
 '''
 First fonction : Rempli dans un tableau toutes les valeurs
 de de la fonction x*log(x) dans un intervale defini
 Second fonction : Calcul la valeur de l'integral en utilisant la methode des trapezes
 '''
+
+import math
+import numpy as np
+
 
 def lstValF(nbVal, borneInf, borneSup):
     stp = (borneSup-borneInf)*(1/nbVal) #Step, dx
@@ -30,7 +30,7 @@ def methodeTrapeze(nbVal, borneInf, borneSup, lst_f):
         
     return A
 
-nbstep = 1000000
+nbstep = 100000
 lst_f = lstValF(nbstep,1,2)
 
 print(methodeTrapeze(nbstep,1,2, lst_f))
