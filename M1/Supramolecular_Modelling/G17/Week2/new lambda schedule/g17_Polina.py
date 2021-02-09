@@ -25,4 +25,4 @@ plt.plot(listLbd, lst_avg, 'xb-')
 plt.xlabel('Lambda')
 plt.ylabel('Energy')
 plt.show()
-# %%
+

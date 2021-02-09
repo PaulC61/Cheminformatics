@@ -8,4 +8,3 @@ numberOfClusters = [200, 118, 43, 28, 20, 17, 17]
 plt.scatter(cutoffRMSD, numberOfClusters, facecolors='none', edgecolors='r')
 plt.xlabel('RMSD Cut-Off')
 plt.ylabel('# of Clusters')
-# %%

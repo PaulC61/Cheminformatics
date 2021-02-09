@@ -105,3 +105,5 @@ plt.plot(extrctBins1_0, dens1_0(extrctBins1_0))
 plt.xlabel('RMSD')
 plt.ylabel('Probability Density')
 plt.ylim(bottom=0)
+
+# %%

@@ -108,7 +108,7 @@ plt.plot(extrctBins0_7, dens0_7(extrctBins0_7))
 plt.plot(extrctBins1_0, dens1_0(extrctBins1_0))
 
 
-plt.xlabel('RMSD (kJ/mol)')
+plt.xlabel('RMSD')
 plt.ylabel('Probability Density')
 plt.ylim(bottom=0)
 
