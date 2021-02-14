@@ -21,5 +21,8 @@ public class Person {
     // thus cannot be used to access any variables that belong to 
     // objects
 
-    
+    public void growOlder(){
+        this.age = this.age + 1;    
+    }
+
 }
