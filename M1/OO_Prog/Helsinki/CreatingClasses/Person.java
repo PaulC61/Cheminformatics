@@ -21,8 +21,29 @@ public class Person {
     // thus cannot be used to access any variables that belong to 
     // objects
 
+   
+
     public void growOlder(){
-        this.age = this.age + 1;    
+        if (this.age < 30){
+            this.age = this.age + 1;  
+        }
+          
+    }
+
+    public int returnAge(){
+        return this.age;
+    }
+
+    public boolean ofLegalAge(){
+        return this.age >= 18;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public int getAge(){
+        return this.age;
     }
 
 }
