@@ -6,12 +6,7 @@ public class Main {
     
     public static void main(String[] args) {
         Person ada = new Person("Ada");
-        Person antti = new Person("Antti");
         Person martin = new Person("Martin");
-
-        ada.printPerson();
-        antti.printPerson();
-        martin.printPerson();
 
         Whistle duckWhistle = new Whistle("Kvaak");
         Whistle roosterWhistle = new Whistle("Peef");
@@ -32,7 +27,6 @@ public class Main {
         ada.growOlder();
         ada.growOlder();
 
-        ada.printPerson();
 
         martin.growOlder();
 
@@ -100,7 +94,7 @@ public class Main {
             
         } else {
             System.out.println(ada.getName() + " is underage.");
-            ada.printPerson();
+          
         }
 
         if (martin.ofLegalAge()){
@@ -109,6 +103,42 @@ public class Main {
             System.out.println(martin.getName() + " is underage.");
         }
 
+        Gauge g = new Gauge();
 
+        while(!g.full()){
+            System.out.println("Not full! Value: " + g.value());
+            g.increase();
+        }
+
+        System.out.println("Full! Value: " + g.value());
+        g.decrease();
+        System.out.println("Not full! Value: " + g.value());
+
+        System.out.println(ada);
+        System.out.println(martin);
+
+        Agent clarke = new Agent ("Paul","Clarke");
+
+        clarke.toString();
+        System.out.println(clarke);
+
+        Agent ionic = new Agent("Ionic","Bond");
+        System.out.println(ionic);
+
+        ada.setHeight(180);
+        ada.setWeight(86);
+
+        martin.setHeight(173);
+        martin.setWeight(71);
+        System.out.println(ada.getName() + ", body mass index is " + ada.bodyMassIndex());
+        System.out.println(martin.getName() + ", body mass index is " + martin.bodyMassIndex());
+
+        Multiplier multiplyByThree = new Multiplier(3);
+        System.out.println("multiplyByThree.multiply(2): " + multiplyByThree.multiply(2));
+
+        Statistics statistics = new Statistics();
+        statistics.addNumber(3);
+        statistics.addNumber(5);
+        System.out.println("Count: "+ statistics.getCount());
     }
 }
