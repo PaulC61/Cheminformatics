@@ -14,5 +14,16 @@ public class MainProgram {
         card.eatHeartily();
         System.out.println(card);
 
+        card.addMoney(15);
+        System.out.println(card);
+
+        card.addMoney(10);
+        System.out.println(card);
+
+        card.addMoney(200);
+        System.out.println(card);
+
+        card.addMoney(-15);
+        System.out.println(card);
     }
 }
