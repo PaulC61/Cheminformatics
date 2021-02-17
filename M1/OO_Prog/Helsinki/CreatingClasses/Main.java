@@ -137,8 +137,21 @@ public class Main {
         System.out.println("multiplyByThree.multiply(2): " + multiplyByThree.multiply(2));
 
         Statistics statistics = new Statistics();
-        statistics.addNumber(3);
-        statistics.addNumber(5);
-        System.out.println("Count: "+ statistics.getCount());
+        
+
+        Scanner numbers = new Scanner(System.in);
+
+        System.out.println("Enter numbers:");
+        
+        int input = Integer.valueOf(numbers.nextLine());
+        while(input!=-1){
+            statistics.addNumber(input);
+            input = Integer.valueOf(numbers.nextLine());
+        }
+        
+        System.out.println("Sum: " + statistics.sum());
+        System.out.println("Sum of even numbers: " + statistics.sumEven());
+        System.out.println("Sum of odd numbers: " + statistics.sumOdd());
+        
     }
 }
