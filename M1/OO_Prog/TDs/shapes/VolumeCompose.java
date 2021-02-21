@@ -3,21 +3,37 @@ package M1.OO_Prog.TDs.shapes;
 import java.util.List;
 
 public class VolumeCompose implements Volume {
-    private List<Volume> elements;
+    private Volume[] volumes;
 
-    public VolumeCompose(List<Volume> volElements){
-        this.elements = volElements;
-
+    public void setVolumes(Volume[] volumes){
+        this.volumes = volumes;
     }
+
+
+    
+    // public VolumeCompose(List<Volume> volElements){
+    //     this.elements = volElements;
+    // }
 
     @Override
     public double getVolume() {
         double currentVol = 0;
-        for(int i=0; i < this.elements.size(); i++){
-            currentVol = currentVol + this.elements.get(i).getVolume();
+        for(Volume volume : volumes){
+            currentVol = currentVol + volume.getVolume();
         }
         return currentVol;
     }
+
+    @Override
+    public String toString(){
+        StringBuffer detail = new StringBuffer();
+        for(Volume volume : volumes){
+            detail.append(volume.toString());
+            detail.append(",");
+        }
+    }
+
+   
 
     
 }
