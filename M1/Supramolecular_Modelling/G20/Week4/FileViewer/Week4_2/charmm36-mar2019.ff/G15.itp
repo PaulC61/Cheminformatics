@@ -1,0 +1,157 @@
+; Created by cgenff_charmm2gmx.py
+
+[ moleculetype ]
+; Name			   nrexcl
+G15				 3
+
+[ atoms ]
+;	 nr		  type	resnr residue  atom   cgnr	   charge		mass  typeB    chargeB		massB
+; residue	 1 G15 rtp G15 q	qsum
+     1      CG331      1    G15     C1      1     -0.269     12.011   ;
+     2       HGA3      1    G15    H12      2      0.090      1.008   ;
+     3       HGA3      1    G15   HC11      3      0.090      1.008   ;
+     4       HGA3      1    G15     H1      4      0.090      1.008   ;
+     5      CG301      1    G15     C2      5     -0.004     12.011   ;
+     6      CG331      1    G15     C5      6     -0.269     12.011   ;
+     7       HGA3      1    G15    H51      7      0.090      1.008   ;
+     8       HGA3      1    G15    H52      8      0.090      1.008   ;
+     9       HGA3      1    G15   HC51      9      0.090      1.008   ;
+    10      CG331      1    G15     C3     10     -0.269     12.011   ;
+    11       HGA3      1    G15    H31     11      0.090      1.008   ;
+    12       HGA3      1    G15    H32     12      0.090      1.008   ;
+    13       HGA3      1    G15   HC31     13      0.090      1.008   ;
+    14      CG331      1    G15     C4     14     -0.269     12.011   ;
+    15       HGA3      1    G15    H41     15      0.090      1.008   ;
+    16       HGA3      1    G15    H42     16      0.090      1.008   ;
+    17       HGA3      1    G15   HC41     17      0.090      1.008   ;
+
+[ bonds ]
+;	ai	  aj funct			  c0			c1			  c2			c3
+    1     5	 1 ;       CG331      CG301
+    1     3	 1 ;       CG331       HGA3
+    1     4	 1 ;       CG331       HGA3
+    1     2	 1 ;       CG331       HGA3
+    5    10	 1 ;       CG301      CG331
+    5    14	 1 ;       CG301      CG331
+    5     6	 1 ;       CG301      CG331
+    6     7	 1 ;       CG331       HGA3
+    6     8	 1 ;       CG331       HGA3
+    6     9	 1 ;       CG331       HGA3
+   10    11	 1 ;       CG331       HGA3
+   10    13	 1 ;       CG331       HGA3
+   10    12	 1 ;       CG331       HGA3
+   14    15	 1 ;       CG331       HGA3
+   14    16	 1 ;       CG331       HGA3
+   14    17	 1 ;       CG331       HGA3
+
+[ pairs ]
+;	ai	  aj funct			  c0			c1			  c2			c3
+    1    11	 1
+    1    13	 1
+    1    12	 1
+    1    15	 1
+    1    16	 1
+    1    17	 1
+    1     7	 1
+    1     8	 1
+    1     9	 1
+    2    10	 1
+    2    14	 1
+    2     6	 1
+    3    10	 1
+    3    14	 1
+    3     6	 1
+    4    10	 1
+    4    14	 1
+    4     6	 1
+    6    11	 1
+    6    13	 1
+    6    12	 1
+    6    15	 1
+    6    16	 1
+    6    17	 1
+    7    10	 1
+    7    14	 1
+    8    10	 1
+    8    14	 1
+    9    10	 1
+    9    14	 1
+   10    15	 1
+   10    16	 1
+   10    17	 1
+   11    14	 1
+   12    14	 1
+   13    14	 1
+
+[ angles ]
+;	ai	  aj	ak funct			c0			  c1			c2			  c3
+    5     1     3	5 ;      CG301      CG331       HGA3
+    5     1     4	5 ;      CG301      CG331       HGA3
+    5     1     2	5 ;      CG301      CG331       HGA3
+    3     1     4	5 ;       HGA3      CG331       HGA3
+    3     1     2	5 ;       HGA3      CG331       HGA3
+    4     1     2	5 ;       HGA3      CG331       HGA3
+   10     5    14	5 ;      CG331      CG301      CG331
+   10     5     6	5 ;      CG331      CG301      CG331
+   10     5     1	5 ;      CG331      CG301      CG331
+   14     5     6	5 ;      CG331      CG301      CG331
+   14     5     1	5 ;      CG331      CG301      CG331
+    6     5     1	5 ;      CG331      CG301      CG331
+    7     6     5	5 ;       HGA3      CG331      CG301
+    7     6     8	5 ;       HGA3      CG331       HGA3
+    7     6     9	5 ;       HGA3      CG331       HGA3
+    5     6     8	5 ;      CG301      CG331       HGA3
+    5     6     9	5 ;      CG301      CG331       HGA3
+    8     6     9	5 ;       HGA3      CG331       HGA3
+   11    10    13	5 ;       HGA3      CG331       HGA3
+   11    10    12	5 ;       HGA3      CG331       HGA3
+   11    10     5	5 ;       HGA3      CG331      CG301
+   13    10    12	5 ;       HGA3      CG331       HGA3
+   13    10     5	5 ;       HGA3      CG331      CG301
+   12    10     5	5 ;       HGA3      CG331      CG301
+   15    14    16	5 ;       HGA3      CG331       HGA3
+   15    14     5	5 ;       HGA3      CG331      CG301
+   15    14    17	5 ;       HGA3      CG331       HGA3
+   16    14     5	5 ;       HGA3      CG331      CG301
+   16    14    17	5 ;       HGA3      CG331       HGA3
+    5    14    17	5 ;      CG301      CG331       HGA3
+
+[ dihedrals ]
+;	ai	  aj	ak	  al funct			  c0			c1			  c2			c3			  c4			c5
+    3     1     5    10	 9 ;       HGA3      CG331      CG301      CG331
+    3     1     5    14	 9 ;       HGA3      CG331      CG301      CG331
+    3     1     5     6	 9 ;       HGA3      CG331      CG301      CG331
+    4     1     5    10	 9 ;       HGA3      CG331      CG301      CG331
+    4     1     5    14	 9 ;       HGA3      CG331      CG301      CG331
+    4     1     5     6	 9 ;       HGA3      CG331      CG301      CG331
+    2     1     5    10	 9 ;       HGA3      CG331      CG301      CG331
+    2     1     5    14	 9 ;       HGA3      CG331      CG301      CG331
+    2     1     5     6	 9 ;       HGA3      CG331      CG301      CG331
+   14     5    10    11	 9 ;      CG331      CG301      CG331       HGA3
+   14     5    10    13	 9 ;      CG331      CG301      CG331       HGA3
+   14     5    10    12	 9 ;      CG331      CG301      CG331       HGA3
+    6     5    10    11	 9 ;      CG331      CG301      CG331       HGA3
+    6     5    10    13	 9 ;      CG331      CG301      CG331       HGA3
+    6     5    10    12	 9 ;      CG331      CG301      CG331       HGA3
+    1     5    10    11	 9 ;      CG331      CG301      CG331       HGA3
+    1     5    10    13	 9 ;      CG331      CG301      CG331       HGA3
+    1     5    10    12	 9 ;      CG331      CG301      CG331       HGA3
+   10     5    14    15	 9 ;      CG331      CG301      CG331       HGA3
+   10     5    14    16	 9 ;      CG331      CG301      CG331       HGA3
+   10     5    14    17	 9 ;      CG331      CG301      CG331       HGA3
+    6     5    14    15	 9 ;      CG331      CG301      CG331       HGA3
+    6     5    14    16	 9 ;      CG331      CG301      CG331       HGA3
+    6     5    14    17	 9 ;      CG331      CG301      CG331       HGA3
+    1     5    14    15	 9 ;      CG331      CG301      CG331       HGA3
+    1     5    14    16	 9 ;      CG331      CG301      CG331       HGA3
+    1     5    14    17	 9 ;      CG331      CG301      CG331       HGA3
+   10     5     6     7	 9 ;      CG331      CG301      CG331       HGA3
+   10     5     6     8	 9 ;      CG331      CG301      CG331       HGA3
+   10     5     6     9	 9 ;      CG331      CG301      CG331       HGA3
+   14     5     6     7	 9 ;      CG331      CG301      CG331       HGA3
+   14     5     6     8	 9 ;      CG331      CG301      CG331       HGA3
+   14     5     6     9	 9 ;      CG331      CG301      CG331       HGA3
+    1     5     6     7	 9 ;      CG331      CG301      CG331       HGA3
+    1     5     6     8	 9 ;      CG331      CG301      CG331       HGA3
+    1     5     6     9	 9 ;      CG331      CG301      CG331       HGA3
+

@@ -1,0 +1,26 @@
+#List of CVs
+WHOLEMOLECULES STRIDE=1 ENTITY0=127-138
+RMSD REFERENCE=ref-bnd.pdb  TYPE=OPTIMAL  LABEL=rmsd
+
+#List of CV to bias with plumed:
+DISTANCE ATOMS=18,131        LABEL=r
+ANGLE    ATOMS=108,18,131     LABEL=theta
+TORSION  ATOMS=30,108,18,131  LABEL=phi
+ANGLE    ATOMS=18,131,129     LABEL=THETA
+TORSION  ATOMS=18,131,129,137  LABEL=PHI
+TORSION  ATOMS=108,18,131,129  LABEL=PSI
+
+#list of restraints for each CV
+rest-r:     RESTRAINT ARG=r     KAPPA=10000   AT=0.437790
+rest-theta: RESTRAINT ARG=theta KAPPA=1000   AT=0.704977
+rest-phi:   RESTRAINT ARG=phi   KAPPA=1000   AT=0.791168
+rest-THETA: RESTRAINT ARG=THETA KAPPA=1000   AT=2.426869
+rest-PHI:   RESTRAINT ARG=PHI   KAPPA=1000   AT=-2.215950
+rest-PSI:   RESTRAINT ARG=PSI   KAPPA=1000   AT=0.168244
+rest-rmsd:  RESTRAINT ARG=rmsd  KAPPA=100000  AT=0.0
+
+#printout frequency
+PRINT ARG=r,rest-r.bias,theta,rest-theta.bias,phi,rest-phi.bias,THETA,rest-THETA.bias,PHI,rest-PHI.bias,PSI,rest-PSI.bias STRIDE=1 FILE=VBA_rest
+
+#endofinput 
+ENDPLUMED

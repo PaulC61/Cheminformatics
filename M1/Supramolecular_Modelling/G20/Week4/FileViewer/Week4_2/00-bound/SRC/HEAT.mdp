@@ -1,0 +1,48 @@
+;define		        = -DPOSRES        	; position restrain
+; Run parameters
+integrator              = md            	; leap-frog integrator
+nsteps                  = 100000                ; total number of steps (200ps)
+;nsteps                  = 10000                ; total number of steps (20ps)
+dt                      = 0.002         	; 2 fs for timestep
+continuation	        = no			; continue a previous dynamics?
+; Output control
+nstenergy	        = 2500			; save energies every 1.0 ps
+nstlog		        = 2500			; update log file every 1.0 ps
+nstxout-compressed      = 2500          	; save compressed coordinates every 10.0 ps
+; Bond parameters
+constraints	        = h-bonds		; h-bonds constrained
+constraint_algorithm    = lincs         	; holonomic constraints 
+lincs_iter	        = 1	        	; accuracy of LINCS
+lincs_order	        = 4	        	; also related to accuracy
+; Neighbor searching
+cutoff-scheme           = Verlet                ; scheme to make the neighbor searching
+ns_type		        = grid	        	; search neighboring grid cells
+nstlist		        = 20     		; 20 fs, largely irrelevant with Verlet
+; Electrostatics interactions
+vdwtype = cutoff
+vdw-modifier = force-switch
+rlist = 1.2
+rvdw = 1.2
+rvdw-switch = 1.0
+coulombtype = PME
+rcoulomb = 1.2
+DispCorr = no
+; Temperature coupling is on
+tcoupl		        = V-rescale             ; Modified Berendsen thermostat
+tc-grps		        = Water Non-Water	; two coupling groups - more accurate
+tau_t                   = 0.1	  0.1           ; time constant, in ps
+ref_t		        = 298 	  298           ; reference temperature, one for each group, in K
+; Simulated annealing control
+annealing               = single single
+; Heating protocol
+annealing-npoints       = 12 12
+annealing-time          = 0 50 100 150 200 250 300 350 400 450 500 550 0 50 100 150 200 250 300 350 400 450 500 550
+annealing-temp          = 0 50  50 100 100 150 150 200 200 250 250 298 0 50  50 100 100 150 150 200 200 250 250 298
+; Pressure coupling is off
+pcoupl		        = no 			; no pressure coupling in NVT
+; Periodic boundary conditions
+pbc		        = xyz		    	; 3-D PBC
+; Velocity generation
+gen_vel		        = yes			; assign velocities from Maxwell distribution
+gen_temp	        = 298			; temperature for Maxwell distribution
+gen_seed	        = -1			; generate a random seed

@@ -1,0 +1,18 @@
+
+[ bondtypes ]
+;      i        j  func           b0           kb
+   CG1T2    CG1T2     1   0.12200000    820064.00
+
+
+[ angletypes ]
+;      i        j        k  func       theta0       ktheta          ub0          kub
+   CG1T2    CG1T2   HGPAM1     5   180.000000    66.944000   0.00000000         0.00
+
+
+[ dihedraltypes ]
+;      i        j        k        l  func         phi0         kphi  mult
+
+
+[ dihedraltypes ]
+; 'improper' dihedrals 
+;      i        j        k        l  func         phi0         kphi

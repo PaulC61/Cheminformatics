@@ -1,0 +1,47 @@
+; Created by cgenff_charmm2gmx.py
+
+[ moleculetype ]
+; Name			   nrexcl
+G03				 3
+
+[ atoms ]
+;	 nr		  type	resnr residue  atom   cgnr	   charge		mass  typeB    chargeB		massB
+; residue	 1 G03 rtp G03 q	qsum
+     1      CG2D2      1    G03     C1      1     -0.420     12.011   ;
+     2       HGA5      1    G03    H12      2      0.210      1.008   ;
+     3       HGA5      1    G03   HC11      3      0.210      1.008   ;
+     4      CG2D2      1    G03     C2      4     -0.420     12.011   ;
+     5       HGA5      1    G03    H21      5      0.210      1.008   ;
+     6       HGA5      1    G03    H22      6      0.210      1.008   ;
+
+[ bonds ]
+;	ai	  aj funct			  c0			c1			  c2			c3
+    1     2	 1 ;       CG2D2       HGA5
+    1     4	 1 ;       CG2D2      CG2D2
+    1     3	 1 ;       CG2D2       HGA5
+    4     5	 1 ;       CG2D2       HGA5
+    4     6	 1 ;       CG2D2       HGA5
+
+[ pairs ]
+;	ai	  aj funct			  c0			c1			  c2			c3
+    2     5	 1
+    2     6	 1
+    3     5	 1
+    3     6	 1
+
+[ angles ]
+;	ai	  aj	ak funct			c0			  c1			c2			  c3
+    2     1     4	5 ;       HGA5      CG2D2      CG2D2
+    2     1     3	5 ;       HGA5      CG2D2       HGA5
+    4     1     3	5 ;      CG2D2      CG2D2       HGA5
+    5     4     1	5 ;       HGA5      CG2D2      CG2D2
+    5     4     6	5 ;       HGA5      CG2D2       HGA5
+    1     4     6	5 ;      CG2D2      CG2D2       HGA5
+
+[ dihedrals ]
+;	ai	  aj	ak	  al funct			  c0			c1			  c2			c3			  c4			c5
+    2     1     4     5	 9 ;       HGA5      CG2D2      CG2D2       HGA5
+    2     1     4     6	 9 ;       HGA5      CG2D2      CG2D2       HGA5
+    3     1     4     5	 9 ;       HGA5      CG2D2      CG2D2       HGA5
+    3     1     4     6	 9 ;       HGA5      CG2D2      CG2D2       HGA5
+

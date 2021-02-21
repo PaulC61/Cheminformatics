@@ -1,0 +1,167 @@
+; Created by cgenff_charmm2gmx.py
+
+[ moleculetype ]
+; Name			   nrexcl
+G16				 3
+
+[ atoms ]
+;	 nr		  type	resnr residue  atom   cgnr	   charge		mass  typeB    chargeB		massB
+; residue	 1 G16 rtp G16 q	qsum
+     1     CG3C52      1    G16     C1      1     -0.180     12.011   ;
+     2       HGA2      1    G16    H12      2      0.090      1.008   ;
+     3       HGA2      1    G16   HC11      3      0.090      1.008   ;
+     4     CG3C52      1    G16     C2      4     -0.180     12.011   ;
+     5       HGA2      1    G16    H21      5      0.090      1.008   ;
+     6       HGA2      1    G16   HC21      6      0.090      1.008   ;
+     7     CG3C52      1    G16     C3      7     -0.180     12.011   ;
+     8       HGA2      1    G16    H31      8      0.090      1.008   ;
+     9       HGA2      1    G16   HC31      9      0.090      1.008   ;
+    10     CG3C52      1    G16     C4     10     -0.180     12.011   ;
+    11       HGA2      1    G16    H41     11      0.090      1.008   ;
+    12       HGA2      1    G16    H42     12      0.090      1.008   ;
+    13     CG3C52      1    G16     C5     13     -0.180     12.011   ;
+    14       HGA2      1    G16    H52     14      0.090      1.008   ;
+    15       HGA2      1    G16   HC51     15      0.090      1.008   ;
+
+[ bonds ]
+;	ai	  aj funct			  c0			c1			  c2			c3
+    1    13	 1 ;      CG3C52     CG3C52
+    1     3	 1 ;      CG3C52       HGA2
+    1     2	 1 ;      CG3C52       HGA2
+    1     4	 1 ;      CG3C52     CG3C52
+    4     6	 1 ;      CG3C52       HGA2
+    4     7	 1 ;      CG3C52     CG3C52
+    4     5	 1 ;      CG3C52       HGA2
+    7    10	 1 ;      CG3C52     CG3C52
+    7     8	 1 ;      CG3C52       HGA2
+    7     9	 1 ;      CG3C52       HGA2
+   10    12	 1 ;      CG3C52       HGA2
+   10    13	 1 ;      CG3C52     CG3C52
+   10    11	 1 ;      CG3C52       HGA2
+   13    15	 1 ;      CG3C52       HGA2
+   13    14	 1 ;      CG3C52       HGA2
+
+[ pairs ]
+;	ai	  aj funct			  c0			c1			  c2			c3
+    1     8	 1
+    1     9	 1
+    1    12	 1
+    1    11	 1
+    2    15	 1
+    2    14	 1
+    2    10	 1
+    2     6	 1
+    2     7	 1
+    2     5	 1
+    3    15	 1
+    3    14	 1
+    3    10	 1
+    3     6	 1
+    3     7	 1
+    3     5	 1
+    4    15	 1
+    4    14	 1
+    4    12	 1
+    4    11	 1
+    5    13	 1
+    5    10	 1
+    5     8	 1
+    5     9	 1
+    6    13	 1
+    6    10	 1
+    6     8	 1
+    6     9	 1
+    7    15	 1
+    7    14	 1
+    8    12	 1
+    8    13	 1
+    8    11	 1
+    9    12	 1
+    9    13	 1
+    9    11	 1
+   11    15	 1
+   11    14	 1
+   12    15	 1
+   12    14	 1
+
+[ angles ]
+;	ai	  aj	ak funct			c0			  c1			c2			  c3
+   13     1     3	5 ;     CG3C52     CG3C52       HGA2
+   13     1     2	5 ;     CG3C52     CG3C52       HGA2
+   13     1     4	5 ;     CG3C52     CG3C52     CG3C52
+    3     1     2	5 ;       HGA2     CG3C52       HGA2
+    3     1     4	5 ;       HGA2     CG3C52     CG3C52
+    2     1     4	5 ;       HGA2     CG3C52     CG3C52
+    1     4     6	5 ;     CG3C52     CG3C52       HGA2
+    1     4     7	5 ;     CG3C52     CG3C52     CG3C52
+    1     4     5	5 ;     CG3C52     CG3C52       HGA2
+    6     4     7	5 ;       HGA2     CG3C52     CG3C52
+    6     4     5	5 ;       HGA2     CG3C52       HGA2
+    7     4     5	5 ;     CG3C52     CG3C52       HGA2
+   10     7     8	5 ;     CG3C52     CG3C52       HGA2
+   10     7     4	5 ;     CG3C52     CG3C52     CG3C52
+   10     7     9	5 ;     CG3C52     CG3C52       HGA2
+    8     7     4	5 ;       HGA2     CG3C52     CG3C52
+    8     7     9	5 ;       HGA2     CG3C52       HGA2
+    4     7     9	5 ;     CG3C52     CG3C52       HGA2
+   12    10    13	5 ;       HGA2     CG3C52     CG3C52
+   12    10    11	5 ;       HGA2     CG3C52       HGA2
+   12    10     7	5 ;       HGA2     CG3C52     CG3C52
+   13    10    11	5 ;     CG3C52     CG3C52       HGA2
+   13    10     7	5 ;     CG3C52     CG3C52     CG3C52
+   11    10     7	5 ;       HGA2     CG3C52     CG3C52
+   15    13    14	5 ;       HGA2     CG3C52       HGA2
+   15    13    10	5 ;       HGA2     CG3C52     CG3C52
+   15    13     1	5 ;       HGA2     CG3C52     CG3C52
+   14    13    10	5 ;       HGA2     CG3C52     CG3C52
+   14    13     1	5 ;       HGA2     CG3C52     CG3C52
+   10    13     1	5 ;     CG3C52     CG3C52     CG3C52
+
+[ dihedrals ]
+;	ai	  aj	ak	  al funct			  c0			c1			  c2			c3			  c4			c5
+    3     1    13    15	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    3     1    13    14	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    3     1    13    10	 9 ;       HGA2     CG3C52     CG3C52     CG3C52
+    2     1    13    15	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    2     1    13    14	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    2     1    13    10	 9 ;       HGA2     CG3C52     CG3C52     CG3C52
+    4     1    13    15	 9 ;     CG3C52     CG3C52     CG3C52       HGA2
+    4     1    13    14	 9 ;     CG3C52     CG3C52     CG3C52       HGA2
+    4     1    13    10	 9 ;     CG3C52     CG3C52     CG3C52     CG3C52
+   13     1     4     6	 9 ;     CG3C52     CG3C52     CG3C52       HGA2
+   13     1     4     7	 9 ;     CG3C52     CG3C52     CG3C52     CG3C52
+   13     1     4     5	 9 ;     CG3C52     CG3C52     CG3C52       HGA2
+    3     1     4     6	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    3     1     4     7	 9 ;       HGA2     CG3C52     CG3C52     CG3C52
+    3     1     4     5	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    2     1     4     6	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    2     1     4     7	 9 ;       HGA2     CG3C52     CG3C52     CG3C52
+    2     1     4     5	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    1     4     7    10	 9 ;     CG3C52     CG3C52     CG3C52     CG3C52
+    1     4     7     8	 9 ;     CG3C52     CG3C52     CG3C52       HGA2
+    1     4     7     9	 9 ;     CG3C52     CG3C52     CG3C52       HGA2
+    6     4     7    10	 9 ;       HGA2     CG3C52     CG3C52     CG3C52
+    6     4     7     8	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    6     4     7     9	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    5     4     7    10	 9 ;       HGA2     CG3C52     CG3C52     CG3C52
+    5     4     7     8	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    5     4     7     9	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    8     7    10    12	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    8     7    10    13	 9 ;       HGA2     CG3C52     CG3C52     CG3C52
+    8     7    10    11	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    4     7    10    12	 9 ;     CG3C52     CG3C52     CG3C52       HGA2
+    4     7    10    13	 9 ;     CG3C52     CG3C52     CG3C52     CG3C52
+    4     7    10    11	 9 ;     CG3C52     CG3C52     CG3C52       HGA2
+    9     7    10    12	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+    9     7    10    13	 9 ;       HGA2     CG3C52     CG3C52     CG3C52
+    9     7    10    11	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+   12    10    13    15	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+   12    10    13    14	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+   12    10    13     1	 9 ;       HGA2     CG3C52     CG3C52     CG3C52
+   11    10    13    15	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+   11    10    13    14	 9 ;       HGA2     CG3C52     CG3C52       HGA2
+   11    10    13     1	 9 ;       HGA2     CG3C52     CG3C52     CG3C52
+    7    10    13    15	 9 ;     CG3C52     CG3C52     CG3C52       HGA2
+    7    10    13    14	 9 ;     CG3C52     CG3C52     CG3C52       HGA2
+    7    10    13     1	 9 ;     CG3C52     CG3C52     CG3C52     CG3C52
+

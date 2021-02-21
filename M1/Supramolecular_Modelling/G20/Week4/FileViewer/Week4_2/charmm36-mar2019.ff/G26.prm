@@ -1,0 +1,25 @@
+
+[ bondtypes ]
+;      i        j  func           b0           kb
+   CG312    CG312     1   0.15200000    165686.40
+
+
+[ angletypes ]
+;      i        j        k  func       theta0       ktheta          ub0          kub
+   CG312    CG312    CG312     5   112.000000   418.400000   0.23570000     25104.00
+   CG312    CG312     FGA2     5   112.000000   418.400000   0.23570000     25104.00
+
+
+[ dihedraltypes ]
+;      i        j        k        l  func         phi0         kphi  mult
+   CG312    CG312    CG312    CG312     9     0.000000     0.269868     2
+   CG312    CG312    CG312    CG312     9   180.000000     0.626345     3
+   CG312    CG312    CG312    CG312     9     0.000000     0.395806     4
+   CG312    CG312    CG312    CG312     9     0.000000     0.470700     5
+   CG312    CG312    CG312     FGA2     9     0.000000     1.046000     3
+    FGA2    CG312    CG312     FGA2     9     0.000000     1.046000     3
+
+
+[ dihedraltypes ]
+; 'improper' dihedrals 
+;      i        j        k        l  func         phi0         kphi

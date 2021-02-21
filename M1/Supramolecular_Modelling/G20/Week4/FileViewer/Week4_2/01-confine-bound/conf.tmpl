@@ -1,0 +1,14 @@
+#Monitoring the distance between COMs for host and guest systems
+
+#List of CVs
+WHOLEMOLECULES STRIDE=1 ENTITY0=127-138
+RMSD REFERENCE=ref-bnd.pdb  TYPE=OPTIMAL  LABEL=rmsd
+
+#list of restraints for each CV
+rest-rmsd: RESTRAINT ARG=rmsd  KAPPA=KKKKK   AT=0.0
+
+#printout frequency of the CV
+PRINT ARG=rmsd,rest-rmsd.bias  STRIDE=1  FILE=CONF.out
+
+#endofinput 
+ENDPLUMED

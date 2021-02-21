@@ -1,0 +1,29 @@
+#include "../charmm36-mar2019.ff/forcefield.itp"
+
+; additional params for the molecule
+#include "../charmm36-mar2019.ff/CB7.prm"
+#include "../charmm36-mar2019.ff/G20.prm"
+
+#include "../charmm36-mar2019.ff/CB7.itp"
+#include "../charmm36-mar2019.ff/G20.itp"
+
+#include "../charmm36-mar2019.ff/tip3p.itp"
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct		 fcx		fcy		   fcz
+   1	1		1000	   1000		  1000
+#endif
+
+; Include topology for ions
+#include "../charmm36-mar2019.ff/ions.itp"
+
+[ system ]
+; Name
+mol in water
+
+[ molecules ]
+; Compound		  #mols
+CB7			1
+G20			1                
+SOL              1656

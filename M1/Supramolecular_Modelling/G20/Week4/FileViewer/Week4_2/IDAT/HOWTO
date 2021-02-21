@@ -1,0 +1,7 @@
+cp ../STORE-02Jul20/complex-muddana/* ./IDAT/
+cp ../STORE-02Jul20/complex-sampl4/* ./IDAT/
+
+cd IDAT/
+ls -1 *.pdb > TMP
+awk '{print $0, substr($0,1,7), toupper(substr($0,1,3)), toupper(substr($0,5,3))}' TMP > file.inp
+rm TMP

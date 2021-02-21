@@ -1,0 +1,33 @@
+
+[ bondtypes ]
+;      i        j  func           b0           kb
+   CG2O2    CG314     1   0.15220000    167360.00
+
+
+[ angletypes ]
+;      i        j        k  func       theta0       ktheta          ub0          kub
+   CG314    CG2O2    OG2D1     5   125.000000   585.760000   0.24420000     16736.00
+   CG314    CG2O2    OG311     5   110.500000   460.240000   0.00000000         0.00
+   CG2O2    CG314    CG321     5   108.000000   435.136000   0.00000000         0.00
+   CG2O2    CG314    NG3P3     5   110.000000   365.681600   0.00000000         0.00
+   CG2O2    CG314     HGA1     5   109.500000   418.400000   0.00000000         0.00
+
+
+[ dihedraltypes ]
+;      i        j        k        l  func         phi0         kphi  mult
+   OG2D1    CG2O2    CG314    CG321     9   180.000000     0.209200     6
+   OG2D1    CG2O2    CG314    NG3P3     9   180.000000     0.000000     6
+   OG2D1    CG2O2    CG314     HGA1     9     0.000000     0.000000     3
+   OG311    CG2O2    CG314    CG321     9   180.000000     0.209200     6
+   OG311    CG2O2    CG314    NG3P3     9   180.000000     0.000000     6
+   OG311    CG2O2    CG314     HGA1     9   180.000000     0.209200     6
+   CG314    CG2O2    OG311     HGP1     9   180.000000     8.577200     2
+   CG2O2    CG314    CG321   CG2R61     9     0.000000     0.167360     3
+   CG2O2    CG314    CG321     HGA2     9     0.000000     0.836800     3
+   CG2O2    CG314    NG3P3     HGP2     9     0.000000     0.418400     3
+
+
+[ dihedraltypes ]
+; 'improper' dihedrals 
+;      i        j        k        l  func         phi0         kphi
+   CG2O2    CG314    OG2D1    OG311     2     0.000000   543.920000
