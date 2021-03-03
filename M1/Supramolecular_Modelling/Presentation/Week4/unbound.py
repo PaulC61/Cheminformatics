@@ -6,9 +6,9 @@ import scipy.stats as stats
 
 lstRelevantColumns = [1,3,5,7,9,11]
 lstRelevantColumnsStr = ['VdW', 'Coulomb', 'Total']
-lstg17 = [9,686, 0,023, 9,709]
-lstg19 = [11.657, 0.300, 11.957]
-lstg20 = []
+lstg17 = [-2.561, 0.016, -2.483]
+lstg19 = [-2.336, -0.001,-2.336]
+lstg20 = [-2.635, 1.798, -0.837]
 
 
 x = np.arange(len(lstRelevantColumnsStr))
