@@ -12,6 +12,7 @@ g17_rmsd = g17_bnddata[1:,1]*10
 g19_rmsd = g19_bnddata[1:,1]*10
 g20_rmsd = g20_bnddata[1:,1]*10
 
+print(g17_rmsd)
 
 g17_data, g17_bins,_ = plt.hist(g17_rmsd, bins=100, edgecolor='blue',histtype=u'step', label='G-17: Hexane')
 g19_data, g19_bins,_ = plt.hist(g19_rmsd, bins=100, edgecolor='orange',histtype=u'step', label='G-19: Cyclohexane')

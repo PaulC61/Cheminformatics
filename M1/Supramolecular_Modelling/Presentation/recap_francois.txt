@@ -1,0 +1,26 @@
+Week1 : 
+Week2 : 
+Week3 : 
+
+-------------------------------
+Week4 : 
+
+Bound : 
+Total > 11.957 +- 0.406
+Coulomb > 0.300 +- 0.027
+VdW > 11.657 +- 0.406
+
+Unbound : 
+Total > -2.336 +- 0.425
+Coulomb > -2.336 +- 0.423
+VdW > -0.001 +- 0.034
+
+
+-------------------------------
+Week5 : 
+
+W_r = 12.30 kcal/mol
+W_pos : 5.85 kcal/mol
+W_orie = 6.45 kcal/mol
+W_symm = -2.62 kcal/mol
+W_tot = 9.68 kcal/mol
