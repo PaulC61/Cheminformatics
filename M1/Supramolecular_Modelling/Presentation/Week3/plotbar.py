@@ -5,12 +5,12 @@ import scipy.stats as stats
 
 
 lstRelevantColumns = [1,3,5,7,9,11]
-lstRelevantColumnsStr = ['r', 'theta', 'phi', 'THETA', 'PHI', 'PSI']
+lstRelevantColumnsStr = ['r', 'theta', 'phi', 'THETA', 'PHI', 'PSI', 'Total']
 lstLambdaDec = [0.0001, 0.001, 0.01, 0.1, 0.2, 0.5, 1.0]
 lstLambdaStr = ['0_0001', '0_001', '0_01', '0_1', '0_2','0_5', '1_0']
-lstg17 = [2.08982, 0.92826, 0.76986, 1.91439, 2.95518, 2.94152]
-lstg19 = [0.498, 1.001, 1.349, 3.052, 3.983, 4.267]
-lstg20 = [0.76729,0.89649,0.54264, 2.54291, 2.97685, 2.26410]
+lstg17 = [2.08982, 0.92826, 0.76986, 1.91439, 2.95518, 2.94152, 11.59903]
+lstg19 = [0.498, 1.001, 1.349, 3.052, 3.983, 4.267, 14.15]
+lstg20 = [0.76729,0.89649,0.54264, 2.54291, 2.97685, 2.26410, 9.66]
 
 
 x = np.arange(len(lstRelevantColumnsStr))
