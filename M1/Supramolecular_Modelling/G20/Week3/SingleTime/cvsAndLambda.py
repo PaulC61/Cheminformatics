@@ -24,7 +24,7 @@ ax.set_ylabel("Free Energy (kcal/mol)")
 ax.set_xticks(x)
 ax.set_xticklabels(lstRelevantColumnsStr)
 ax.legend()
-********
+
 fig.tight_layout()
 
 print("Default: " + str(round(sum(lstEnergySingle),2)))

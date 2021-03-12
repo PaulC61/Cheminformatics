@@ -1,4 +1,4 @@
-
+#%%
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
@@ -40,3 +40,5 @@ fit = fitfunc(tfit, k_fit)
 
 plt.plot(tfit, fit, 'b', label='fit')
 plt.show()
+
+# %%
