@@ -23,3 +23,4 @@ ax.set_xticks(x)
 ax.set_xticklabels(lstRelevantColumnsStr)
 ax.legend()
 fig.tight_layout()
+# %%
