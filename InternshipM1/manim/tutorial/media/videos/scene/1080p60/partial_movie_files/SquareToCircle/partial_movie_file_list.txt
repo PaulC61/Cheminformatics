@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Paul/Git/Cheminformatics/InternshipM1/manim/tutorial/media/videos/scene/1080p60/partial_movie_files/SquareToCircle/450974505_4057419953_3227597104.mp4'
+file 'file:C:/Users/Paul/Git/Cheminformatics/InternshipM1/manim/tutorial/media/videos/scene/1080p60/partial_movie_files/SquareToCircle/2788726626_1297474700_3227597104.mp4'
+file 'file:C:/Users/Paul/Git/Cheminformatics/InternshipM1/manim/tutorial/media/videos/scene/1080p60/partial_movie_files/SquareToCircle/2788726626_380633977_2155190785.mp4'
