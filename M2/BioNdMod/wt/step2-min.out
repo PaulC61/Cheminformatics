@@ -1,0 +1,542 @@
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+                (CHARMM) - Free Version 44b2   February 15, 2020                
+                                   686801d1a                                    
+       Copyright(c) 1984-2020  President and Fellows of Harvard College
+                              All Rights Reserved
+  Current operating system: Linux-5.4.0-88-generic(x86_64)@dhcp-41-174.u-stra   
+                 Created on 10/4/21 at 15:02:23 by user: pclarke     
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> * MINIMISATION DE NCP7
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>    !!!! ouverture du Topology et du Parameter  !!!
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>     
+  
+ CHARMM>    open unit 1 card read name lib/top_all22_prot.inp
+ VOPEN> Attempting to open::lib/top_all22_prot.inp::
+ OPNLGU> Unit  1 opened for READONLY access to lib/top_all22_prot.inp
+  
+ CHARMM>    read RTF card unit 1
+ MAINIO> Residue topology file being read from unit   1.
+ TITLE> *>>>>>>>> DEVELOPMENTAL RESIDUE TOPOLOGY FILE FOR PROTEINS <<<<<
+ TITLE> *>>>>>>>>>>>>>>>>> USING ALL HYDROGENS (ALLH) <<<<<<<<<<<<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>> JANUARY 1996 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> *>>>>>>> DIRECT COMMENTS TO ALEXANDER D. MACKERELL JR. <<<<<<<<<
+ TITLE> *>>>>>> 410-706-7442 OR EMAIL: ALEX,MMIRIS.AB.UMD.EDU  <<<<<<<<<
+ TITLE> * THESE FILES ARE A BETA RELEASE; ADDITIONAL PARAMETER DEVELOPMENT
+ TITLE> * AND TESTING MAY LEAD TO ALTERATION OF THE CONTENTS.
+ TITLE> *
+  
+ CHARMM>    close unit 1
+ VCLOSE: Closing unit    1 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    open unit 1 card read name lib/par_all22_prot.inp
+ VOPEN> Attempting to open::lib/par_all22_prot.inp::
+ OPNLGU> Unit  1 opened for READONLY access to lib/par_all22_prot.inp
+  
+ CHARMM>    read PARA card unit 1
+
+          PARAMETER FILE BEING READ FROM UNIT  1
+ TITLE> *>>>>>>>>>> DEVELOPMENTAL PARAMETER FILE FOR PROTEINS <<<<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>> USING ALL HYDROGENS (ALLH) <<<<<<<<<<<<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>> JANUARY 1996 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> *>>>>>>> DIRECT COMMENTS TO ALEXANDER D. MACKERELL JR. <<<<<<<<<
+ TITLE> *>>>>>> 410-706-7442 OR EMAIL: ALEX,MMIRIS.AB.UMD.EDU  <<<<<<<<<
+ TITLE> * THESE FILES ARE A BETA RELEASE; ADDITIONAL PARAMETER DEVELOPMENT
+ TITLE> * AND TESTING MAY LEAD TO ALTERATION OF THE CONTENTS.
+ TITLE> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>    close unit 1
+ VCLOSE: Closing unit    1 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>    !!!!  lecture du fichier psf et de coordonnees crd !!!
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>     
+  
+ CHARMM>    open read formatted unit 27 name scr/build.psf
+ VOPEN> Attempting to open::scr/build.psf::
+ OPNLGU> Unit 27 opened for READONLY access to scr/build.psf
+  
+ CHARMM>    read  psf card unit 27
+ MAINIO> Protein structure file being read from unit  27.
+ TITLE>  * PSF FOR ZINC FINGER
+ TITLE>  *  DATE:    10/ 4/21     14:14:40      CREATED BY USER: pclarke
+ TITLE>  *
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       17
+         Number of atoms         =      237   Number of groups     =       67
+         Number of bonds         =      238   Number of angles     =      429
+         Number of dihedrals     =      615   Number of impropers  =       43
+         Number of cross-terms   =        0
+         Number of HB acceptors  =       24   Number of HB donors  =       32
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    open read formatted unit 27 name scr/build.crd
+ OPNLGU> Unit already open. The old file will be closed first.
+ VCLOSE: Closing unit   27 with status "KEEP"
+ VOPEN> Attempting to open::scr/build.crd::
+ OPNLGU> Unit 27 opened for READONLY access to scr/build.crd
+  
+ CHARMM>    read coor card unit 27
+          SPATIAL COORDINATES BEING READ FROM UNIT 27
+ TITLE> * ZINC FINGER STRUCTURE WITH HYDROGENS
+ TITLE> *  DATE:    10/ 4/21     14:14:40      CREATED BY USER: PCLARKE
+ TITLE> *
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>    !! definition des parametres d'energie non liee !!
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>     
+  
+ CHARMM>    ! non bonded interaction
+ CHARMM>    NBONd  CUTNb 13.0 CTOFnb 12.0 CTONnb 10.0 -
+ CHARMM>           VSWItch SHIFt -
+ CHARMM>           RDIElectric EPS 8.0
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    RDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 13.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  8.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    667 exclusions and    602 interactions(1-4)
+ <MAKGRP> found    173 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22848 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      505 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>    !  minimize initial structure       !!
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    RDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 13.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  8.000
+ NBXMOD =      5
+ There are    22848 atom  pairs and     1269 atom  exclusions.
+ There are        0 group pairs and      173 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22848 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      505 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0    175.89079      0.00000     16.84913
+ENER INTERN>       28.92667     63.22524     11.25658     61.86762     28.63886
+ENER EXTERN>       22.25700    -40.28118      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>    mini sd nsteps 500 nprint 50
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    RDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 13.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  8.000
+ NBXMOD =      5
+ There are    22848 atom  pairs and     1269 atom  exclusions.
+ There are        0 group pairs and      173 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22848 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      505 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+
+
+ STEEPD> An energy minimization has been requested.
+
+ NSTEP  =          500   NPRINT =           50
+ STEP   =    0.0200000   TOLFUN =    0.0000000
+ TOLGRD =    0.0000000   TOLSTP =    0.0000000
+
+MINI MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+MINI INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+MINI EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        0    175.89079      0.00000     16.84913      0.02000
+MINI INTERN>       28.92667     63.22524     11.25658     61.86762     28.63886
+MINI EXTERN>       22.25700    -40.28118      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       50     26.20773    149.68306      0.94647      0.00087
+MINI INTERN>        4.92839     25.86534      1.30939     57.76510      0.88124
+MINI EXTERN>      -34.33203    -30.20969      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        97
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22738 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      509 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>      100     19.18173      7.02599      0.44867      0.00052
+MINI INTERN>        5.00361     24.51106      1.29101     56.59660      0.76865
+MINI EXTERN>      -39.67876    -29.31043      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      150     15.29167      3.89007      1.27423      0.00074
+MINI INTERN>        5.26309     23.64271      1.28637     55.76635      0.73071
+MINI EXTERN>      -42.44487    -28.95268      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      200     12.43784      2.85383      0.47778      0.00044
+MINI INTERN>        5.04755     23.12789      1.26724     55.15432      0.71318
+MINI EXTERN>      -44.09034    -28.78201      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      250     10.40591      2.03193      0.94278      0.00064
+MINI INTERN>        5.08565     22.68314      1.25997     54.61548      0.70094
+MINI EXTERN>      -45.22753    -28.71174      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      300      8.60161      1.80430      0.45376      0.00038
+MINI INTERN>        5.08234     22.23572      1.24748     54.13439      0.69091
+MINI EXTERN>      -46.09080    -28.69843      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      350      7.21062      1.39099      0.99953      0.00055
+MINI INTERN>        5.06702     22.03504      1.22606     53.68847      0.68156
+MINI EXTERN>      -46.79449    -28.69303      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       399
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22630 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      518 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>      400      5.99488      1.21574      0.64795      0.00033
+MINI INTERN>        5.06142     21.61494      1.23989     53.32551      0.67334
+MINI EXTERN>      -47.22698    -28.69323      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      450      4.99269      1.00219      0.19208      0.00020
+MINI INTERN>        5.00462     21.42590      1.22609     53.00950      0.66582
+MINI EXTERN>      -47.64914    -28.69011      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      500      4.10305      0.88964      0.50398      0.00028
+MINI INTERN>        4.99226     21.24998      1.21704     52.70083      0.65793
+MINI EXTERN>      -48.03449    -28.68049      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+
+ STEEPD> Minimization exiting with number of steps limit (       500) exceeded.
+
+STPD MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+STPD INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+STPD EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+STPD>      500      4.10305      0.88964      0.50398      0.00034
+STPD INTERN>        4.99226     21.24998      1.21704     52.70083      0.65793
+STPD EXTERN>      -48.03449    -28.68049      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    mini abnr nstep 500
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    RDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 13.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  8.000
+ NBXMOD =      5
+ There are    22630 atom  pairs and     1269 atom  exclusions.
+ There are        0 group pairs and      173 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22617 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      516 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+
+
+ ABNER> An energy minimization has been requested.
+
+ EIGRNG =    0.0005000   MINDIM =            5
+ NPRINT =           50   NSTEP  =          500
+ PSTRCT =    0.0000000   SDSTP  =    0.0200000
+ STPLIM =    1.0000000   STRICT =    0.1000000
+ TOLFUN =    0.0000000   TOLGRD =    0.0000000
+ TOLITR =          100   TOLSTP =    0.0000000
+ FMEM   =    0.0000000
+MINI MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+MINI INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+MINI EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        0      4.10305      0.88964      0.50398      0.00000
+MINI INTERN>        4.99226     21.24998      1.21704     52.70083      0.65793
+MINI EXTERN>      -48.03449    -28.68049      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step         8
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22524 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      533 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ UPDECI: Nonbond update at step        30
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22432 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      535 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>       50     -8.42629     12.52934      0.43557      0.00802
+MINI INTERN>        4.82347     17.65063      1.18890     48.47218      0.45325
+MINI EXTERN>      -54.72286    -26.29187      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        55
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22362 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      537 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>      100    -10.80724      2.38095      0.36860      0.00607
+MINI INTERN>        4.72378     17.06827      1.17442     46.81348      0.44783
+MINI EXTERN>      -55.27360    -25.76142      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       101
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22352 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      533 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>      150    -13.91178      3.10454      0.17065      0.00310
+MINI INTERN>        4.53420     16.45181      1.14782     44.93620      0.33854
+MINI EXTERN>      -55.70948    -25.61087      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       160
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22440 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      525 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ UPDECI: Nonbond update at step       190
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22583 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      531 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>      200    -16.19178      2.28000      0.24444      0.00441
+MINI INTERN>        4.68278     16.00804      1.11031     43.78095      0.28874
+MINI EXTERN>      -56.88696    -25.17564      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      250    -17.80429      1.61251      0.42200      0.00626
+MINI INTERN>        4.63510     15.96627      1.10972     42.74660      0.31321
+MINI EXTERN>      -57.36570    -25.20949      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       283
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22708 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      524 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>      300    -18.62584      0.82155      0.16347      0.00320
+MINI INTERN>        4.56837     15.94129      1.10337     42.64871      0.33121
+MINI EXTERN>      -58.28387    -24.93493      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      350    -19.26716      0.64132      0.14925      0.00273
+MINI INTERN>        4.58720     15.84490      1.11645     42.25714      0.33610
+MINI EXTERN>      -58.20904    -25.19992      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       378
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22765 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      519 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ UPDECI: Nonbond update at step       394
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22802 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      518 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>      400    -21.06869      1.80152      0.55193      0.01077
+MINI INTERN>        4.59013     15.91831      1.11559     41.96557      0.39345
+MINI EXTERN>      -60.22977    -24.82197      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       414
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22848 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      518 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>      450    -22.61225      1.54357      0.12805      0.00331
+MINI INTERN>        4.45997     16.05913      1.11387     41.86057      0.51371
+MINI EXTERN>      -61.55441    -25.06510      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       455
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22931 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      505 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>      500    -23.54074      0.92848      0.17833      0.00282
+MINI INTERN>        4.45048     16.17753      1.11504     41.90423      0.49988
+MINI EXTERN>      -62.16622    -25.52168      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+
+ ABNER> Minimization exiting with number of steps limit (  500) exceeded.
+
+ABNR MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+ABNR INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ABNR EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ABNR>      500    -23.54074      0.92848      0.17833      0.00254
+ABNR INTERN>        4.45048     16.17753      1.11504     41.90423      0.49988
+ABNR EXTERN>      -62.16622    -25.52168      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    RDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 13.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  8.000
+ NBXMOD =      5
+ There are    22931 atom  pairs and     1269 atom  exclusions.
+ There are        0 group pairs and      173 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    27967 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+    22968 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      502 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0    -23.54074      0.92848      0.17833
+ENER INTERN>        4.45048     16.17753      1.11504     41.90423      0.49988
+ENER EXTERN>      -62.16622    -25.52168      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>    !    write out coordinates !
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>     
+  
+ CHARMM>    open write formatted unit 27 name scr/mini.pdb
+ OPNLGU> Unit already open. The old file will be closed first.
+ VCLOSE: Closing unit   27 with status "KEEP"
+ VOPEN> Attempting to open::scr/mini.pdb::
+ OPNLGU> Unit 27 opened for WRITE access to scr/mini.pdb
+  
+ CHARMM>    write coor pdb  unit 27
+ RDTITL> * ENERGY MINIMIZED COORDINATE SET FOR NCP7
+ RDTITL> *
+  Write CHARMM-pdb format
+  
+ CHARMM>    close unit 27
+ VCLOSE: Closing unit   27 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    open write formatted unit 27 name scr/mini.crd
+ VOPEN> Attempting to open::scr/mini.crd::
+ OPNLGU> Unit 27 opened for WRITE access to scr/mini.crd
+  
+ CHARMM>    write coor card  unit 27
+ RDTITL> * ENERGY MINIMIZED COORDINATE SET FOR NCP7
+ RDTITL> *
+ VCLOSE: Closing unit   27 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+$$$$$$  New timer profile $$$$$
+      NBONDS                          0.00 Other:            0.00
+   List time                       0.00 Other:            0.00
+      Nonbond force                   0.30 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.02 Other:            0.00
+         Dihedral energy                 0.03 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.06 Other:            0.00
+   Energy time                     0.36 Other:            0.00
+ Total time                      0.47 Other:            0.10
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    NO WARNINGS WERE ISSUED
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.47  SECONDS 
+                         CPU TIME:     0.42  SECONDS 

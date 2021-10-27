@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Paul/Git/Cheminformatics/InternshipM1/manim/tutorial/media/videos/scene/480p15/partial_movie_files/SomeAnimations/3163782288_1142517713_428166014.mp4'
+file 'file:C:/Users/Paul/Git/Cheminformatics/InternshipM1/manim/tutorial/media/videos/scene/480p15/partial_movie_files/SomeAnimations/1495979052_2432241074_3976572931.mp4'
+file 'file:C:/Users/Paul/Git/Cheminformatics/InternshipM1/manim/tutorial/media/videos/scene/480p15/partial_movie_files/SomeAnimations/1495979052_3324584472_343063568.mp4'
+file 'file:C:/Users/Paul/Git/Cheminformatics/InternshipM1/manim/tutorial/media/videos/scene/480p15/partial_movie_files/SomeAnimations/1495979052_2432241074_4087389908.mp4'

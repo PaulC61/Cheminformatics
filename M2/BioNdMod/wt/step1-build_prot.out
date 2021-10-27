@@ -1,0 +1,592 @@
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+                (CHARMM) - Free Version 44b2   February 15, 2020                
+                                   686801d1a                                    
+       Copyright(c) 1984-2020  President and Fellows of Harvard College
+                              All Rights Reserved
+  Current operating system: Linux-5.4.0-88-generic(x86_64)@dhcp-41-174.u-stra   
+                 Created on 10/4/21 at 14:14:40 by user: pclarke     
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> * CONSTRUIT PSF ET CRD DE LA STRUCTURE
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    ! Read in Topology and  Parameter files
+ CHARMM>     
+  
+ CHARMM>    open unit 1 card read name lib/top_all22_prot.inp
+ VOPEN> Attempting to open::lib/top_all22_prot.inp::
+ OPNLGU> Unit  1 opened for READONLY access to lib/top_all22_prot.inp
+  
+ CHARMM>    read RTF card unit 1
+ MAINIO> Residue topology file being read from unit   1.
+ TITLE> *>>>>>>>> DEVELOPMENTAL RESIDUE TOPOLOGY FILE FOR PROTEINS <<<<<
+ TITLE> *>>>>>>>>>>>>>>>>> USING ALL HYDROGENS (ALLH) <<<<<<<<<<<<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>> JANUARY 1996 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> *>>>>>>> DIRECT COMMENTS TO ALEXANDER D. MACKERELL JR. <<<<<<<<<
+ TITLE> *>>>>>> 410-706-7442 OR EMAIL: ALEX,MMIRIS.AB.UMD.EDU  <<<<<<<<<
+ TITLE> * THESE FILES ARE A BETA RELEASE; ADDITIONAL PARAMETER DEVELOPMENT
+ TITLE> * AND TESTING MAY LEAD TO ALTERATION OF THE CONTENTS.
+ TITLE> *
+  
+ CHARMM>    close unit 1
+ VCLOSE: Closing unit    1 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    open unit 1 card read name  ./lib/patch_cys.rtf
+ VOPEN> Attempting to open::./lib/patch_cys.rtf::
+ OPNLGU> Unit  1 opened for READONLY access to ./lib/patch_cys.rtf
+  
+ CHARMM>    read RTF card unit 1 append
+ MAINIO> Residue topology file being read from unit   1.
+ TITLE> * PATCH DISULFIDE BOND BREACK
+ TITLE> *
+ WARNING from DECODI -- Zero length string being converted to 0
+ RTFRDR> WARNING: Version number is NOT specified.
+  
+ CHARMM>    close unit 1
+ VCLOSE: Closing unit    1 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    open unit 1 card read name lib/par_all22_prot.inp
+ VOPEN> Attempting to open::lib/par_all22_prot.inp::
+ OPNLGU> Unit  1 opened for READONLY access to lib/par_all22_prot.inp
+  
+ CHARMM>    read PARA card unit 1
+
+          PARAMETER FILE BEING READ FROM UNIT  1
+ TITLE> *>>>>>>>>>> DEVELOPMENTAL PARAMETER FILE FOR PROTEINS <<<<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>> USING ALL HYDROGENS (ALLH) <<<<<<<<<<<<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>> JANUARY 1996 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> *>>>>>>> DIRECT COMMENTS TO ALEXANDER D. MACKERELL JR. <<<<<<<<<
+ TITLE> *>>>>>> 410-706-7442 OR EMAIL: ALEX,MMIRIS.AB.UMD.EDU  <<<<<<<<<
+ TITLE> * THESE FILES ARE A BETA RELEASE; ADDITIONAL PARAMETER DEVELOPMENT
+ TITLE> * AND TESTING MAY LEAD TO ALTERATION OF THE CONTENTS.
+ TITLE> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>    close unit 1
+ VCLOSE: Closing unit    1 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    ! Read sequence from the PDB coordinate file
+ CHARMM>    open unit 1 card read name scr/1esk1.pdb
+ VOPEN> Attempting to open::scr/1esk1.pdb::
+ OPNLGU> Unit  1 opened for READONLY access to scr/1esk1.pdb
+  
+ CHARMM>    read sequ pdb unit 1
+ MAINIO> Sequence information being read from unit   1.
+ TITLE>   COORDINATES
+ TITLE>    DATE:     3/ 9/ 1     12:39:46      CREATED BY USER:
+ TITLE>  *
+
+          RESIDUE SEQUENCE --    16 RESIDUES
+          GLY CYS TRP LYS CYS GLY LYS GLU GLY HSD GLN MET LYS ASP CYS THR 
+ ***** Message from SEQRDR ***** THE SYSTEM CONTAINS  6 TITRATABLE GROUPS
+ THE USER MUST PREDETERMINE THE PROTONATION STATE THROUGH THE SEQUENCE AND RTF
+ HIS -  0  HSD -  1  HSE -  0  HSP -  0  ASP -  1  GLU -  1  LYS -  3  TYR -  0
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    ! now generate the PSF and also the IC table (SETU keyword)
+ CHARMM>     
+  
+ CHARMM>    generate prot setu
+ THE PATCH 'GLYP' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CTER' WILL BE USED FOR THE LAST  RESIDUE
+ GENPSF> Segment   1 has been generated. Its identifier is PROT.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       16
+         Number of atoms         =      239   Number of groups     =       66
+         Number of bonds         =      241   Number of angles     =      432
+         Number of dihedrals     =      624   Number of impropers  =       43
+         Number of cross-terms   =        0
+         Number of HB acceptors  =       24   Number of HB donors  =       35
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>    patch CYSM PROT 2
+ ATOM  PROT 2    CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         1 bonds deleted
+ DELTIC:         1 angles deleted
+ DELTIC:         3 dihedrals deleted
+ DELTIC:         1 donors deleted
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       16
+         Number of atoms         =      238   Number of groups     =       66
+         Number of bonds         =      240   Number of angles     =      431
+         Number of dihedrals     =      621   Number of impropers  =       43
+         Number of cross-terms   =        0
+         Number of HB acceptors  =       24   Number of HB donors  =       34
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>    patch CYSM PROT 5
+ ATOM  PROT 5    CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         1 bonds deleted
+ DELTIC:         1 angles deleted
+ DELTIC:         3 dihedrals deleted
+ DELTIC:         1 donors deleted
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       16
+         Number of atoms         =      237   Number of groups     =       66
+         Number of bonds         =      239   Number of angles     =      430
+         Number of dihedrals     =      618   Number of impropers  =       43
+         Number of cross-terms   =        0
+         Number of HB acceptors  =       24   Number of HB donors  =       33
+         Number of NB exclusions =        0   Total charge =   -1.00000
+  
+ CHARMM>    patch CYSM PROT 15
+ ATOM  PROT 15   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         1 bonds deleted
+ DELTIC:         1 angles deleted
+ DELTIC:         3 dihedrals deleted
+ DELTIC:         1 donors deleted
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       16
+         Number of atoms         =      236   Number of groups     =       66
+         Number of bonds         =      238   Number of angles     =      429
+         Number of dihedrals     =      615   Number of impropers  =       43
+         Number of cross-terms   =        0
+         Number of HB acceptors  =       24   Number of HB donors  =       32
+         Number of NB exclusions =        0   Total charge =   -2.00000
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    ! read in pdb coordinate file
+ CHARMM>     
+  
+ CHARMM>    open unit 1 card read name  scr/1esk1.pdb
+ OPNLGU> Unit already open. The old file will be closed first.
+ VCLOSE: Closing unit    1 with status "KEEP"
+ VOPEN> Attempting to open::scr/1esk1.pdb::
+ OPNLGU> Unit  1 opened for READONLY access to scr/1esk1.pdb
+  
+ CHARMM>    read coor pdb unit 1
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT  1
+ TITLE>   COORDINATES
+ TITLE>    DATE:     3/ 9/ 1     12:39:46      CREATED BY USER:
+ TITLE>  *
+  
+ CHARMM>    close unit 1
+ VCLOSE: Closing unit    1 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>    !!!!                ADD a Zinc ion             !!!
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>    read sequence ZN2 1
+  
+ CHARMM>    generate zinc noangle nodihedral
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ GENPSF> Segment   2 has been generated. Its identifier is ZINC.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       17
+         Number of atoms         =      237   Number of groups     =       67
+         Number of bonds         =      238   Number of angles     =      429
+         Number of dihedrals     =      615   Number of impropers  =       43
+         Number of cross-terms   =        0
+         Number of HB acceptors  =       24   Number of HB donors  =       32
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    read coordinate card append
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ A RESIDUE OFFSET OF  16 WILL BE USED.
+ INFO: A subset of total atoms will be read.
+
+ RDTITL> * CHLORINE STARTING COORDINATES
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    coor print sele segid zinc end
+ SELRPN>      1 atoms have been selected out of    237
+ NOTE: A SELECTED SUBSET OF ATOMS WILL BE USED
+
+
+          COORDINATE FILE MODULE
+ TITLE>  * CONSTRUIT PSF ET CRD DE LA STRUCTURE
+ TITLE>  *
+    1
+  237   17 ZN2  ZN   104.92500 142.26500  87.76500 ZINC 1      1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    JOIN PROT ZINC RENU
+ SEGMENTS "PROT" AND "ZINC" HAVE BEEN JOINED.
+ THE RESIDUE IDENTIFIERS HAVE BEEN RENUMBERED
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       17
+         Number of atoms         =      237   Number of groups     =       67
+         Number of bonds         =      238   Number of angles     =      429
+         Number of dihedrals     =      615   Number of impropers  =       43
+         Number of cross-terms   =        0
+         Number of HB acceptors  =       24   Number of HB donors  =       32
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    ! build in missing coordinates using values in
+ CHARMM>    ! the parameter set
+ CHARMM>    ic fill
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    ! print all coordinates:  undefined coordinates are indicated as
+ CHARMM>    ! 9999.00
+ CHARMM>     
+  
+ CHARMM>    print coor
+
+          COORDINATE FILE MODULE
+ TITLE>  * CONSTRUIT PSF ET CRD DE LA STRUCTURE
+ TITLE>  *
+  237
+    1    1 GLY  N    108.85200 134.76800  90.05600 PROT 1      1.00000
+    2    1 GLY  HT1  109.55400 134.97500  89.31700 PROT 1      0.00000
+    3    1 GLY  HT2  108.59900 133.76000  90.02100 PROT 1      0.00000
+    4    1 GLY  HT3  109.25400 134.99200  90.98900 PROT 1      0.00000
+    5    1 GLY  CA   107.65900 135.57600  89.83400 PROT 1      1.00000
+    6    1 GLY  HA1  107.34100 135.47500  88.79800 PROT 1      1.00000
+    7    1 GLY  HA2  106.83400 135.25300  90.46900 PROT 1      1.00000
+    8    1 GLY  C    107.94600 137.04800  90.12900 PROT 1      1.00000
+    9    1 GLY  O    109.03800 137.40700  90.57300 PROT 1      1.00000
+   10    2 CYS  N    106.95000 137.90800  89.89700 PROT 2      1.00000
+   11    2 CYS  HN   106.07100 137.53100  89.57300 PROT 2      1.00000
+   12    2 CYS  CA   107.08200 139.31400  90.25300 PROT 2      1.00000
+   13    2 CYS  HA   108.00700 139.67100  89.79800 PROT 2      1.00000
+   14    2 CYS  CB   105.95300 140.21600  89.73800 PROT 2      1.00000
+   15    2 CYS  HB1  105.46100 139.87500  88.85700 PROT 2      1.00000
+   16    2 CYS  HB2  105.14600 140.26500  90.43300 PROT 2      1.00000
+   17    2 CYS  SG   106.46300 141.89100  89.36100 PROT 2      1.00000
+   18    2 CYS  C    107.16300 139.42900  91.76900 PROT 2      1.00000
+   19    2 CYS  O    106.26300 138.99100  92.48500 PROT 2      1.00000
+   20    3 TRP  N    108.24100 140.05200  92.23700 PROT 3      1.00000
+   21    3 TRP  HN   108.92600 140.37800  91.57300 PROT 3      1.00000
+   22    3 TRP  CA   108.48500 140.32600  93.64100 PROT 3      1.00000
+   23    3 TRP  HA   108.45500 139.39300  94.20100 PROT 3      1.00000
+   24    3 TRP  CB   109.88800 140.92400  93.74600 PROT 3      1.00000
+   25    3 TRP  HB1  110.49000 140.52400  92.94200 PROT 3      1.00000
+   26    3 TRP  HB2  109.85200 142.00900  93.64400 PROT 3      1.00000
+   27    3 TRP  CG   110.66200 140.53900  94.94900 PROT 3      1.00000
+   28    3 TRP  CD2  110.98500 141.31900  96.12800 PROT 3      1.00000
+   29    3 TRP  CD1  111.23600 139.33200  95.11700 PROT 3      1.00000
+   30    3 TRP  HD1  111.19600 138.55100  94.36600 PROT 3      1.00000
+   31    3 TRP  NE1  111.86200 139.28900  96.34600 PROT 3      1.00000
+   32    3 TRP  HE1  112.35000 138.49300  96.72800 PROT 3      1.00000
+   33    3 TRP  CE2  111.74800 140.49800  97.00500 PROT 3      1.00000
+   34    3 TRP  CE3  110.71300 142.63900  96.54300 PROT 3      1.00000
+   35    3 TRP  HE3  110.10900 143.26500  95.90400 PROT 3      1.00000
+   36    3 TRP  CZ2  112.21600 140.96700  98.23900 PROT 3      1.00000
+   37    3 TRP  HZ2  112.78000 140.31300  98.87900 PROT 3      1.00000
+   38    3 TRP  CZ3  111.18600 143.12200  97.77700 PROT 3      1.00000
+   39    3 TRP  HZ3  110.96000 144.13400  98.08000 PROT 3      1.00000
+   40    3 TRP  CH2  111.94000 142.28900  98.62400 PROT 3      1.00000
+   41    3 TRP  HH2  112.29700 142.66400  99.57200 PROT 3      1.00000
+   42    3 TRP  C    107.45400 141.29400  94.22200 PROT 3      1.00000
+   43    3 TRP  O    107.28700 141.35900  95.43900 PROT 3      1.00000
+   44    4 LYS  N    106.78800 142.05600  93.34300 PROT 4      1.00000
+   45    4 LYS  HN   107.01200 141.97400  92.36400 PROT 4      1.00000
+   46    4 LYS  CA   105.94700 143.17500  93.70100 PROT 4      1.00000
+   47    4 LYS  HA   105.95400 143.32700  94.78200 PROT 4      1.00000
+   48    4 LYS  CB   106.58900 144.39000  93.03600 PROT 4      1.00000
+   49    4 LYS  HB1  107.65400 144.33800  93.23900 PROT 4      1.00000
+   50    4 LYS  HB2  106.48300 144.34200  91.95400 PROT 4      1.00000
+   51    4 LYS  CG   106.07700 145.73200  93.55200 PROT 4      1.00000
+   52    4 LYS  HG1  106.00900 145.70100  94.63700 PROT 4      1.00000
+   53    4 LYS  HG2  106.85400 146.43000  93.26100 PROT 4      1.00000
+   54    4 LYS  CD   104.73000 146.16700  92.95200 PROT 4      1.00000
+   55    4 LYS  HD1  104.70600 145.93300  91.88700 PROT 4      1.00000
+   56    4 LYS  HD2  103.92000 145.62900  93.44200 PROT 4      1.00000
+   57    4 LYS  CE   104.46400 147.66700  93.13200 PROT 4      1.00000
+   58    4 LYS  HE1  103.50100 147.89700  92.67400 PROT 4      1.00000
+   59    4 LYS  HE2  104.41300 147.91200  94.19400 PROT 4      1.00000
+   60    4 LYS  NZ   105.49700 148.49900  92.48800 PROT 4      1.00000
+   61    4 LYS  HZ1  105.71300 148.12200  91.57000 PROT 4      1.00000
+   62    4 LYS  HZ2  105.17800 149.45300  92.40500 PROT 4      1.00000
+   63    4 LYS  HZ3  106.34300 148.47500  93.03800 PROT 4      1.00000
+   64    4 LYS  C    104.50500 143.04300  93.23200 PROT 4      1.00000
+   65    4 LYS  O    103.59100 143.09300  94.05200 PROT 4      1.00000
+   66    5 CYS  N    104.29700 142.93200  91.91200 PROT 5      1.00000
+   67    5 CYS  HN   105.08500 142.74200  91.30200 PROT 5      1.00000
+   68    5 CYS  CA   102.95100 143.05000  91.35600 PROT 5      1.00000
+   69    5 CYS  HA   102.44000 143.82600  91.92900 PROT 5      1.00000
+   70    5 CYS  CB   102.98600 143.58900  89.91600 PROT 5      1.00000
+   71    5 CYS  HB1  102.16300 144.29400  89.78700 PROT 5      1.00000
+   72    5 CYS  HB2  103.89700 144.16600  89.76700 PROT 5      1.00000
+   73    5 CYS  SG   102.85900 142.37400  88.58600 PROT 5      1.00000
+   74    5 CYS  C    102.12400 141.77500  91.54400 PROT 5      1.00000
+   75    5 CYS  O    100.90300 141.81700  91.40400 PROT 5      1.00000
+   76    6 GLY  N    102.77700 140.65500  91.87800 PROT 6      1.00000
+   77    6 GLY  HN   103.78900 140.66200  91.89500 PROT 6      1.00000
+   78    6 GLY  CA   102.09800 139.43700  92.30000 PROT 6      1.00000
+   79    6 GLY  HA1  102.70600 138.97200  93.07500 PROT 6      1.00000
+   80    6 GLY  HA2  101.12300 139.66800  92.73200 PROT 6      1.00000
+   81    6 GLY  C    101.91200 138.42500  91.17500 PROT 6      1.00000
+   82    6 GLY  O    101.78500 137.23400  91.45000 PROT 6      1.00000
+   83    7 LYS  N    101.91400 138.87500  89.91300 PROT 7      1.00000
+   84    7 LYS  HN   102.04900 139.85900  89.74100 PROT 7      1.00000
+   85    7 LYS  CA   101.91600 137.96300  88.77900 PROT 7      1.00000
+   86    7 LYS  HA   101.11300 137.23400  88.90000 PROT 7      1.00000
+   87    7 LYS  CB   101.70100 138.71500  87.46300 PROT 7      1.00000
+   88    7 LYS  HB1  102.40900 139.53700  87.42400 PROT 7      1.00000
+   89    7 LYS  HB2  101.89200 138.04600  86.62500 PROT 7      1.00000
+   90    7 LYS  CG   100.26400 139.22400  87.35600 PROT 7      1.00000
+   91    7 LYS  HG1   99.59300 138.36900  87.30600 PROT 7      1.00000
+   92    7 LYS  HG2  100.03600 139.78500  88.25900 PROT 7      1.00000
+   93    7 LYS  CD   100.02900 140.11300  86.12900 PROT 7      1.00000
+   94    7 LYS  HD1   99.01100 140.50100  86.19300 PROT 7      1.00000
+   95    7 LYS  HD2  100.72200 140.95600  86.14700 PROT 7      1.00000
+   96    7 LYS  CE   100.18000 139.33100  84.81700 PROT 7      1.00000
+   97    7 LYS  HE1  101.21900 139.03600  84.67200 PROT 7      1.00000
+   98    7 LYS  HE2   99.56100 138.43300  84.85700 PROT 7      1.00000
+   99    7 LYS  NZ    99.75600 140.13400  83.65600 PROT 7      1.00000
+  100    7 LYS  HZ1  100.32100 140.96800  83.58800 PROT 7      1.00000
+  101    7 LYS  HZ2   99.86300 139.59000  82.81100 PROT 7      1.00000
+  102    7 LYS  HZ3   98.78500 140.39500  83.75800 PROT 7      1.00000
+  103    7 LYS  C    103.24300 137.21800  88.73000 PROT 7      1.00000
+  104    7 LYS  O    104.20000 137.58100  89.40900 PROT 7      1.00000
+  105    8 GLU  N    103.27300 136.17500  87.90500 PROT 8      1.00000
+  106    8 GLU  HN   102.42000 135.98900  87.39800 PROT 8      1.00000
+  107    8 GLU  CA   104.40900 135.27100  87.77800 PROT 8      1.00000
+  108    8 GLU  HA   105.28500 135.76500  88.18800 PROT 8      1.00000
+  109    8 GLU  CB   104.16800 134.00900  88.61500 PROT 8      1.00000
+  110    8 GLU  HB1  105.05900 133.38000  88.59400 PROT 8      1.00000
+  111    8 GLU  HB2  103.97500 134.29900  89.64900 PROT 8      1.00000
+  112    8 GLU  CG   102.97500 133.20600  88.09000 PROT 8      1.00000
+  113    8 GLU  HG1  102.10000 133.85100  88.04400 PROT 8      1.00000
+  114    8 GLU  HG2  103.19900 132.83700  87.09000 PROT 8      1.00000
+  115    8 GLU  CD   102.66600 132.01900  88.99400 PROT 8      1.00000
+  116    8 GLU  OE1  103.39100 131.00900  88.87100 PROT 8      1.00000
+  117    8 GLU  OE2  101.71500 132.14600  89.79500 PROT 8      1.00000
+  118    8 GLU  C    104.77100 134.94800  86.32700 PROT 8      1.00000
+  119    8 GLU  O    105.78000 134.28500  86.09400 PROT 8      1.00000
+  120    9 GLY  N    104.00500 135.44700  85.34500 PROT 9      1.00000
+  121    9 GLY  HN   103.18900 135.99100  85.57500 PROT 9      1.00000
+  122    9 GLY  CA   104.36000 135.35200  83.93500 PROT 9      1.00000
+  123    9 GLY  HA1  104.78600 134.37400  83.70800 PROT 9      1.00000
+  124    9 GLY  HA2  103.45800 135.48300  83.34100 PROT 9      1.00000
+  125    9 GLY  C    105.36000 136.45000  83.57500 PROT 9      1.00000
+  126    9 GLY  O    105.09900 137.24500  82.67500 PROT 9      1.00000
+  127   10 HSD  N    106.47300 136.47800  84.32000 PROT 10     1.00000
+  128   10 HSD  HN   106.54900 135.74900  85.01600 PROT 10     1.00000
+  129   10 HSD  CA   107.58000 137.42800  84.31400 PROT 10     1.00000
+  130   10 HSD  HA   108.33100 137.07300  83.60600 PROT 10     1.00000
+  131   10 HSD  ND1  104.78900 139.57100  84.48100 PROT 10     1.00000
+  132   10 HSD  HD1  104.34500 139.15200  83.67400 PROT 10     1.00000
+  133   10 HSD  CG   106.12400 139.49500  84.80000 PROT 10     1.00000
+  134   10 HSD  CB   107.16800 138.85000  83.92100 PROT 10     1.00000
+  135   10 HSD  HB1  108.04400 139.48300  83.99900 PROT 10     1.00000
+  136   10 HSD  HB2  106.88900 138.88200  82.87500 PROT 10     1.00000
+  137   10 HSD  NE2  105.04300 140.78000  86.39200 PROT 10     1.00000
+  138   10 HSD  CD2  106.20200 140.13100  86.00900 PROT 10     1.00000
+  139   10 HSD  HD2  107.06200 140.24200  86.64500 PROT 10     1.00000
+  140   10 HSD  CE1  104.21000 140.29800  85.45400 PROT 10     1.00000
+  141   10 HSD  HE1  103.14800 140.50100  85.46200 PROT 10     1.00000
+  142   10 HSD  C    108.20100 137.46400  85.70800 PROT 10     1.00000
+  143   10 HSD  O    107.60700 136.97300  86.66800 PROT 10     1.00000
+  144   11 GLN  N    109.37400 138.09800  85.80900 PROT 11     1.00000
+  145   11 GLN  HN   109.77600 138.48700  84.96700 PROT 11     1.00000
+  146   11 GLN  CA   110.05200 138.36000  87.06900 PROT 11     1.00000
+  147   11 GLN  HA   109.52400 137.85800  87.87500 PROT 11     1.00000
+  148   11 GLN  CB   111.48100 137.79300  87.03400 PROT 11     1.00000
+  149   11 GLN  HB1  111.89000 137.70800  88.04200 PROT 11     1.00000
+  150   11 GLN  HB2  111.45200 136.80200  86.59600 PROT 11     1.00000
+  151   11 GLN  CG   112.40500 138.65200  86.18100 PROT 11     1.00000
+  152   11 GLN  HG1  111.82700 138.99600  85.34200 PROT 11     1.00000
+  153   11 GLN  HG2  112.70300 139.52900  86.73500 PROT 11     1.00000
+  154   11 GLN  CD   113.63800 137.88900  85.70500 PROT 11     1.00000
+  155   11 GLN  OE1  114.11500 136.98100  86.38500 PROT 11     1.00000
+  156   11 GLN  NE2  114.15200 138.24600  84.52700 PROT 11     1.00000
+  157   11 GLN  HE21 113.69500 138.96400  83.97100 PROT 11     1.00000
+  158   11 GLN  HE22 114.95100 137.75500  84.15600 PROT 11     1.00000
+  159   11 GLN  C    110.01100 139.84300  87.42900 PROT 11     1.00000
+  160   11 GLN  O    109.37000 140.66500  86.78000 PROT 11     1.00000
+  161   12 MET  N    110.71800 140.16900  88.50400 PROT 12     1.00000
+  162   12 MET  HN   111.33300 139.46500  88.87900 PROT 12     1.00000
+  163   12 MET  CA   110.66600 141.45800  89.16400 PROT 12     1.00000
+  164   12 MET  HA   109.61400 141.73000  89.28500 PROT 12     1.00000
+  165   12 MET  CB   111.28100 141.26300  90.56000 PROT 12     1.00000
+  166   12 MET  HB1  110.90600 141.99500  91.26800 PROT 12     1.00000
+  167   12 MET  HB2  110.94400 140.28700  90.90700 PROT 12     1.00000
+  168   12 MET  CG   112.81200 141.25300  90.59800 PROT 12     1.00000
+  169   12 MET  HG1  113.17000 140.42700  89.98400 PROT 12     1.00000
+  170   12 MET  HG2  113.19400 142.18100  90.18100 PROT 12     1.00000
+  171   12 MET  SD   113.51900 141.06200  92.25900 PROT 12     1.00000
+  172   12 MET  CE   113.16800 142.68800  92.97900 PROT 12     1.00000
+  173   12 MET  HE1  113.58400 142.72900  93.98500 PROT 12     1.00000
+  174   12 MET  HE2  112.09400 142.85800  93.03300 PROT 12     1.00000
+  175   12 MET  HE3  113.62800 143.46600  92.36900 PROT 12     1.00000
+  176   12 MET  C    111.32600 142.53000  88.29100 PROT 12     1.00000
+  177   12 MET  O    110.83100 143.65100  88.18900 PROT 12     1.00000
+  178   13 LYS  N    112.42100 142.14800  87.62400 PROT 13     1.00000
+  179   13 LYS  HN   112.76500 141.21700  87.79300 PROT 13     1.00000
+  180   13 LYS  CA   113.12600 142.96700  86.65100 PROT 13     1.00000
+  181   13 LYS  HA   113.37800 143.90800  87.13100 PROT 13     1.00000
+  182   13 LYS  CB   114.42300 142.27300  86.18900 PROT 13     1.00000
+  183   13 LYS  HB1  114.20800 141.56100  85.39200 PROT 13     1.00000
+  184   13 LYS  HB2  115.07800 143.04700  85.78500 PROT 13     1.00000
+  185   13 LYS  CG   115.15700 141.50300  87.29800 PROT 13     1.00000
+  186   13 LYS  HG1  115.05900 142.03800  88.24000 PROT 13     1.00000
+  187   13 LYS  HG2  114.70700 140.51900  87.42500 PROT 13     1.00000
+  188   13 LYS  CD   116.64700 141.32400  86.97700 PROT 13     1.00000
+  189   13 LYS  HD1  117.10700 142.30500  86.84600 PROT 13     1.00000
+  190   13 LYS  HD2  117.12300 140.82900  87.82600 PROT 13     1.00000
+  191   13 LYS  CE   116.86600 140.47500  85.71800 PROT 13     1.00000
+  192   13 LYS  HE1  116.40200 139.49800  85.85500 PROT 13     1.00000
+  193   13 LYS  HE2  116.41300 140.96300  84.85400 PROT 13     1.00000
+  194   13 LYS  NZ   118.29900 140.28200  85.43500 PROT 13     1.00000
+  195   13 LYS  HZ1  118.74200 139.81200  86.21200 PROT 13     1.00000
+  196   13 LYS  HZ2  118.74100 141.17900  85.28900 PROT 13     1.00000
+  197   13 LYS  HZ3  118.40600 139.72100  84.60200 PROT 13     1.00000
+  198   13 LYS  C    112.21500 143.25500  85.45800 PROT 13     1.00000
+  199   13 LYS  O    111.93400 144.40800  85.14000 PROT 13     1.00000
+  200   14 ASP  N    111.75800 142.17500  84.82100 PROT 14     1.00000
+  201   14 ASP  HN   112.06400 141.28100  85.17300 PROT 14     1.00000
+  202   14 ASP  CA   110.91900 142.14800  83.63300 PROT 14     1.00000
+  203   14 ASP  HA   111.50500 142.43800  82.75900 PROT 14     1.00000
+  204   14 ASP  CB   110.38800 140.72200  83.45600 PROT 14     1.00000
+  205   14 ASP  HB1  110.04600 140.38300  84.42600 PROT 14     1.00000
+  206   14 ASP  HB2  109.51900 140.72400  82.79700 PROT 14     1.00000
+  207   14 ASP  CG   111.41300 139.71400  82.94800 PROT 14     1.00000
+  208   14 ASP  OD1  110.97200 138.58600  82.64300 PROT 14     1.00000
+  209   14 ASP  OD2  112.61900 140.04900  82.94000 PROT 14     1.00000
+  210   14 ASP  C    109.71000 143.07200  83.74100 PROT 14     1.00000
+  211   14 ASP  O    109.39100 143.77700  82.78600 PROT 14     1.00000
+  212   15 CYS  N    109.02000 143.01900  84.88700 PROT 15     1.00000
+  213   15 CYS  HN   109.36600 142.42900  85.63200 PROT 15     1.00000
+  214   15 CYS  CA   107.72900 143.65900  85.06500 PROT 15     1.00000
+  215   15 CYS  HA   107.02100 143.08800  84.46100 PROT 15     1.00000
+  216   15 CYS  CB   107.24500 143.50200  86.49900 PROT 15     1.00000
+  217   15 CYS  HB1  107.28400 142.44700  86.74000 PROT 15     1.00000
+  218   15 CYS  HB2  107.91400 143.99000  87.20100 PROT 15     1.00000
+  219   15 CYS  SG   105.54000 144.08500  86.72400 PROT 15     1.00000
+  220   15 CYS  C    107.73200 145.13700  84.66700 PROT 15     1.00000
+  221   15 CYS  O    108.46500 145.93900  85.24500 PROT 15     1.00000
+  222   16 THR  N    106.86800 145.49100  83.71000 PROT 16     1.00000
+  223   16 THR  HN   106.31200 144.77300  83.26900 PROT 16     1.00000
+  224   16 THR  CA   106.62400 146.86300  83.28700 PROT 16     1.00000
+  225   16 THR  HA   107.54700 147.44200  83.35600 PROT 16     1.00000
+  226   16 THR  CB   106.17600 146.86800  81.81700 PROT 16     1.00000
+  227   16 THR  HB   105.94600 147.89100  81.51300 PROT 16     1.00000
+  228   16 THR  OG1  105.01900 146.07100  81.66600 PROT 16     1.00000
+  229   16 THR  HG1  104.31000 146.48800  82.16400 PROT 16     1.00000
+  230   16 THR  CG2  107.28000 146.33700  80.89700 PROT 16     1.00000
+  231   16 THR  HG21 108.18400 146.93400  81.02000 PROT 16     1.00000
+  232   16 THR  HG22 106.95000 146.40600  79.86000 PROT 16     1.00000
+  233   16 THR  HG23 107.50500 145.29500  81.12500 PROT 16     1.00000
+  234   16 THR  C    105.59100 147.51100  84.21600 PROT 16     1.00000
+  235   16 THR  OT1  104.54600 147.98100  83.77100 PROT 16     1.00000
+  236   16 THR  OT2  105.12400 146.81600  85.15700 PROT 16     0.00000
+  237   17 ZN2  ZN   104.92500 142.26500  87.76500 PROT 17     1.00000
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    ! write out the protein structure file (psf) and
+ CHARMM>    ! the coordinate file in pdb format.
+ CHARMM>     
+  
+ CHARMM>    open write formatted unit 27 name scr/build.psf
+ VOPEN> Attempting to open::scr/build.psf::
+ OPNLGU> Unit 27 opened for WRITE access to scr/build.psf
+  
+ CHARMM>    write psf card unit 27
+ RDTITL> * PSF FOR ZINC FINGER
+ RDTITL> *
+  
+ CHARMM>    open unit 1 card write name scr/build.pdb
+ VOPEN> Attempting to open::scr/build.pdb::
+ OPNLGU> Unit  1 opened for WRITE access to scr/build.pdb
+  
+ CHARMM>    write coor pdb unit 1
+ RDTITL> * ZINC FINGER STRUCTURE WITH HYDROGENS
+ RDTITL> *
+  Write CHARMM-pdb format
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    open unit 1 card write name scr/build.crd
+ OPNLGU> Unit already open. The old file will be closed first.
+ VCLOSE: Closing unit    1 with status "KEEP"
+ VOPEN> Attempting to open::scr/build.crd::
+ OPNLGU> Unit  1 opened for WRITE access to scr/build.crd
+  
+ CHARMM>    write coor card unit 1
+ RDTITL> * ZINC FINGER STRUCTURE WITH HYDROGENS
+ RDTITL> *
+ VCLOSE: Closing unit    1 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+ VCLOSE: Closing unit   27 with status "KEEP"
+$$$$$$  New timer profile $$$$$
+ Total time                      0.19 Other:            0.00
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    NO WARNINGS WERE ISSUED
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.20  SECONDS 
+                         CPU TIME:     0.11  SECONDS 
