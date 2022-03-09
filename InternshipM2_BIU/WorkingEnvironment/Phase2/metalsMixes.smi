@@ -362,7 +362,7 @@ fluorene, carbazole 4.77	CCCCn1c2cc(ccc2c2c1cc(cc2)c1ccc(s1)c1ccc(s1)/C=C(/C(=O)
 carbazole 3.9	CCCCCCc1cc(sc1c1sc(c(c1)CCCCCC)/C=C(\C(=O)O)/C#N)c1sc(cc1CCCCCC)c1ccc2c(c1)c1ccccc1n2CC
 carbazole 2.9	COCCCCc1cc(sc1c1sc(c(c1)CCCCOC)c1sc(c(c1)CCCCOC)/C=C(/C(=O)O)\C#N)c1sc(cc1CCCCOC)c1ccc2c(c1)c1ccccc1n2CC
 carbazole 4.0	CCCCCCc1cc(sc1c1sc(c(c1)CCCCCC)/C=C(/C(=O)O)\C#N)c1sc(cc1CCCCOC)c1sc(cc1CCCCOC)c1ccc2c(c1)c1ccccc1n2CC
-carbazole 0.819	N#CC(=Cc1ccc(s1)C#Cc1ccc(cc1)n1c2ccccc2c2c1cccc2)C(=O)O
+carbazole 0.8190000000000001	N#CC(=Cc1ccc(s1)C#Cc1ccc(cc1)n1c2ccccc2c2c1cccc2)C(=O)O
 carbazole 6.83	CCCCn1c2cc(ccc2c2c1cc(cc2)N(c1ccccc1)c1ccccc1)c1ccc(s1)c1ccc(s1)/C=C(/C(=O)O)\C#N
 carbazole 6.05	CCCCn1c2cc(ccc2c2c1cc(cc2)N(c1ccccc1)c1ccccc1)c1ccc(s1)/C=C(/C(=O)O)\C#N
 triphenylamine 2.15	N#C/C(=C/c1cn(c2c1cccc2)c1ccc(cc1)N(c1ccccc1)c1ccccc1)/C(=O)O
@@ -638,7 +638,7 @@ azobenzene 2.6	CCO[Si](c1ccc(cc1)N=Nc1ccc(cc1)N(C)C)(OCC)OCC
 azobenzene 2.2	CCO[Si](c1ccccc1)(c1ccc(cc1)N=Nc1ccc(cc1)N(C)C)OCC
 azobenzene 0.29	CCO[Si](c1ccccc1)(c1ccc(cc1)N=Nc1ccccc1)OCC
 azobenzene 0.152	O[Si](c1ccc(cc1)N=Nc1ccccc1)(c1ccc(cc1)N=Nc1ccccc1)O
-azobenzene 0.416	OC(=O)c1ccc(cc1)N=Nc1ccccc1
+azobenzene 0.41600000000000004	OC(=O)c1ccc(cc1)N=Nc1ccccc1
 acenaphthopyrazine 4.04	OC(=O)c1[nH]c2c3cccc4c3c(c2[nH]c1C(=O)O)ccc4N(c1ccccc1)c1ccccc1
 acenaphthopyrazine 2.68	CCCCN(c1ccc2c3c1cccc3c1c2[nH]c(c([nH]1)C(=O)O)C(=O)O)c1ccccc1
 triphenylamine 5.01	CCCCCC1(CCCCC)COc2c(OC1)c(sc2c1sc2c(n1)sc(n2)c1sc(c2c1OCC(CO2)(CCCCC)CCCCC)c1sc(c2c1OCCO2)C=C(C(=O)O)C#N)c1ccc(cc1)N(c1ccccc1)c1ccccc1
