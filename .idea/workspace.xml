@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9810c47a-116a-4b45-b286-6c2977f8858e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/InternshipM2_BIU/WorkingEnvironment/Phase2/rdkitConversions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InternshipM2_BIU/WorkingEnvironment/Phase2/reproducePLSPaper.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/InternshipM2_BIU/WorkingEnvironment/Phase2/reproducePLSPaper.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="9810c47a-116a-4b45-b286-6c2977f8858e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
