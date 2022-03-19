@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ALVADESC version="2.0.0" description="PLSDescriptors.adtpl" generation_date="2022/03/19">
+  <DESCRIPTORS>
+    <block id="1" SelectAll="true"/>
+    <block id="2" SelectAll="true"/>
+    <block id="5" SelectAll="true"/>
+    <block id="11" SelectAll="true"/>
+    <block id="21" SelectAll="true"/>
+    <block id="22" SelectAll="true"/>
+    <block id="23" SelectAll="true"/>
+    <block id="25" SelectAll="true"/>
+    <block id="28" SelectAll="true"/>
+  </DESCRIPTORS>
+</ALVADESC>
