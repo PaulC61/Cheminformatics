@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9810c47a-116a-4b45-b286-6c2977f8858e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InternshipM2_BIU/WorkingEnvironment/Phase2/RFGlobFeatures.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/InternshipM2_BIU/WorkingEnvironment/Phase2/RFGlobFeatures.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InternshipM2_BIU/WorkingEnvironment/Phase2/familyAsFeature.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/InternshipM2_BIU/WorkingEnvironment/Phase2/familyAsFeature.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +31,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Git/Peptides" />
   </component>
   <component name="RunManager">
     <configuration name="rdkitConversions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -70,5 +71,17 @@
       <updated>1646769065544</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
