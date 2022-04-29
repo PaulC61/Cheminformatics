@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from scipy.stats import shapiro, wasserstein_distance
 
-
 # core functions to generating synthetic data
 def split_db(df_toSplit, target_column):
     """
