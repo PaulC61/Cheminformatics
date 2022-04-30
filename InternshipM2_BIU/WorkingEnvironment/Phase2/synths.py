@@ -173,6 +173,33 @@ def gen_synths_balance(df_to_gen, target_col, corr=True):
     df_synth = pd.concat([df_synth, synths], axis=0)
     return df, df_synth
 
+def gen_synths_expanded(df_to_gen, target_col, corr=True):
+    split_dfs = split_db(df_to_gen, target_col)
+    df = pd.DataFrame(columns=split_dfs[0].columns)
+    df_synth = pd.DataFrame(columns=split_dfs[0].columns)
+
+    if split_dfs[0].shape[0] > split_dfs[1].shape[0]:
+        minority = 1
+        majority = 0
+    else:
+        minority = 0
+        majority = 1
+
+    n_synths_minority = (2 * split_dfs[minority].shape[0])
+    n_synths_majority = (split_dfs[majority].shape[0] * n_synths_minority)/(split_dfs[minority].shape[0]) # maintains active : inactive ratio
+
+    minority_synths_real, minority_synths = gen_synths_for_classValue(split_dfs, target_col,
+                                                                      minority, n_samples=n_synths_minority, corr=corr)
+    df = pd.concat([df, minority_synths_real], axis=0)
+    df_synth = pd.concat([df_synth, minority_synths], axis=0)
+
+    majority_synths_real, majority_synths = gen_synths_for_classValue(split_dfs, target_col,
+                                                                      majority, n_samples=n_synths_majority, corr=corr)
+    df = pd.concat([df, majority_synths_real], axis=0)
+    df_synth = pd.concat([df_synth, majority_synths], axis=0)
+
+    return df, df_synth
+
 def standardized_wasserstein_distance(a, b):
     """a and b are numpy arrays to compare distance between"""
     numerator = wasserstein_distance(a, b)
