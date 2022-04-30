@@ -207,7 +207,7 @@ def standardized_wasserstein_distance(a, b):
     return (numerator/denominator) if denominator != .0 else .0
 
 
-def swd_feature_selection(X, y):  # Standardized Wasserstein Distance
+def swd_feature_selection(X, y, n_features=100):  # Standardized Wasserstein Distance
     # split df into active and non-active
     # for each column compare distributions and get swd_score
     print("-----choose most different dist.-----")
@@ -219,7 +219,7 @@ def swd_feature_selection(X, y):  # Standardized Wasserstein Distance
         swd_col = standardized_wasserstein_distance(active[col].to_numpy(), nonactive[col].to_numpy())
         swd_scores.append(swd_col)
 
-    threshold = np.sort(swd_scores)[-101] + 0.0001
+    threshold = np.sort(swd_scores)[-(n_features+1)] + 0.0001
     to_drop = []
     for col in X.columns:
         col_idx = X.columns.get_loc(col)
