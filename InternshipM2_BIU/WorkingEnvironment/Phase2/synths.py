@@ -12,11 +12,11 @@ def split_db(df_toSplit, target_column):
     to the Y classifaction of samples and the items are the dataframes of samples
     """
     split_dfs = dict()
-    print(f"Splitting dataframe based on {target_column}")
+    # print(f"Splitting dataframe based on {target_column}")
     if target_column in df_toSplit:
         n_unique = len(pd.unique(df_toSplit[target_column]))
         unique_classes = pd.unique(df_toSplit[target_column])
-        print(f"Splitting into {n_unique} DataFrames of classes {unique_classes}")
+        # print(f"Splitting into {n_unique} DataFrames of classes {unique_classes}")
         for i in range(n_unique):
             class_i = unique_classes[i]
             split_dfs[class_i] = df_toSplit.loc[df_toSplit[target_column]==unique_classes[i]]
@@ -67,14 +67,14 @@ def gen_synths_for_classValue(split_df_dict, target_col, target_value, n_samples
         print(f"Cannot generate less data than is already there for class {target_value}, increase n_samples")
     else:
         if corr:
-            print(f"Generating {n_samples-len(original_df.index)} correlated synthetic data entries for class {target_value}")
+            # print(f"Generating {n_samples-len(original_df.index)} correlated synthetic data entries for class {target_value}")
             for i in range(n_samples - len(original_df.index)):
                 synth_name = f"SYNTH_{target_value}_{i}"
                 synth = gen_corr_synth_sample(original_df, target_col, target_value, odf_col_mean_cov[0],
                                               odf_col_mean_cov[1], synth_name)
                 synth_df = pd.concat([synth_df, synth], axis=0)
         else:
-            print(f"Generating {n_samples-len(original_df.index)} uncorrelated synthetic data entries for class {target_value}")
+            # print(f"Generating {n_samples-len(original_df.index)} uncorrelated synthetic data entries for class {target_value}")
             for i in range(n_samples - len(original_df.index)):
                 synth_name = f"SYNTH_{target_value}_{i}"
                 synth = gen_synth_sample(original_df, target_col, target_value, odf_col_mean_std, synth_name)
@@ -185,8 +185,8 @@ def gen_synths_expanded(df_to_gen, target_col, corr=True):
         minority = 0
         majority = 1
 
-    n_synths_minority = (2 * split_dfs[minority].shape[0])
-    n_synths_majority = (split_dfs[majority].shape[0] * n_synths_minority)/(split_dfs[minority].shape[0]) # maintains active : inactive ratio
+    n_synths_minority = int(round(2 * split_dfs[minority].shape[0]))
+    n_synths_majority = int(round(split_dfs[majority].shape[0] * n_synths_minority)/(split_dfs[minority].shape[0])) # maintains active : inactive ratio
 
     minority_synths_real, minority_synths = gen_synths_for_classValue(split_dfs, target_col,
                                                                       minority, n_samples=n_synths_minority, corr=corr)
@@ -210,8 +210,8 @@ def standardized_wasserstein_distance(a, b):
 def swd_feature_selection(X, y, n_features=100):  # Standardized Wasserstein Distance
     # split df into active and non-active
     # for each column compare distributions and get swd_score
-    print("-----choose most different dist.-----")
-    print("Original DB shape is", X.shape)
+    # print("-----choose most different dist.-----")
+    # print("Original DB shape is", X.shape)
     active = X[y == True]
     nonactive = X[y == False]
     swd_scores = []
@@ -227,12 +227,12 @@ def swd_feature_selection(X, y, n_features=100):  # Standardized Wasserstein Dis
             to_drop.append(col)
 
     X = X.drop(to_drop, axis=1)
-    print(f"Choosing 100 most different distributions using threshold {threshold}, DB shape now", X.shape)
+    # print(f"Choosing 100 most different distributions using threshold {threshold}, DB shape now", X.shape)
     return X, to_drop
 
 def normal_feature_selection(X, y):
-    print("-----Eliminate features which are non-normal for active or inactive-----")
-    print("Original DB shape is", X.shape)
+    # print("-----Eliminate features which are non-normal for active or inactive-----")
+    # print("Original DB shape is", X.shape)
     active = X[y==True]
     nonactive = X[y==False]
     to_drop = []
@@ -242,5 +242,5 @@ def normal_feature_selection(X, y):
         if (p_active <= 0.05) and (p_nonactive <= 0.05):
             to_drop.append(col)
     X = X.drop(to_drop, axis=1)
-    print("Number of features reamining", X.shape)
+    # print("Number of features reamining", X.shape)
     return X, to_drop
