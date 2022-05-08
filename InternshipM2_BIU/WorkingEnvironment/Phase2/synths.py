@@ -215,13 +215,13 @@ def swd_feature_selection(X, y, n_features=100):  # Standardized Wasserstein Dis
     active = X[y == True]
     nonactive = X[y == False]
     swd_scores = []
-    for col in X.columns:
+    for col in X.columns[:-1]:
         swd_col = standardized_wasserstein_distance(active[col].to_numpy(), nonactive[col].to_numpy())
         swd_scores.append(swd_col)
 
     threshold = np.sort(swd_scores)[-(n_features+1)] + 0.0001
     to_drop = []
-    for col in X.columns:
+    for col in X.columns[:-1]:
         col_idx = X.columns.get_loc(col)
         if swd_scores[col_idx] < threshold:
             to_drop.append(col)
